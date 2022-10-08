@@ -50,7 +50,7 @@ class Footer extends Component {
                             <div className="col-lg-12">
                                 <div className="footer__copyright">
                                     <div className="footer__copyright__text"><p>
-                                    Copyright © 2022. All Rights Reserved. VietStore <i className="fa fa-heart" aria-hidden="true" /> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    Copyright © 2022. All Rights Reserved. VietStore <i className="fa fa-heart" aria-hidden="true" />
                                     </p></div>
                                     <div className="footer__copyright__payment"><img src="img/payment-item.png" alt="" /></div>
                                 </div>

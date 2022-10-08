@@ -25,7 +25,7 @@ class Trangchu extends Component {
                                 </div>
                             </div>
                             <div className="col-lg-9">
-                            <div className="hero__search">
+                                <div className="hero__search">
                                     <div className="hero__search__form">
                                         <form action="#">
                                             <input type="text" placeholder="What do yo u need?" />
@@ -45,7 +45,7 @@ class Trangchu extends Component {
                         </div>
                     </div>
                 </section>
-                <section className="categories">
+                {/* <section className="categories">
                     <div className="container">
                         <div className="row">
                             <div className="categories__slider owl-carousel">
@@ -77,7 +77,23 @@ class Trangchu extends Component {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
+                <div className="banner">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6 col-md-6 col-sm-6">
+                                <div className="banner__pic">
+                                    <img src="img/banner/banner-1.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div className="col-lg-6 col-md-6 col-sm-6">
+                                <div className="banner__pic">
+                                    <img src="img/banner/banner-2.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <section className="featured spad">
                     <div className="container">
                         <div className="row">
@@ -160,22 +176,6 @@ class Trangchu extends Component {
                         </div>
                     </div>
                 </section>
-                <div className="banner">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6 col-md-6 col-sm-6">
-                                <div className="banner__pic">
-                                    <img src="img/banner/banner-1.jpg" alt="" />
-                                </div>
-                            </div>
-                            <div className="col-lg-6 col-md-6 col-sm-6">
-                                <div className="banner__pic">
-                                    <img src="img/banner/banner-2.jpg" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <section className="from-blog spad">
                     <div className="container">
                         <div className="row">
@@ -234,7 +234,7 @@ class Trangchu extends Component {
                         </div>
                     </div>
                 </section>
-                <Footer/>
+                <Footer />
             </div>
         );
     }
