@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
+import ReactDOM from 'react-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
+import { Carousel } from 'react-responsive-carousel';
 
 class Trangchu extends Component {
     render() {
@@ -45,10 +48,10 @@ class Trangchu extends Component {
                         </div>
                     </div>
                 </section>
-                {/* <section className="categories">
+                {/* <Carousel>
                     <div className="container">
                         <div className="row">
-                            <div className="categories__slider owl-carousel">
+                            <div className="">
                                 <div className="col-lg-3">
                                     <div className="categories__item set-bg" style={{ backgroundImage: "url(img/categories/cat-1.jpg)" }}>
                                         <h5><a href="#">Fresh Fruit</a></h5>
@@ -77,7 +80,27 @@ class Trangchu extends Component {
                             </div>
                         </div>
                     </div>
-                </section> */}
+                </Carousel> */}
+
+                <Carousel autoPlay='true'>
+                    <div className="col-lg-3">
+                        <div className="categories__item" style={{ backgroundImage: "url(img/categories/cat-1.jpg)" }}>
+                            <h5><a href="#">Fresh Fruit</a></h5>
+                        </div>
+                    </div>
+                    <div className="col-lg-3">
+                        <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                            <h5><a href="#">drink fruits</a></h5>
+                        </div>
+                    </div>
+                    <div className="col-lg-3">
+                        <div className="categories__item" style={{ backgroundImage: "url(img/categories/cat-5.jpg)" }}>
+                            <h5><a href="#">drink fruits</a></h5>
+                        </div>
+                    </div>
+                </Carousel>
+
+
                 <div className="banner">
                     <div className="container">
                         <div className="row">
@@ -118,7 +141,7 @@ class Trangchu extends Component {
                                     <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-1.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                         </ul>
                                     </div>
@@ -133,7 +156,7 @@ class Trangchu extends Component {
                                     <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-2.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                         </ul>
                                     </div>
@@ -148,7 +171,7 @@ class Trangchu extends Component {
                                     <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-3.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                         </ul>
                                     </div>
@@ -163,7 +186,7 @@ class Trangchu extends Component {
                                     <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-4.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                         </ul>
                                     </div>
