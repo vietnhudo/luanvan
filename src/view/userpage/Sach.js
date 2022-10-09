@@ -37,7 +37,7 @@ class Sach extends Component {
                         </div>
                     </div>
                 </section>
-                <section className="breadcrumb-section set-bg" style={{ backgroundImage: "url(img/breadcrumb.jpg)" }} >
+                <section className="breadcrumb-section set-bg" style={{ backgroundColor: "#006666" }} >
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12 text-center">
@@ -95,7 +95,7 @@ class Sach extends Component {
                                                         <div className="product__discount__percent">-20%</div>
                                                         <ul className="product__item__pic__hover">
                                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                         </ul>
                                                     </div>
@@ -112,7 +112,7 @@ class Sach extends Component {
                                                         <div className="product__discount__percent">-20%</div>
                                                         <ul className="product__item__pic__hover">
                                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                         </ul>
                                                     </div>
@@ -129,7 +129,7 @@ class Sach extends Component {
                                                         <div className="product__discount__percent">-20%</div>
                                                         <ul className="product__item__pic__hover">
                                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                         </ul>
                                                     </div>
@@ -146,7 +146,7 @@ class Sach extends Component {
                                                         <div className="product__discount__percent">-20%</div>
                                                         <ul className="product__item__pic__hover">
                                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                         </ul>
                                                     </div>
@@ -163,7 +163,7 @@ class Sach extends Component {
                                                         <div className="product__discount__percent">-20%</div>
                                                         <ul className="product__item__pic__hover">
                                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                            <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                             <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                         </ul>
                                                     </div>
@@ -180,46 +180,46 @@ class Sach extends Component {
                                 <div className="row">
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="product__item">
-                                            <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/product/product-1.jpg)" }}>
+                                            <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach1.jpg)" }}>
                                                 <ul className="product__item__pic__hover">
                                                     <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                    <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                    <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                     <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                 </ul>
                                             </div>
                                             <div className="product__item__text">
-                                                <h6><a href="#">Crab Pool Security</a></h6>
-                                                <h5>$30.00</h5>
+                                                <h6><a href="#">Tony Buổi Sáng - Cà Phê Cùng Tony</a></h6>
+                                                <h5>60.000 đ</h5>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="product__item">
-                                            <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/product/product-2.jpg)" }}>
+                                            <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach2.jpg)" }}>
                                                 <ul className="product__item__pic__hover">
                                                     <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                    <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                    <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                     <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                 </ul>
                                             </div>
                                             <div className="product__item__text">
-                                                <h6><a href="#">Crab Pool Security</a></h6>
-                                                <h5>$30.00</h5>
+                                                <h6><a href="#">Người Thông Minh Học Tập Như Thế Nào</a></h6>
+                                                <h5>108.000 đ</h5>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-lg-4 col-md-6 col-sm-6">
                                         <div className="product__item">
-                                            <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/product/product-3.jpg)" }}>
+                                            <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach3.jpg)" }}>
                                                 <ul className="product__item__pic__hover">
                                                     <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                                    <li><a href="#"><i className="fa fa-retweet" /></a></li>
+                                                    <li><a href="#"><i className="fa fa-eye" /></a></li>
                                                     <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
                                                 </ul>
                                             </div>
                                             <div className="product__item__text">
-                                                <h6><a href="#">Crab Pool Security</a></h6>
-                                                <h5>$30.00</h5>
+                                                <h6><a href="#">Naruto - Tập 20</a></h6>
+                                                <h5>22.000 đ</h5>
                                             </div>
                                         </div>
                                     </div>

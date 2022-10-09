@@ -13,7 +13,21 @@ class Trangchu extends Component {
                 <section className="hero">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-3">
+                            <div className="col-lg-3 d-none d-lg-block">
+                                <a className="btn shadow-none d-flex align-items-center justify-content-between text-white w-100" data-toggle="collapse" href="#navbar-vertical" style={{ height: '65px', marginTop: '-1px', padding: '0 30px', backgroundColor: "#006666" }}>
+                                    <h6 className="m-0">Danh mục</h6>
+                                    <i className="fa fa-bars" />
+                                </a>
+                                <nav className="collapse p-3 border border-top-0 " id="navbar-vertical">
+                                    <div className="w-100 " style={{ height: '300px'}}>
+                                        <li><a style={{color: "#000"}} href="#">Sách giáo khoa</a></li>
+                                        <li><a style={{color: "#000"}} href="#">Sách thiếu nhi</a></li>
+                                        <li><a style={{color: "#000"}} href="#">Tâm lý - Kỹ năng</a></li>
+                                        <li><a style={{color: "#000"}} href="#">Tiểu thuyết</a></li>
+                                    </div>
+                                </nav>
+                            </div>
+                            {/* <div className="col-lg-3">
                                 <div className="hero__categories">
                                     <div className="hero__categories__all">
                                         <i className="fa fa-bars" />
@@ -26,7 +40,7 @@ class Trangchu extends Component {
                                         <li><a href="#">Tiểu thuyết</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className="col-lg-9">
                                 <div className="hero__search">
                                     <div className="hero__search__form">
@@ -36,12 +50,12 @@ class Trangchu extends Component {
                                         </form>
                                     </div>
                                 </div>
-                                <div className="hero__item set-bg" style={{ backgroundImage: "url(img/hero/banner.jpg)" }}>
+                                <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)" }}>
                                     <div className="hero__text">
-                                        <span>FRUIT FRESH</span>
+                                        {/* <span>FRUIT FRESH</span>
                                         <h2>Vegetable <br />100% Organic</h2>
                                         <p>Free Pickup and Delivery Available</p>
-                                        <a href="#" className="primary-btn">SHOP NOW</a>
+                                        <a href="#" className="primary-btn">SHOP NOW</a> */}
                                     </div>
                                 </div>
                             </div>
@@ -81,37 +95,43 @@ class Trangchu extends Component {
                         </div>
                     </div>
                 </Carousel> */}
-
-                <Carousel autoPlay='true'>
-                    <div className="col-lg-3">
-                        <div className="categories__item" style={{ backgroundImage: "url(img/categories/cat-1.jpg)" }}>
-                            <h5><a href="#">Fresh Fruit</a></h5>
+                <div className="container">
+                    <Carousel autoPlay='true'>
+                        <div className="row">
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-lg-3">
-                        <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div className="col-lg-3">
-                        <div className="categories__item" style={{ backgroundImage: "url(img/categories/cat-5.jpg)" }}>
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                </Carousel>
-
-
+                    </Carousel>
+                </div>
                 <div className="banner">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6 col-md-6 col-sm-6">
                                 <div className="banner__pic">
-                                    <img src="img/banner/banner-1.jpg" alt="" />
+                                    <img src="img/banner_slider_2.jpg" alt="" />
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-6">
                                 <div className="banner__pic">
-                                    <img src="img/banner/banner-2.jpg" alt="" />
+                                    <img src="img/banner_slider_3.jpg" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -122,15 +142,15 @@ class Trangchu extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="section-title">
-                                    <h2>Featured Product</h2>
+                                    <h2>Sách nổi bật</h2>
                                 </div>
                                 <div className="featured__controls">
                                     <ul>
-                                        <li className="active" data-filter="*">All</li>
-                                        <li data-filter=".oranges">Oranges</li>
-                                        <li data-filter=".fresh-meat">Fresh Meat</li>
-                                        <li data-filter=".vegetables">Vegetables</li>
-                                        <li data-filter=".fastfood">Fastfood</li>
+                                        <li className="active" data-filter="*">Tất cả</li>
+                                        <li data-filter=".oranges">Sách thiếu nhi</li>
+                                        <li data-filter=".fresh-meat">Tâm lý</li>
+                                        <li data-filter=".vegetables">Kinh doanh</li>
+                                        <li data-filter=".fastfood">Sách giáo khoa</li>
                                     </ul>
                                 </div>
                             </div>
@@ -138,7 +158,7 @@ class Trangchu extends Component {
                         <div className="row featured__filter">
                             <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                                 <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-1.jpg)" }}>
+                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach2.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><a href="#"><i className="fa fa-eye" /></a></li>
@@ -146,14 +166,14 @@ class Trangchu extends Component {
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
-                                        <h6><a href="#">Crab Pool Security</a></h6>
-                                        <h5>$30.00</h5>
+                                        <h6><a href="#">Người Thông Minh Học Tập Như Thế Nào</a></h6>
+                                        <h5>108.000 đ</h5>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
                                 <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-2.jpg)" }}>
+                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach3.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><a href="#"><i className="fa fa-eye" /></a></li>
@@ -161,14 +181,14 @@ class Trangchu extends Component {
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
-                                        <h6><a href="#">Crab Pool Security</a></h6>
-                                        <h5>$30.00</h5>
+                                        <h6><a href="#">Naruto - Tập 20</a></h6>
+                                        <h5>22.000 đ</h5>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
                                 <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-3.jpg)" }}>
+                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach4.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><a href="#"><i className="fa fa-eye" /></a></li>
@@ -176,14 +196,14 @@ class Trangchu extends Component {
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
-                                        <h6><a href="#">Crab Pool Security</a></h6>
-                                        <h5>$30.00</h5>
+                                        <h6><a href="#">100 Cách Sống Hạnh Phúc</a></h6>
+                                        <h5>200.000 đ</h5>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
                                 <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/featured/feature-4.jpg)" }}>
+                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach1.jpg)" }}>
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><a href="#"><i className="fa fa-eye" /></a></li>
@@ -191,8 +211,8 @@ class Trangchu extends Component {
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
-                                        <h6><a href="#">Crab Pool Security</a></h6>
-                                        <h5>$30.00</h5>
+                                        <h6><a href="#">Tony Buổi Sáng - Cà Phê Cùng Tony</a></h6>
+                                        <h5>81.000 đ</h5>
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +224,7 @@ class Trangchu extends Component {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="section-title from-blog__title">
-                                    <h2>From The Blog</h2>
+                                    <h2>Bài viết mới nhất</h2>
                                 </div>
                             </div>
                         </div>
@@ -212,14 +232,14 @@ class Trangchu extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                        <img src="img/blog/blog-1.jpg" alt="" />
+                                        <img src="img/blog1.jpg" alt="" />
                                     </div>
-                                    <div className="blog__item__text">
-                                        <ul>
+                                    <div className="blog__item__text_1">
+                                        {/* <ul>
                                             <li><i className="fa fa-calendar-o" /> May 4,2019</li>
                                             <li><i className="fa fa-comment-o" /> 5</li>
-                                        </ul>
-                                        <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                                        </ul> */}
+                                        <h5><a href="#">THÁNG PHÁI ĐẸP: TỎA SÁNG VẺ ĐẸP, NHẬN NGÀN QUÀ TẶNG</a></h5>
                                         <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                                     </div>
                                 </div>
@@ -227,14 +247,10 @@ class Trangchu extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                        <img src="img/blog/blog-2.jpg" alt="" />
+                                        <img src="img/blog2.jpg" alt="" />
                                     </div>
-                                    <div className="blog__item__text">
-                                        <ul>
-                                            <li><i className="fa fa-calendar-o" /> May 4,2019</li>
-                                            <li><i className="fa fa-comment-o" /> 5</li>
-                                        </ul>
-                                        <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
+                                    <div className="blog__item__text_1">
+                                        <h5><a href="#">Chỉ còn 5 ngày để săn sale Siêu khuyến mãi, Mừng lễ lớn</a></h5>
                                         <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                                     </div>
                                 </div>
@@ -242,14 +258,10 @@ class Trangchu extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                        <img src="img/blog/blog-3.jpg" alt="" />
+                                        <img src="img/blog3.jpg" alt="" />
                                     </div>
-                                    <div className="blog__item__text">
-                                        <ul>
-                                            <li><i className="fa fa-calendar-o" /> May 4,2019</li>
-                                            <li><i className="fa fa-comment-o" /> 5</li>
-                                        </ul>
-                                        <h5><a href="#">Visit the clean farm in the US</a></h5>
+                                    <div className="blog__item__text_1">
+                                        <h5><a href="#">NHÂN VĂN - VNPAY KHAO LỚN, QUÉT MÃ QRBOOKNV GIẢM NGAY 20K</a></h5>
                                         <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
                                     </div>
                                 </div>

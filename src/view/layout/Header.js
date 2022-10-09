@@ -44,6 +44,7 @@ class Header extends Component {
                                     <ul>
                                         <li className="active"><Link to={"/"} replace className="dropdown-item">Trang chủ</Link></li>
                                         <li><Link to={"/sach"} replace className="dropdown-item">Sản phẩm</Link></li>
+                                        <li><Link to={"/baiviet"} replace className="dropdown-item">Bài viết</Link></li>
                                         <li><Link to={"/lienhe"} replace className="dropdown-item">Liên hệ</Link></li>
                                     </ul>
                                 </nav>

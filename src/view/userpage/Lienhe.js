@@ -7,7 +7,7 @@ class Lienhe extends Component {
         return (
             <div>
             <Header />
-            <section className="breadcrumb-section set-bg" style={{ backgroundImage: "url(img/breadcrumb.jpg)" }} >
+            <section className="breadcrumb-section set-bg" style={{ backgroundColor: "#006666" }} >
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 text-center">

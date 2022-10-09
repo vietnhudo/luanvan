@@ -5,6 +5,7 @@ import Dangnhap from '../userpage/Dangnhap';
 import Lienhe from '../userpage/Lienhe';
 import Sach from '../userpage/Sach';
 import Trangchu from '../userpage/Trangchu';
+import Baiviet from '../userpage/Baiviet';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/lienhe" element={<Lienhe></Lienhe>} />
           <Route path="/dangnhap" element={<Dangnhap></Dangnhap>} />
           <Route path="/dangky" element={<Dangky></Dangky>} />
+          <Route path="/baiviet" element={<Baiviet></Baiviet>} />
         </Routes>
       </Router>
 
