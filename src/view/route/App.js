@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Dangky from '../userpage/Dangky';
 import Dangnhap from '../userpage/Dangnhap';
 import Lienhe from '../userpage/Lienhe';
 import Sach from '../userpage/Sach';
@@ -14,6 +15,7 @@ function App() {
           <Route path="/sach" element={<Sach></Sach>} />
           <Route path="/lienhe" element={<Lienhe></Lienhe>} />
           <Route path="/dangnhap" element={<Dangnhap></Dangnhap>} />
+          <Route path="/dangky" element={<Dangky></Dangky>} />
         </Routes>
       </Router>
 
