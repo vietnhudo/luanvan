@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 class Footer extends Component {
     render() {
         return (
@@ -23,9 +23,10 @@ class Footer extends Component {
                                 <div className="footer__widget">
                                     <h6>Thông tin</h6>
                                     <ul>
-                                        <li><a href="#">Trang chủ</a></li>
-                                        <li><a href="#">Sách</a></li>
-                                        <li><a href="#">Liên hệ</a></li>
+                                        <li><Link to={"/"}>Trang chủ</Link></li>
+                                        <li><Link to={"/sach"}>Sách</Link></li>
+                                        <li><Link to={"/lienhe"}>Liên hệ</Link></li>
+                                        <li><Link to={"/baiviet"}>Bài viết</Link></li>
                                     </ul>
                                     
                                 </div>
