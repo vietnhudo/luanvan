@@ -24,7 +24,7 @@ class Dangky extends Component {
                 </section>
                 <div className="contact-form spad">
                     <div className="container">
-                        <div className="row" style={{ backgroundColor: "#fafafa", padding:"50px",border: "1px solid #e5e5e5" }}>
+                        <div className="row" style={{ backgroundColor: "#fafafa", padding: "50px", border: "1px solid #e5e5e5" }}>
                             <div className="col-lg-12">
                                 <div className="contact__form__title">
                                     <h2>Đăng ký </h2>
@@ -32,10 +32,19 @@ class Dangky extends Component {
                                 <form action="#">
                                     <div className="row">
                                         <div className="col-lg-12 col-md-12">
-                                            <input type="emiail" placeholder="Email" />
+                                            <input type="text" placeholder="Your name" />
                                         </div>
-                                        <div className="col-lg-12 col-md-12">
+                                        <div className="col-lg-6 col-md-12">
+                                            <input type="email" placeholder="Email" />
+                                        </div>
+                                        <div className="col-lg-6 col-md-12">
+                                            <input type="text" placeholder="Address" />
+                                        </div>
+                                        <div className="col-lg-6 col-md-12">
                                             <input type="password" placeholder="Password" />
+                                        </div>
+                                        <div className="col-lg-6 col-md-12">
+                                            <input type="phone" placeholder="Phone number" />
                                         </div>
                                         <div className="col-lg-12 text-center">
                                             <button type="submit" className="site-btn"><i className='fa fa-sign-in'></i> Đăng ký</button>

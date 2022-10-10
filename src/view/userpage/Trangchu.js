@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
+import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
 import { Carousel } from 'react-responsive-carousel';
@@ -19,28 +20,14 @@ class Trangchu extends Component {
                                     <i className="fa fa-bars" />
                                 </a>
                                 <nav className="collapse p-3 border border-top-0 " id="navbar-vertical">
-                                    <div className="w-100 " style={{ height: '300px'}}>
-                                        <li><a style={{color: "#000"}} href="#">Sách giáo khoa</a></li>
-                                        <li><a style={{color: "#000"}} href="#">Sách thiếu nhi</a></li>
-                                        <li><a style={{color: "#000"}} href="#">Tâm lý - Kỹ năng</a></li>
-                                        <li><a style={{color: "#000"}} href="#">Tiểu thuyết</a></li>
+                                    <div className="w-100 " style={{ height: '300px' }}>
+                                        <li><Link to={"/sach"} style={{ color: "#000" }}>Sách giáo khoa</Link></li>
+                                        <li><Link to={"/sach"} style={{ color: "#000" }}>Sách thiếu nhi</Link></li>
+                                        <li><Link to={"/sach"} style={{ color: "#000" }} >Tâm lý - Kỹ năng</Link></li>
+                                        <li><Link to={"/sach"} style={{ color: "#000" }}>Tiểu thuyết</Link></li>
                                     </div>
                                 </nav>
                             </div>
-                            {/* <div className="col-lg-3">
-                                <div className="hero__categories">
-                                    <div className="hero__categories__all">
-                                        <i className="fa fa-bars" />
-                                        <span>Danh mục</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">Sách giáo khoa</a></li>
-                                        <li><a href="#">Sách thiếu nhi</a></li>
-                                        <li><a href="#">Tâm lý - Kỹ năng</a></li>
-                                        <li><a href="#">Tiểu thuyết</a></li>
-                                    </ul>
-                                </div>
-                            </div> */}
                             <div className="col-lg-9">
                                 <div className="hero__search">
                                     <div className="hero__search__form">
@@ -51,52 +38,57 @@ class Trangchu extends Component {
                                     </div>
                                 </div>
                                 <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)" }}>
-                                    <div className="hero__text">
-                                        {/* <span>FRUIT FRESH</span>
-                                        <h2>Vegetable <br />100% Organic</h2>
-                                        <p>Free Pickup and Delivery Available</p>
-                                        <a href="#" className="primary-btn">SHOP NOW</a> */}
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                {/* <Carousel>
-                    <div className="container">
+                <div className="container">
+                    <Carousel autoPlay='true' infiniteLoop='true' >
                         <div className="row">
-                            <div className="">
-                                <div className="col-lg-3">
-                                    <div className="categories__item set-bg" style={{ backgroundImage: "url(img/categories/cat-1.jpg)" }}>
-                                        <h5><a href="#">Fresh Fruit</a></h5>
-                                    </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
                                 </div>
-                                <div className="col-lg-3">
-                                    <div className="categories__item set-bg" style={{ backgroundImage: "url(img/categories/cat-2.jpg)" }}>
-                                        <h5><a href="#">Dried Fruit</a></h5>
-                                    </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
                                 </div>
-                                <div className="col-lg-3">
-                                    <div className="categories__item set-bg" style={{ backgroundImage: "url(img/categories/cat-3.jpg)" }}>
-                                        <h5><a href="#">Vegetables</a></h5>
-                                    </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
                                 </div>
-                                <div className="col-lg-3">
-                                    <div className="categories__item set-bg" style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                        <h5><a href="#">drink fruits</a></h5>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="categories__item set-bg" style={{ backgroundImage: "url(img/categories/cat-5.jpg)" }}>
-                                        <h5><a href="#">drink fruits</a></h5>
-                                    </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </Carousel> */}
-                <div className="container">
-                    <Carousel autoPlay='true'>
+                        <div className="row">
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3">
+                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
+                                    <h5><a href="#">drink fruits</a></h5>
+                                </div>
+                            </div>
+                        </div>
                         <div className="row">
                             <div className="col-lg-3">
                                 <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
