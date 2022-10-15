@@ -8,6 +8,8 @@ import Trangchu from '../userpage/Trangchu';
 import Baiviet from '../userpage/Baiviet';
 import Chitietbaiviet from '../userpage/Chitietbaiviet';
 import Chitietsach from '../userpage/Chitietsach';
+import Giohang from '../userpage/Giohang';
+import Thanhtoan from '../userpage/Thanhtoan';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/dangky" element={<Dangky></Dangky>} />
           <Route path="/baiviet" element={<Baiviet></Baiviet>} />
           <Route path="/chitietbaiviet" element={<Chitietbaiviet></Chitietbaiviet>} />
+          <Route path='/giohang' element={<Giohang></Giohang>}/>
+          <Route path='/thanhtoan' element={<Thanhtoan></Thanhtoan>}/>
         </Routes>
       </Router>
 
