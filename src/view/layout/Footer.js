@@ -10,7 +10,7 @@ class Footer extends Component {
                             <div className="col-lg-3 col-md-6 col-sm-6">
                                 <div className="footer__about">
                                     <div className="footer__about__logo">
-                                        <a href="./index.html"><img src="img/logo_vietstore.png" alt="" /></a>
+                                        <Link to={'/'}><img src="img/logo_vietstore.png" alt="" /></Link>
                                     </div>
                                     <ul>
                                         <li>Địa chỉ : 180 Cao Lỗ, Phường 4, Quận 8, TP.HCM</li>
@@ -28,7 +28,7 @@ class Footer extends Component {
                                         <li><Link to={"/lienhe"}>Liên hệ</Link></li>
                                         <li><Link to={"/baiviet"}>Bài viết</Link></li>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-12">
@@ -51,7 +51,7 @@ class Footer extends Component {
                             <div className="col-lg-12">
                                 <div className="footer__copyright">
                                     <div className="footer__copyright__text"><p>
-                                    Copyright © 2022. All Rights Reserved. VietStore <i className="fa fa-heart" aria-hidden="true" />
+                                        Copyright © 2022. All Rights Reserved. VietStore <i className="fa fa-heart" aria-hidden="true" />
                                     </p></div>
                                     <div className="footer__copyright__payment"><img src="img/payment-item.png" alt="" /></div>
                                 </div>

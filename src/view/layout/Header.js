@@ -5,10 +5,10 @@ class Header extends Component {
         return (
             <div>
                 <header className="header">
-                    <div className="header__top">
+                    <div className="header__top" style={{ backgroundColor: "#398282" }}>
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-6 col-md-6">
+                                <div className="col-lg-6 col-md-6" >
                                     <div className="header__top__left">
                                         <ul>
                                             <li><i className="fa fa-envelope" /> vietstrore@gmail.com</li>
@@ -36,7 +36,7 @@ class Header extends Component {
                         <div className="row">
                             <div className="col-lg-3">
                                 <div className="header__logo">
-                                    <a href="./index.html"><img src="img/logo_vietstore.png" alt="" /></a>
+                                    <Link to={'/'}><img src="img/logo_vietstore.png" alt="" /></Link>
                                 </div>
                             </div>
                             <div className="col-lg-6">
