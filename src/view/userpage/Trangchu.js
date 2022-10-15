@@ -12,19 +12,19 @@ class Trangchu extends Component {
             <div>
                 <Header />
                 <section className="hero">
-                    <div className="container">
+                    <div className="container" style={{ width: "100%" }}>
                         <div className="row">
-                            <div className="col-lg-3 d-none d-lg-block">
-                                <a className="btn shadow-none d-flex align-items-center justify-content-between text-white w-100" data-toggle="collapse" href="#navbar-vertical" style={{ height: '65px', marginTop: '-1px', padding: '0 30px', backgroundColor: "#006666" }}>
-                                    <h6 className="m-0">Danh mục</h6>
+                            <div className="col-lg-3 ">
+                                <a className="btn shadow-none d-flex align-items-center justify-content-between text-white" data-toggle="collapse" href="#navbar-vertical" style={{ height: '53px', marginTop: '-1px', backgroundColor: "#006666" }}>
+                                    <h6 className="m-0 font-weight-bold" style={{ textTransform: "uppercase", display: "inline-block" }}>DANH MỤC</h6>
                                     <i className="fa fa-bars" />
                                 </a>
-                                <nav className="collapse p-3 border border-top-0 " id="navbar-vertical">
-                                    <div className="w-100 " style={{ height: '300px' }}>
-                                        <li><Link to={"/sach"} style={{ color: "#000" }}>Sách giáo khoa</Link></li>
-                                        <li><Link to={"/sach"} style={{ color: "#000" }}>Sách thiếu nhi</Link></li>
-                                        <li><Link to={"/sach"} style={{ color: "#000" }} >Tâm lý - Kỹ năng</Link></li>
-                                        <li><Link to={"/sach"} style={{ color: "#000" }}>Tiểu thuyết</Link></li>
+                                <nav className=" collapse p-3 border border-top-0 " id="navbar-vertical" style={{ overflow: "hidden", zIndex: "99999", position: "relative" }}>
+                                    <div className="hi" style={{ height: 'auto', overflow: "hidden", position: "relative" }}>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Sách giáo khoa</Link></p>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Sách thiếu nhi</Link></p>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }} >Tâm lý - Kỹ năng</Link></p>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Tiểu thuyết</Link></p>
                                     </div>
                                 </nav>
                             </div>
@@ -33,12 +33,12 @@ class Trangchu extends Component {
                                     <div className="hero__search__form">
                                         <form action="#">
                                             <input type="text" placeholder="What do yo u need?" />
-                                            <button type="submit" className="site-btn">SEARCH</button>
+                                            <button type="submit" className="site-btn">TÌM KIẾM</button>
                                         </form>
                                     </div>
                                 </div>
-                                <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)" }}>
-                                </div>
+                            </div>
+                            <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)", width: "100%" }}>
                             </div>
                         </div>
                     </div>
@@ -47,94 +47,86 @@ class Trangchu extends Component {
                     <Carousel autoPlay='true' infiniteLoop='true' >
                         <div className="row">
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item ">
+                                    <img src='img/quangcao1.jpg' />
                                 </div>
                             </div>
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item " >
+                                    <img src='img/quangcao2.jpg' />
                                 </div>
                             </div>
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item " >
+                                    <img src='img/quangcao3.jpg' />
                                 </div>
                             </div>
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item " >
+                                    <img src='img/quangcao4.jpg' />
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item ">
+                                    <img src='img/quangcao1.jpg' />
                                 </div>
                             </div>
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item " >
+                                    <img src='img/quangcao2.jpg' />
                                 </div>
                             </div>
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item " >
+                                    <img src='img/quangcao3.jpg' />
                                 </div>
                             </div>
                             <div className="col-lg-3">
-                                <div className="categories__item " style={{ backgroundImage: "url(img/categories/cat-4.jpg)" }}>
-                                    <h5><a href="#">drink fruits</a></h5>
+                                <div className="categories__item " >
+                                    <img src='img/quangcao4.jpg' />
                                 </div>
                             </div>
                         </div>
                     </Carousel>
                 </div>
-                <div className="banner">
+                <section className="hero">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6 col-md-6 col-sm-6">
-                                <div className="banner__pic">
-                                    <img src="img/banner_slider_2.jpg" alt="" />
+                        <div className="row ">
+                            <div className="col-lg-3 col-md-6 col-sm-12">
+                                <div className="d-flex align-items-center border mb-4" style={{ padding: '30px' }}>
+                                    <h3 className="m-0 mr-3"> <img src='img/icon1.jpg' /> </h3>
+                                    <h5 className="font-weight-bold m-0">Hoàn tiền <br></br> 101%</h5>
                                 </div>
                             </div>
-                            <div className="col-lg-6 col-md-6 col-sm-6">
-                                <div className="banner__pic">
-                                    <img src="img/banner_slider_3.jpg" alt="" />
+                            <div className="col-lg-3 col-md-6 col-sm-12">
+                                <div className="d-flex align-items-center border mb-4" style={{ padding: '30px' }}>
+                                    <h3 className="m-0 mr-3"> <img src='img/icon2.jpg' /> </h3>
+                                    <h5 className="font-weight-bold m-0">Đổi trả<br></br> 07 ngày</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-sm-12">
+                                <div className="d-flex align-items-center border mb-4" style={{ padding: '30px' }}>
+                                    <h3 className="m-0 mr-3"> <img src='img/icon3.jpg' /> </h3>
+                                    <h5 className="font-weight-bold m-0">Tích lũy<br></br> NV-POINT</h5>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-md-6 col-sm-12">
+                                <div className="d-flex align-items-center border mb-4" style={{ padding: '30px' }}>
+                                    <h3 className="m-0 mr-3"> <img src='img/icon4.jpg' /> </h3>
+                                    <h5 className="font-weight-bold m-0">Chương trình<br></br> ưu đãi</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <section className="featured spad">
+                </section>
+                <section className="">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="section-title">
-                                    <h2>Sách nổi bật</h2>
+                                    <h2>Danh mục phổ biến được người dùng quan tâm</h2>
                                 </div>
                                 <div className="featured__controls">
                                     <ul>
@@ -154,7 +146,7 @@ class Trangchu extends Component {
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
@@ -169,7 +161,7 @@ class Trangchu extends Component {
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
@@ -184,7 +176,7 @@ class Trangchu extends Component {
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
@@ -199,7 +191,7 @@ class Trangchu extends Component {
                                         <ul className="featured__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="featured__item__text">
@@ -211,6 +203,22 @@ class Trangchu extends Component {
                         </div>
                     </div>
                 </section>
+                <div className="banner">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6 col-md-6 col-sm-6">
+                                <div className="banner__pic">
+                                    <img src="img/banner_slider_2.jpg" alt="" />
+                                </div>
+                            </div>
+                            <div className="col-lg-6 col-md-6 col-sm-6">
+                                <div className="banner__pic">
+                                    <img src="img/banner_slider_3.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <section className="from-blog spad">
                     <div className="container">
                         <div className="row">
@@ -224,7 +232,7 @@ class Trangchu extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                    <Link to={"/chitietbaiviet"}><img src="img/blog1.jpg" alt="" /></Link>
+                                        <Link to={"/chitietbaiviet"}><img src="img/blog1.jpg" alt="" /></Link>
                                     </div>
                                     <div className="blog__item__text_1">
                                         {/* <ul>
@@ -239,7 +247,7 @@ class Trangchu extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                    <Link to={"/chitietbaiviet"}> <img src="img/blog2.jpg" alt="" /></Link>
+                                        <Link to={"/chitietbaiviet"}> <img src="img/blog2.jpg" alt="" /></Link>
                                     </div>
                                     <div className="blog__item__text_1">
                                         <h5><Link to={"/chitietbaiviet"}>Chỉ còn 5 ngày để săn sale Siêu khuyến mãi, Mừng lễ lớn</Link></h5>
@@ -250,7 +258,7 @@ class Trangchu extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                    <Link to={"/chitietbaiviet"}><img src="img/blog3.jpg" alt="" /></Link>
+                                        <Link to={"/chitietbaiviet"}><img src="img/blog3.jpg" alt="" /></Link>
                                     </div>
                                     <div className="blog__item__text_1">
                                         <h5><Link to={"/chitietbaiviet"}>NHÂN VĂN - VNPAY KHAO LỚN, QUÉT MÃ QRBOOKNV GIẢM NGAY 20K</Link></h5>

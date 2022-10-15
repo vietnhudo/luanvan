@@ -9,20 +9,20 @@ class Baiviet extends Component {
             <div>
                 <Header />
                 <section className="breadcrumb-section set-bg" style={{ backgroundColor: "#006666" }} >
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12 text-center">
-                            <div className="breadcrumb__text">
-                                <h2>Bài viết</h2>
-                                <div className="breadcrumb__option">
-                                    <a href="./index.html">Trang chủ </a>
-                                    <span>Bài viết</span>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12 text-center">
+                                <div className="breadcrumb__text">
+                                    <h2>Bài viết</h2>
+                                    <div className="breadcrumb__option">
+                                        <Link to={'/'}>Trang chủ </Link>
+                                        <span>Bài viết</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
                 <section className="from-blog spad">
                     <div className="container">
                         <div className="row">
@@ -36,7 +36,7 @@ class Baiviet extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                    <Link to={"/chitietbaiviet"}><img src="img/blog1.jpg" alt="" /></Link>
+                                        <Link to={"/chitietbaiviet"}><img src="img/blog1.jpg" alt="" /></Link>
                                     </div>
                                     <div className="blog__item__text_1">
                                         {/* <ul>
@@ -51,7 +51,7 @@ class Baiviet extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                    <Link to={"/chitietbaiviet"}><img src="img/blog2.jpg" alt="" /></Link>
+                                        <Link to={"/chitietbaiviet"}><img src="img/blog2.jpg" alt="" /></Link>
                                     </div>
                                     <div className="blog__item__text_1">
                                         <h5><Link to={"/chitietbaiviet"}>Chỉ còn 5 ngày để săn sale Siêu khuyến mãi, Mừng lễ lớn</Link></h5>
@@ -62,7 +62,7 @@ class Baiviet extends Component {
                             <div className="col-lg-4 col-md-4 col-sm-6">
                                 <div className="blog__item">
                                     <div className="blog__item__pic">
-                                    <Link to={"/chitietbaiviet"}><img src="img/blog3.jpg" alt="" /></Link>
+                                        <Link to={"/chitietbaiviet"}><img src="img/blog3.jpg" alt="" /></Link>
                                     </div>
                                     <div className="blog__item__text_1">
                                         <h5><Link to={"/chitietbaiviet"}>NHÂN VĂN - VNPAY KHAO LỚN, QUÉT MÃ QRBOOKNV GIẢM NGAY 20K</Link></h5>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 
@@ -7,16 +8,15 @@ class Chitietsach extends Component {
         return (
             <div>
                 <Header />
-                <section className="breadcrumb-section set-bg" style={{ backgroundImage: "url(img/breadcrumb.jpg)" }}>
+                <section className="breadcrumb-section set-bg" style={{ backgroundColor: "#006666" }} >
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12 text-center">
                                 <div className="breadcrumb__text">
-                                    <h2>Naruto</h2>
+                                    <h2>Chi tiết sách</h2>
                                     <div className="breadcrumb__option">
-                                        <a href="./index.html">Trang chủ</a>
-                                        <a href="./index.html">Sách</a>
-                                        <span>Vegetable’s Package</span>
+                                        <Link to={'/'}>Trang chủ </Link>
+                                        <span>Chi tiết sách</span>
                                     </div>
                                 </div>
                             </div>
@@ -29,31 +29,25 @@ class Chitietsach extends Component {
                             <div className="col-lg-6 col-md-6">
                                 <div className="product__details__pic">
                                     <div className="product__details__pic__item">
-                                        <img className="product__details__pic__item--large" src="img/product/details/product-details-1.jpg" alt="" />
-                                    </div>
-                                    <div className="product__details__pic__slider owl-carousel">
-                                        <img data-imgbigurl="img/product/details/product-details-2.jpg" src="img/product/details/thumb-1.jpg" alt="" />
-                                        <img data-imgbigurl="img/product/details/product-details-3.jpg" src="img/product/details/thumb-2.jpg" alt="" />
-                                        <img data-imgbigurl="img/product/details/product-details-5.jpg" src="img/product/details/thumb-3.jpg" alt="" />
-                                        <img data-imgbigurl="img/product/details/product-details-4.jpg" src="img/product/details/thumb-4.jpg" alt="" />
+                                        <img className="product__details__pic__item--large" src="img/sach1.jpg" alt="" />
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-6">
                                 <div className="product__details__text">
-                                    <h3>Vetgetable’s Package</h3>
+                                    <h3>Cà phê cùng Tony</h3>
                                     <div className="product__details__rating">
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star-half-o" />
-                                        <span>(18 reviews)</span>
+                                        <span>(18 đánh giá)</span>
                                     </div>
-                                    <div className="product__details__price">$50.00</div>
-                                    <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                                        vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                                        quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
+                                    <div className="product__details__price">60.000 vnđ</div>
+                                    <p>Có đôi khi vào những tháng năm bắt đầu vào đời, giữa vô vàn ngả rẽ và lời khuyên, khi rất nhiều dự định mà thiếu đôi phần định hướng, thì cảm hứng là điều quan trọng để bạn trẻ bắt đầu bước chân đầu tiên trên con đường theo đuổi giấc mơ của mình.
+                                        Cà Phê Cùng Tony là tập hợp những bài viết của tác giả Tony Buổi Sáng.
+                                        Đúng như tên gọi, mỗi bài nhẹ nhàng như một tách cà phê, mà bạn trẻ có thể nhận ra một chút gì của chính mình hay bạn bè mình trong đó: Từ chuyện lớn như định vị bản thân giữa bạn bè quốc tế, cho đến chuyện nhỏ như nên chú ý những phép tắc xã giao thông thường.</p>
                                     <div className="product__details__quantity">
                                         <div className="quantity">
                                             <div className="pro-qty">
@@ -61,12 +55,12 @@ class Chitietsach extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#" className="primary-btn">ADD TO CARD</a>
-                                    <a href="#" className="heart-icon"><span className="icon_heart_alt" /></a>
+                                    <Link to className="primary-btn"><i className='fa fa-shopping-cart'></i> Thêm vào giỏ hàng</Link>
                                     <ul>
-                                        <li><b>Availability</b> <span>In Stock</span></li>
-                                        <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                                        <li><b>Weight</b> <span>0.5 kg</span></li>
+                                        <li><b>ID</b> <span>8934974151579</span></li>
+                                        <li><b>Loại sản phẩm</b> <span>Tâm Lý</span></li>
+                                        <li><b>Khả dụng:</b> <span><i className='fa fa-check-square-o' style={{ textDecorationColor: "Highlight" }}></i> Còn hàng </span></li>
+
                                         <li><b>Share on</b>
                                             <div className="share">
                                                 <a href="#"><i className="fa fa-facebook" /></a>
@@ -82,74 +76,86 @@ class Chitietsach extends Component {
                                 <div className="product__details__tab">
                                     <ul className="nav nav-tabs" role="tablist">
                                         <li className="nav-item">
-                                            <a className="nav-link active" data-toggle="tab" href="#tabs-1" role="tab" aria-selected="true">Description</a>
+                                            <a className="nav-link active" data-toggle="tab" href="#tabs-1" role="tab" aria-selected="true">Thông tin sản phẩm</a>
                                         </li>
                                         <li className="nav-item">
-                                            <a className="nav-link" data-toggle="tab" href="#tabs-2" role="tab" aria-selected="false">Information</a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a className="nav-link" data-toggle="tab" href="#tabs-3" role="tab" aria-selected="false">Reviews <span>(1)</span></a>
+                                            <a className="nav-link" data-toggle="tab" href="#tabs-3" role="tab" aria-selected="false">Đánh giá sản phẩm <span>(1)</span></a>
                                         </li>
                                     </ul>
                                     <div className="tab-content">
                                         <div className="tab-pane active" id="tabs-1" role="tabpanel">
                                             <div className="product__details__tab__desc">
-                                                <h6>Products Infomation</h6>
-                                                <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                                    Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Vivamus
-                                                    suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam
-                                                    vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada.
-                                                    Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat,
-                                                    accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a
-                                                    pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula
-                                                    elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus orci luctus
-                                                    et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
-                                                    vel, ullamcorper sit amet ligula. Proin eget tortor risus.</p>
-                                                <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
-                                                    ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
-                                                    elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
-                                                    porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
-                                                    nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                                                    Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed
-                                                    porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum
-                                                    sed sit amet dui. Proin eget tortor risus.</p>
-                                            </div>
-                                        </div>
-                                        <div className="tab-pane" id="tabs-2" role="tabpanel">
-                                            <div className="product__details__tab__desc">
-                                                <h6>Products Infomation</h6>
-                                                <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                                    Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
-                                                    Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam
-                                                    sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
-                                                    eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.
-                                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent
-                                                    sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac
-                                                    diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante
-                                                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                                    Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                                                    Proin eget tortor risus.</p>
-                                                <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem
-                                                    ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet
-                                                    elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum
-                                                    porta. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus
-                                                    nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                                                <h2>Cà Phê Cùng Tony</h2>
+                                                <p> Có đôi khi vào những tháng năm bắt đầu vào đời, giữa vô vàn ngả rẽ và lời khuyên,
+                                                    khi rất nhiều dự định mà thiếu đôi phần định hướng, thì CẢM HỨNG là điều quan trọng để bạn trẻ bắt
+                                                    đầu bước chân đầu tiên trên con đường theo đuổi giấc mơ của mình. Cà Phê Cùng Tony là tập hợp những bài
+                                                    viết của tác giả Tony Buổi Sáng. Đúng như tên gọi, mỗi bài nhẹ nhàng như một tách cà phê, mà bạn trẻ có
+                                                    thể nhận ra một chút gì của chính mình hay bạn bè mình trong đó: Từ chuyện lớn như định vị bản thân giữa
+                                                    bạn bè quốc tế, cho đến chuyện nhỏ như nên chú ý những phép tắc xã giao thông thường.
+                                                    Chúng tôi tin rằng những người trẻ tuổi luôn mang trong mình khát khao vươn lên và tấm lòng hướng thiện,
+                                                    và có nhiều cách để động viên họ biến điều đó thành hành động. Nếu như tập sách nhỏ này có thể khơi gợi trong
+                                                    lòng bạn đọc trẻ một cảm hứng tốt đẹp, như tách cà phê thơm vào đầu ngày nắng mới, thì đó là niềm vui lớn
+                                                    của tác giả Tony Buổi Sáng.
+                                                    Tony Buổi Sáng cũng là tác giả của Trên đường băng, tác phẩm hiện đã bán hơn 200.000 bản
+                                                    Trích đoạn
+                                                    ...Thật ra Tony hiểu vì sao các bác giáo sư tiến sĩ soạn sách đã phải đưa vào nhiều nội dung như vậy.
+                                                    Rất là tâm huyết và đáng trân trọng. Vì ngày xưa, kiến thức rất khó tìm. Nhiều điều hữu ích chỉ nằm trong sách,
+                                                    trong thư viện các thành phố lớn, các trường các viện đại học lớn và người ta phải nhớ mọi thứ, nên phải cộng điểm
+                                                    cho học sinh nông thôn vì ít cơ hội tiếp cận kiến thức. Nhưng, bây giờ kiến thức nằm hết trên mạng, trong file máy tính,
+                                                    truy cập là ra ngay, nên các nước đã phải thay đổi chương trình học phổ thông sau khi máy tính và internet ra đời.
+                                                    Học sinh chỉ cần nhớ những gì cốt lõi, và PHƯƠNG PHÁP tìm kiếm tài liệu. Vì chữ nghĩa rồi cũng sẽ rụng rơi theo thời gian,
+                                                    kiến thức mới lại bổ sung liên tục, nên phương pháp tìm kiếm thông tin tốt sẽ giúp ích cho các bạn trong cuộc sống sau này.
+                                                    Làm ngành nghề gì cũng phải cập nhật cái mới... </p>
                                             </div>
                                         </div>
                                         <div className="tab-pane" id="tabs-3" role="tabpanel">
                                             <div className="product__details__tab__desc">
-                                                <h6>Products Infomation</h6>
-                                                <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                                                    Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
-                                                    Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam
-                                                    sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
-                                                    eget malesuada. Vivamus suscipit tortor eget felis porttitor volutpat.
-                                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent
-                                                    sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac
-                                                    diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante
-                                                    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                                    Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                                                    Proin eget tortor risus.</p>
+                                                <div className="product__details__rating">
+                                                    <span><h2>Đánh giá sản phẩm</h2></span>
+                                                    <i className="fa fa-star" />
+                                                    <i className="fa fa-star" />
+                                                    <i className="fa fa-star" />
+                                                    <i className="fa fa-star" />
+                                                    <i className="fa fa-star-half-o" />
+                                                    <span>(dựa trên 2 đánh giá)</span>
+                                                    <Link to className="primary-btn float-right"><i className='fa fa-pencil-square-o'></i> Viết đánh giá</Link>
+                                                </div>
+                                                <div className="product__details__rating" style={{ paddingTop: "40px" }}>
+                                                    <div>
+                                                        <h4>
+                                                            <img style={{ width: "50px", height: "50px" }} className="" src="img/avatar.jpg" alt="" />
+                                                            Lisa
+                                                        </h4>
+                                                    </div>
+                                                    <span className='product__details__text' style={{ float: "right" }}>
+                                                        <div className="product__details__rating">
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star-half-o" />
+                                                        </div>
+                                                    </span>
+                                                    <p>Verry good</p>
+                                                </div>
+                                                <div className="product__details__rating" style={{ paddingTop: "20px" }}>
+                                                    <div>
+                                                        <h4>
+                                                            <img style={{ width: "50px", height: "50px" }} className="" src="img/avatar.jpg" alt="" />
+                                                            Jenni
+                                                        </h4>
+                                                    </div>
+                                                    <span className='product__details__text' style={{ float: "right" }}>
+                                                        <div className="product__details__rating">
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star" />
+                                                            <i className="fa fa-star-half-o" />
+                                                        </div>
+                                                    </span>
+                                                    <p>Verry good</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -157,26 +163,24 @@ class Chitietsach extends Component {
                             </div>
                         </div>
                     </div>
-                </section>
-                {/* Product Details Section End */}
-                {/* Related Product Section Begin */}
+                </section >
                 <section className="related-product">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="section-title related__product__title">
-                                    <h2>Related Product</h2>
+                                    <h2>Thường được mua cùng</h2>
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-3 col-md-4 col-sm-6">
                                 <div className="product__item">
-                                    <div className="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
+                                    <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach1.jpg)" }}>
                                         <ul className="product__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="product__item__text">
@@ -187,11 +191,11 @@ class Chitietsach extends Component {
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-6">
                                 <div className="product__item">
-                                    <div className="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+                                    <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach2.jpg)" }}>
                                         <ul className="product__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="product__item__text">
@@ -202,11 +206,11 @@ class Chitietsach extends Component {
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-6">
                                 <div className="product__item">
-                                    <div className="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
+                                    <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach3.jpg)" }}>
                                         <ul className="product__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="product__item__text">
@@ -217,11 +221,11 @@ class Chitietsach extends Component {
                             </div>
                             <div className="col-lg-3 col-md-4 col-sm-6">
                                 <div className="product__item">
-                                    <div className="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
+                                    <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach4.jpg)" }}>
                                         <ul className="product__item__pic__hover">
                                             <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><a href="#"><i className="fa fa-retweet" /></a></li>
-                                            <li><a href="#"><i className="fa fa-shopping-cart" /></a></li>
+                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
+                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
                                     </div>
                                     <div className="product__item__text">
@@ -234,7 +238,7 @@ class Chitietsach extends Component {
                     </div>
                 </section>
                 <Footer />
-            </div>
+            </div >
         );
     }
 }

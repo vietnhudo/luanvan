@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 
@@ -14,7 +15,7 @@ class Dangky extends Component {
                                 <div className="breadcrumb__text">
                                     <h2>Đăng ký</h2>
                                     <div className="breadcrumb__option">
-                                        <a href="./index.html">Trang chủ </a>
+                                        <Link to={'/'}>Trang chủ </Link>
                                         <span>Đăng ký</span>
                                     </div>
                                 </div>
