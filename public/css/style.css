@@ -648,7 +648,7 @@ ol {
 }
 
 .hero__search__form {
-	width: 610px;
+	width: 100%;
 	height: 50px;
 	border: 1px solid #ebebeb;
 	position: relative;
@@ -766,8 +766,8 @@ ol {
   Categories
 -----------------------*/
 
-.categories__item {
-	height: 270px;
+.categories__item img{
+	height: 200px;
 	width: 100%;
 	position: relative;
 }
@@ -2566,11 +2566,6 @@ ol {
 
 .blog__details__text {
 	margin-bottom: 45px;
-}
-
-.blog__details__text img {
-	margin-bottom: 30px;
-	margin-left: 60px; 
 }
 
 .blog__details__text p {
