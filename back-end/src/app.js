@@ -1,14 +1,14 @@
 const express = require('express');
-// const env = require('dotenv');
+const env = require('dotenv');
 const app = express();
 const morgan = require('morgan')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 //kết nối router
 const SachRouter = require('./router/Sach')
-
+env.config();
 mongoose.connect(
-    `mongodb+srv://nhuviet:nhuviet123456@cluster0.kim46.mongodb.net/dbbookstore?retryWrites=true&w=majority`,
+    `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.kim46.mongodb.net/${process.env.MONGO_DB_DATA}?retryWrites=true&w=majority`,
     {
         useNewUrlParser: true, //tạo đường link người dùng mới
         useUnifiedTopology: true,
@@ -19,6 +19,7 @@ mongoose.connect(
 mongoose.Promise = global.Promise;
 
 //import
+app.set("view engine", "ejs")
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
