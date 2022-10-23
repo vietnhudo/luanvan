@@ -1,19 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose'); 
-const Sach = require('../model/Sach');
+
+
+const SachController = require('../controller/Sach');
 // get list sách
 
+//lấy danh sách của sách
+router.get('/',SachController.lay_danhsach_sach);
 
-router.get('/', (req,res,next)=>{
-    res.status(200).json({
-        message: 'Get list danh sach '
-    })
-})
-router.post('/', (req,res,next)=>{
-    res.status(200).json({
-        message: 'Get POST danh sach '
-    })
-})
-
+// thêm sách
+router.post('/',SachController.them_sach);
 module.exports = router;

@@ -3,9 +3,27 @@ const env = require('dotenv');
 const app = express();
 const morgan = require('morgan')
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const cookieParser = require("cookie-parser");
 const mongoose = require('mongoose');
+
+
+//xử lý router
+const XuLyRouter = require('../src/router/Xulyrouter');
+
 //kết nối router
 const SachRouter = require('./router/Sach')
+
+//lấy giao diện
+// app.use('/', XuLyRouter);
+
+// //Sách
+// app.use('/sach', XuLyRouter);
+
+
+
+
+
 env.config();
 mongoose.connect(
     `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.kim46.mongodb.net/${process.env.MONGO_DB_DATA}?retryWrites=true&w=majority`,
@@ -21,6 +39,9 @@ mongoose.Promise = global.Promise;
 //import
 app.set("view engine", "ejs")
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
+app.use(cors());
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -39,8 +60,15 @@ app.use((req, res, next) => {
 })
 
 
+// app.use('/css', express.static(path.resolve(__dirname, '../public/css')))
+// app.use('/images', express.static(path.resolve(__dirname, "../public/images")))
+// app.use('/js', express.static(path.resolve(__dirname, "../public/js")))
+// app.use('/fonts', express.static(path.resolve(__dirname, "../public/fonts")))
+// app.use('/modules', express.static(path.resolve(__dirname, "../public/modules")))
+
+
 // event router (phần xử lý)
-app.use('/sach',SachRouter);
+app.use('/api/sach', SachRouter);
 
 app.use((req,res,next)=>{
     const error = new Error('Không kết nối');
