@@ -3,24 +3,25 @@ const env = require('dotenv');
 const app = express();
 const morgan = require('morgan')
 const bodyParser = require('body-parser');
+const path =require("path");
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const mongoose = require('mongoose');
 
 
-//xử lý router
-const XuLyRouter = require('../src/router/Xulyrouter');
+
 
 //kết nối router
 const SachRouter = require('./router/Sach')
+const TheLoaiSachRouter = require('./router/TheLoaiSach')
 
-//lấy giao diện
-// app.use('/', XuLyRouter);
+
 
 // //Sách
 // app.use('/sach', XuLyRouter);
 
-
+//xử lý router
+const XuLyRouter = require('./router/Xulyrouter')
 
 
 
@@ -60,15 +61,19 @@ app.use((req, res, next) => {
 })
 
 
-// app.use('/css', express.static(path.resolve(__dirname, '../public/css')))
-// app.use('/images', express.static(path.resolve(__dirname, "../public/images")))
-// app.use('/js', express.static(path.resolve(__dirname, "../public/js")))
-// app.use('/fonts', express.static(path.resolve(__dirname, "../public/fonts")))
-// app.use('/modules', express.static(path.resolve(__dirname, "../public/modules")))
+app.use('/css', express.static(path.resolve(__dirname, '../public/css')))
+app.use('/images', express.static(path.resolve(__dirname, "../public/images")))
+app.use('/js', express.static(path.resolve(__dirname, "../public/js")))
+app.use('/lib', express.static(path.resolve(__dirname, "../public/lib")))
+app.use('/scss', express.static(path.resolve(__dirname, "../public/scss")))
 
+
+//lấy giao diện
+app.use('/', XuLyRouter);
 
 // event router (phần xử lý)
 app.use('/api/sach', SachRouter);
+app.use('/api/theloaisach', TheLoaiSachRouter);
 
 app.use((req,res,next)=>{
     const error = new Error('Không kết nối');
