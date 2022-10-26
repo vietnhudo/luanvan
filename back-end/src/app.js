@@ -15,14 +15,11 @@ const mongoose = require('mongoose');
 const SachRouter = require('./router/Sach')
 const TheLoaiSachRouter = require('./router/TheLoaiSach')
 
-
-
-// //Sách
-// app.use('/sach', XuLyRouter);
-
 //xử lý router
 const XuLyRouter = require('./router/Xulyrouter')
 
+//Sách
+app.use('/sach', XuLyRouter);
 
 
 env.config();
@@ -60,9 +57,9 @@ app.use((req, res, next) => {
     next();
 })
 
-
+//Load public
 app.use('/css', express.static(path.resolve(__dirname, '../public/css')))
-app.use('/images', express.static(path.resolve(__dirname, "../public/images")))
+app.use('/img', express.static(path.resolve(__dirname, "../public/img")))
 app.use('/js', express.static(path.resolve(__dirname, "../public/js")))
 app.use('/lib', express.static(path.resolve(__dirname, "../public/lib")))
 app.use('/scss', express.static(path.resolve(__dirname, "../public/scss")))
@@ -70,6 +67,9 @@ app.use('/scss', express.static(path.resolve(__dirname, "../public/scss")))
 
 //lấy giao diện
 app.use('/', XuLyRouter);
+
+
+
 
 // event router (phần xử lý)
 app.use('/api/sach', SachRouter);
