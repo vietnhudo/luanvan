@@ -11,4 +11,7 @@ router.get('/',SachController.lay_danhsach_sach);
 
 // thêm sách
 router.post('/',SachController.them_sach);
+
+//xóa sách
+router.delete('/:idsach',SachController.xoa_sach);
 module.exports = router;

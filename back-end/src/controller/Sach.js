@@ -49,3 +49,22 @@ exports.them_sach = (req, res, next) => {
             })
         });
 }
+
+exports.xoa_sach = (req, res, next) => {
+    const id = req.params.idsach
+    Sach.remove({ _id: id })
+      .exec()
+      .then(result => {
+        res.status(200).json({
+          message: "Xóa dữ liệu sách",
+          request: {
+            type: 'DELETE',
+            url: 'http://localhost:2000/sach/',
+          }
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({ error: err });
+      });
+  }

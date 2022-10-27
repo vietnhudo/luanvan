@@ -6,8 +6,10 @@ const xulyController = require('../controller/Xulycontroller');
 router.get("/", xulyController.trangchu);
 
 //dulieu  : SÁCH
-router.get("/sach", xulyController.sach);
+router.get('/sach', xulyController.sach);
+
+
 //dulieu  : DỮ LIỆU SÁCH
-router.get("/dulieusach", xulyController.theloaisach);
+// router.get("/dulieusach", xulyController.theloaisach);
 
 module.exports = router;

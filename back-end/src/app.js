@@ -3,11 +3,10 @@ const env = require('dotenv');
 const app = express();
 const morgan = require('morgan')
 const bodyParser = require('body-parser');
-const path =require("path");
+const path = require('path');
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const mongoose = require('mongoose');
-
 
 
 
@@ -18,8 +17,7 @@ const TheLoaiSachRouter = require('./router/TheLoaiSach')
 //xử lý router
 const XuLyRouter = require('./router/Xulyrouter')
 
-//Sách
-app.use('/sach', XuLyRouter);
+
 
 
 env.config();
@@ -40,7 +38,7 @@ app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads'));
 app.use(cors());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Cors
@@ -68,6 +66,9 @@ app.use('/scss', express.static(path.resolve(__dirname, "../public/scss")))
 //lấy giao diện
 app.use('/', XuLyRouter);
 
+//Sách
+app.use('/sach', XuLyRouter);
+
 
 
 
@@ -75,16 +76,16 @@ app.use('/', XuLyRouter);
 app.use('/api/sach', SachRouter);
 app.use('/api/theloaisach', TheLoaiSachRouter);
 
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
     const error = new Error('Không kết nối');
-    error.status= 404;
+    error.status = 404;
     next(error);
 })
 
-app.use((error, req,res, next)=>{
+app.use((error, req, res, next) => {
     res.status(error.status || 500);
     res.json({
-        error:{
+        error: {
             message: error.message
         }
     })
