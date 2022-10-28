@@ -68,6 +68,7 @@ app.use('/', XuLyRouter);
 
 //Sách
 app.use('/sach', XuLyRouter);
+app.use('/themsach', XuLyRouter);
 
 
 

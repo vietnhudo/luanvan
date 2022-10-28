@@ -18,7 +18,14 @@ exports.sach = (req, res) => {
   };
 
   exports.themsach = (req, res) => {
-    res.render('Sach-Them');
+    axios.get(process.env.NODEJS_APP_URL + "/api/sach")
+      .then(function (response) {
+        res.render("Sach-Them", { sach: response.data.sach });
+        console.log(response.data);
+      })
+      .catch((err) => {
+        res.send(err);
+      });
 };
 
   // exports.theloaisach = (req, res) => {
