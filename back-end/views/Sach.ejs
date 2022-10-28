@@ -13,7 +13,7 @@
                         <div class="bg-light text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Danh sách sách</h6>
-                                <a href="">Thêm Sách</a>
+                                <a href="/themsach">Thêm Sách</a>
                             </div>
                             <div class="table-responsive">
                                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -22,6 +22,9 @@
                                             <th>ID</th>
                                             <th scope="col">Tên sách</th>
                                             <th scope="col">Giá</th>
+                                            <!-- <th scope="col">Hình</th> -->
+                                            <th scope="col">Năm xuất bản</th>
+                                            <th scope="col">Nội dung</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -36,8 +39,17 @@
                                                 <td>
                                                     <%= sach[i].gia %>
                                                 </td>
-                                                <td><a class="btn btn-sm btn-primary" href="">Chi tiết</a>
-                                                    <a class="btn btn-sm btn-primary" href="">Sửa</a>
+                                                <td>
+                                                    <%= sach[i].namxuatban %>
+                                                </td>
+                                                <td>
+                                                    <%= sach[i].noidung %>
+                                                </td>
+                                                <td>
+                                                    <!-- <a class="btn btn-sm btn-primary" href="">Chi tiết</a> -->
+                                                    <a class="form-group btn btn-success" type="button">
+                                                        <i class="fas fa-pen-square"></i>Sửa
+                                                    </a>&ensp;
                                                     <a style="color:#fff;" class="form-group btn btn-danger xoasach"
                                                         type="button" data-id=<%=sach[i]._id %> ><i
                                                             class="fas fa-trash"></i> Xóa

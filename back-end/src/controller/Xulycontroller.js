@@ -16,6 +16,11 @@ exports.sach = (req, res) => {
         res.send(err);
       });
   };
+
+  exports.themsach = (req, res) => {
+    res.render('Sach-Them');
+};
+
   // exports.theloaisach = (req, res) => {
   //   axios
   //     .get(process.env.NODEJS_APP_URL + "/api/theloaisach")

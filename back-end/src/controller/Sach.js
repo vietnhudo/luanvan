@@ -5,16 +5,18 @@ const Sach = require('../model/Sach');
 //lấy dữ liệu sách
 exports.lay_danhsach_sach = (req, res, next) => {
     Sach.find()
-        .select('ten gia _id hinh')
+        .select('ten gia _id noidung namxuatban')
         .exec()
         .then((docs) => {
             const response = {
                 count: docs.length,
                 sach: docs.map(doc => {
                     return {
+                        _id: doc._id,
                         ten: doc.ten,
                         gia: doc.gia,
-                        _id: doc._id,
+                        noidung:doc.noidung,
+                        namxuatban:doc.namxuatban,
                         request: {
                             type: 'GET',
                             url: 'http://localhost:2000/sach/' + doc._id
@@ -36,10 +38,12 @@ exports.them_sach = (req, res, next) => {
         _id: new mongoose.Types.ObjectId(),
         ten: req.body.ten,
         gia: req.body.gia,
+        noidung: req.body.noidung,
+        namxuatban: req.body.namxuatban,
     });
     sach.save().then(result => {
         console.log(result);
-        // res.redirect("../sach");
+        res.redirect("../sach");
 
     })
         .catch(err => {
@@ -50,6 +54,7 @@ exports.them_sach = (req, res, next) => {
         });
 }
 
+//xoá sách
 exports.xoa_sach = (req, res, next) => {
     const id = req.params.idsach
     Sach.remove({ _id: id })
