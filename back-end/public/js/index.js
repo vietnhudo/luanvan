@@ -2,9 +2,9 @@
 // $("#sua_sach").submit(function(evnet){
 //     alert("sửa thành công");
 //   });
-//   $("#them_dulieusach").submit(function(evnet){
-//     alert("Thêm dữ liệu thành công");
-//   });
+  $("#them_sach").submit(function(evnet){
+    alert("Thêm thành công");
+  });
 //xóa
 $onDeleteSach = $(".table tbody td a.xoasach");
 $onDeleteSach.click(function () {

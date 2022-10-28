@@ -5,7 +5,7 @@ const SachSchema = mongoose.Schema({
     ten: {type: String, require: true},
     gia: {type: Number, require:true},
     noidung: {type: String, require:true},
-    namxuatban: {type: String, require:true},
+    namxuatban: {type: Number, require:true},
     hinh: {type: String, require:true},
 });
 

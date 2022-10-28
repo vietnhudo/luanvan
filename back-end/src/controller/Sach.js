@@ -1,11 +1,10 @@
 
 const mongoose = require('mongoose');
 const Sach = require('../model/Sach');
-
 //lấy dữ liệu sách
 exports.lay_danhsach_sach = (req, res, next) => {
     Sach.find()
-        .select('ten gia _id noidung namxuatban')
+        .select('ten gia _id hinh noidung namxuatban')
         .exec()
         .then((docs) => {
             const response = {
@@ -15,6 +14,7 @@ exports.lay_danhsach_sach = (req, res, next) => {
                         _id: doc._id,
                         ten: doc.ten,
                         gia: doc.gia,
+                        hinh: doc.hinh,
                         noidung:doc.noidung,
                         namxuatban:doc.namxuatban,
                         request: {
@@ -35,24 +35,26 @@ exports.lay_danhsach_sach = (req, res, next) => {
 //thêm sách
 exports.them_sach = (req, res, next) => {
     const sach = new Sach({
-        _id: new mongoose.Types.ObjectId(),
-        ten: req.body.ten,
-        gia: req.body.gia,
-        noidung: req.body.noidung,
-        namxuatban: req.body.namxuatban,
+      _id: new mongoose.Types.ObjectId(),
+      ten: req.body.ten,
+      gia: req.body.gia,
+      hinh: req.file.path,
+      noidung: req.body.noidung,
+      namxuatban: req.body.namxuatban,
     });
     sach.save().then(result => {
-        console.log(result);
-        res.redirect("../sach");
-
+      console.log(result);
+      res.redirect("../Sach");
+  
     })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            })
-        });
-}
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        })
+      });
+  
+  }
 
 //xoá sách
 exports.xoa_sach = (req, res, next) => {

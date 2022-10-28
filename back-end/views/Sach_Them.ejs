@@ -10,24 +10,28 @@
             <div class="content">
                 <%- include('container/Navbar/Navbar') %>
                     <div class="col-12">
-                        <div class="bg-light rounded h-au p-4">
-                            <form action="/api/sach" method="POST" id="them_sach" enctype="multipart/form-data">
+                        <form action="/api/sach" method="POST" id="them_sach" enctype="multipart/form-data">
+                            <div class="bg-light rounded h-au p-4">
                                 <h3 class="mb-4">Thêm sách</h3>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" name="ten">
-                                    <label for="floatingInput">Tên sách</label>
+                                    <input type="text" placeholder="tên sách" class="form-control" name="ten">
+                                    <label> Nhập tên sách</label>
                                 </div>
                                 <!-- <div class="mb-3">
                                 <label for="formFile" class="form-label">Hình ảnh</label>
                                 <input class="form-control" type="file" id="formFile">
                             </div> -->
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingPassword" name="gia">
-                                    <label for="floatingPassword">Giá</label>
+                                    <input type="text" placeholder="tên sách" class="form-control" name="gia">
+                                    <label>Giá</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingPassword" name="namxuatban">
-                                    <label for="floatingPassword">Năm xuất bản</label>
+                                    <input type="file" placeholder="tên sách" class="form-control" name="hinh" accept="public/image/*"></input>
+                                    <label>Hình</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" placeholder="tên sách" class="form-control" name="namxuatban">
+                                    <label>Năm xuất bản</label>
                                 </div>
                                 <!-- <div class="form-floating mb-3">
                         <select class="form-select" id="floatingSelect"
@@ -47,11 +51,11 @@
                                 <div class="pt-4">
                                     <button type="submit" class="btn btn-primary">Thêm sách</button>
                                 </div>
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                    <%- include('container/Footer/Footer') %>
             </div>
-            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            <%- include('container/Footer/Footer') %>
+    </div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
     <%- include('container/JavaScript/JavaScript') %>
