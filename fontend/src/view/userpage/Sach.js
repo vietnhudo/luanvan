@@ -16,7 +16,7 @@ class Sach extends React.Component {
     componentDidMount() {
         callApi("api/sach", "GET", null).then((res) => {
             this.setState({
-                sach: res.sach,
+                sach: res.data.sach,
             });
         });
     }
