@@ -4,11 +4,14 @@ const mongoose = require('mongoose');
 
 
 const TheLoaiSachController = require('../controller/TheLoaiSach');
-// get list sách
 
-//lấy danh sách của sách
+//lấy danh sách của thể loại sách
 router.get('/',TheLoaiSachController.lay_danhsach_theloaisach);
 
-// thêm sách
+// thêm thể loại sách
 router.post('/',TheLoaiSachController.them_theloaisach);
+
+//xoá thể loại sách
+router.delete('/:idtheloaisach',TheLoaiSachController.xoa_theloaisach);
+
 module.exports = router;

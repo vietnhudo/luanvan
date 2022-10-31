@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 //kết nối router
 const SachRouter = require('./router/Sach')
 const TheLoaiSachRouter = require('./router/TheLoaiSach')
+const NhaXuatBanRouter = require('./router/NhaXuatBan')
 
 //xử lý router
 const XuLyRouter = require('./router/Xulyrouter')
@@ -70,12 +71,19 @@ app.use('/', XuLyRouter);
 app.use('/sach', XuLyRouter);
 app.use('/themsach', XuLyRouter);
 
+//Thể Loại Sách
+app.use('/theloaisach',XuLyRouter);
+app.use('/themtheloaisach',XuLyRouter);
 
+//Nhà Xuất Bản
+app.use('/nhaxuatban',XuLyRouter);
+app.use('/themnhaxuatban',XuLyRouter);
 
 
 // event router (phần xử lý)
 app.use('/api/sach', SachRouter);
 app.use('/api/theloaisach', TheLoaiSachRouter);
+app.use('/api/nhaxuatban', NhaXuatBanRouter);
 
 app.use((req, res, next) => {
     const error = new Error('Không kết nối');

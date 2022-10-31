@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const TheLoaiSach = require('../model/TheLoaiSach');
 
-//lấy dữ liệu sách
+//lấy thể loại sách
 exports.lay_danhsach_theloaisach = (req, res, next) => {
      TheLoaiSach.find()
         .select('ten _id')
@@ -29,7 +29,7 @@ exports.lay_danhsach_theloaisach = (req, res, next) => {
         });
 }
 
-//thêm sách
+//thêm thể loại sách
 exports.them_theloaisach = (req, res, next) => {
     const theloaisach = new TheLoaiSach({
         _id: new mongoose.Types.ObjectId(),
@@ -37,7 +37,7 @@ exports.them_theloaisach = (req, res, next) => {
     });
     theloaisach.save().then(result => {
         console.log(result);
-        // res.redirect("../sach");
+        res.redirect("../theloaisach");
 
     })
         .catch(err => {
@@ -47,3 +47,23 @@ exports.them_theloaisach = (req, res, next) => {
             })
         });
 }
+
+//xoá thể loại sách
+exports.xoa_theloaisach = (req, res, next) => {
+    const id = req.params.idtheloaisach
+    TheLoaiSach.remove({ _id: id })
+      .exec()
+      .then(result => {
+        res.status(200).json({
+          message: "Xóa dữ liệu thể loại sách",
+          request: {
+            type: 'DELETE',
+            url: 'http://localhost:2000/theloaisach/',
+          }
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({ error: err });
+      });
+  }
