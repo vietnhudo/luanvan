@@ -28,9 +28,14 @@ const upload = multer({
 //lấy danh sách của sách
 router.get('/',SachController.lay_danhsach_sach);
 
+//lấy id sách
+router.get('/:sachId',SachController.get_id_sach);
+
 // thêm sách
 router.post('/',upload.single('hinh'),SachController.them_sach);
 
 //xóa sách
 router.delete('/:idsach',SachController.xoa_sach);
+
+
 module.exports = router;

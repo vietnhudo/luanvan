@@ -1,10 +1,59 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
+import callApi from '../api/callApi';
 
 class Chitietsach extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            sach: [],
+            _id: '',
+            ten: '',
+            hinh: '',
+            gia: '',
+            noidung: '',
+            namxuatban: '',
+        }
+    }
+
+    componentDidMount() {
+        var { id } = this.props.params;
+        console.log(this.data);
+        if (id) {
+            callApi(`api/sach/${id}`, 'GET', null).then(res => {
+                var data = res.data;
+                console.log(res)
+                this.setState({
+                    _id: data.sach._id,
+                    ten: data.sach.ten,
+                    hinh: data.sach.hinh,
+                    gia: data.sach.gia,
+                    noidung: data.sach.noidung,
+                    namxuatban: data.sach.namxuatban,
+                });
+            });
+        }
+    }
+
+    // onSave = (e) => {
+    //     var { ten } = this.state;
+    //     e.preventDefault();
+    //     var { id } = this.props.params;
+    //     console.log(this.props)
+    //     if (id) {
+    //         callApi("api/sach", 'PUT', {
+    //             _id: id,
+    //             ten: ten
+    //         })
+    //     }
+    // }
+
+
     render() {
+        var { _id, ten, hinh, gia , sachs , namxuatban, noidung} = this.state;
         return (
             <div>
                 <Header />
@@ -29,13 +78,13 @@ class Chitietsach extends Component {
                             <div className="col-lg-6 col-md-6">
                                 <div className="product__details__pic">
                                     <div className="product__details__pic__item">
-                                        <img className="product__details__pic__item--large" src="img/sach1.jpg" alt="" />
+                                        <img className="product__details__pic__item--large" src={`${process.env.REACT_APP_API_URL}/${hinh.split(",")[0]}`} alt="Image" />
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-6">
                                 <div className="product__details__text">
-                                    <h3>Cà phê cùng Tony</h3>
+                                    <h3>{ten}</h3>
                                     <div className="product__details__rating">
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star" />
@@ -44,10 +93,8 @@ class Chitietsach extends Component {
                                         <i className="fa fa-star-half-o" />
                                         <span>(18 đánh giá)</span>
                                     </div>
-                                    <div className="product__details__price">60.000 vnđ</div>
-                                    <p>Có đôi khi vào những tháng năm bắt đầu vào đời, giữa vô vàn ngả rẽ và lời khuyên, khi rất nhiều dự định mà thiếu đôi phần định hướng, thì cảm hứng là điều quan trọng để bạn trẻ bắt đầu bước chân đầu tiên trên con đường theo đuổi giấc mơ của mình.
-                                        Cà Phê Cùng Tony là tập hợp những bài viết của tác giả Tony Buổi Sáng.
-                                        Đúng như tên gọi, mỗi bài nhẹ nhàng như một tách cà phê, mà bạn trẻ có thể nhận ra một chút gì của chính mình hay bạn bè mình trong đó: Từ chuyện lớn như định vị bản thân giữa bạn bè quốc tế, cho đến chuyện nhỏ như nên chú ý những phép tắc xã giao thông thường.</p>
+                                    <div className="product__details__price">{gia} đ</div>
+                                    <p>{noidung}</p>
                                     <div className="product__details__quantity">
                                         <div className="quantity">
                                             <div className="pro-qty">
@@ -57,7 +104,6 @@ class Chitietsach extends Component {
                                     </div>
                                     <Link to className="primary-btn"><i className='fa fa-shopping-cart'></i> Thêm vào giỏ hàng</Link>
                                     <ul>
-                                        <li><b>ID</b> <span>8934974151579</span></li>
                                         <li><b>Loại sản phẩm</b> <span>Tâm Lý</span></li>
                                         <li><b>Khả dụng:</b> <span><i className='fa fa-check-square-o' style={{ textDecorationColor: "Highlight" }}></i> Còn hàng </span></li>
 
@@ -243,4 +289,12 @@ class Chitietsach extends Component {
     }
 }
 
-export default Chitietsach;
+export default (props) => (
+    <Chitietsach
+        {...props}
+        params={useParams()}
+        navigate={useNavigate()}
+        // dispatch={useDispatch()}
+    />
+
+);

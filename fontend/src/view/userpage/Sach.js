@@ -10,6 +10,7 @@ class Sach extends React.Component {
         super(props);
         this.state = {
             sach: [],
+            theloaisach: [],
         };
     }
 
@@ -19,29 +20,41 @@ class Sach extends React.Component {
                 sach: res.data.sach,
             });
         });
+        callApi("api/theloaisach", "GET", null).then((res) => {
+            this.setState({
+                theloaisach: res.data.theloaisach,
+            });
+        });
     }
 
     renderSach = () => {
         let sach = this.state.sach.map((sachs, index) => (
-            <div className="row">
-                <Link to={`/chitietsach/${sachs._id}`} className="col-lg-4 col-md-6 col-sm-6">
-                    <div className="product__item">
-                        <div className="product__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
-                            <ul className="product__item__pic__hover">
-                                <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
-                                <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
-                            </ul>
-                        </div>
-                        <div className="product__item__text">
-                            <h6><a href="#">{(sachs.ten)}</a></h6>
-                            <h5>{(sachs.gia)} đ</h5>
-                        </div>
+            <Link to={`/chitietsach/${sachs._id}`} className="col-lg-4 col-md-6 col-sm-6">
+                <div className="product__item">
+                    <div className="product__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
+                        <ul className="product__item__pic__hover">
+                            <li><a href="#"><i className="fa fa-heart" /></a></li>
+                            <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
+                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
+                        </ul>
                     </div>
-                </Link>
-            </div>
+                    <div className="product__item__text">
+                        <h6><a href="#">{(sachs.ten)}</a></h6>
+                        <h5>{(sachs.gia)} đ</h5>
+                    </div>
+                </div>
+            </Link>
         ));
         return sach;
+    }
+
+    renderTheLoaiSach = () => {
+        let theloaisach = this.state.theloaisach.map((theloaisachs, index) => (
+            <ul>
+                <li><a href="#">{(theloaisachs.ten)}</a></li>
+            </ul>
+        ));
+        return theloaisach;
     }
 
     render() {
@@ -101,18 +114,17 @@ class Sach extends React.Component {
                                 <div className="sidebar">
                                     <div className="sidebar__item">
                                         <h4>Danh mục</h4>
-                                        <ul>
-                                            <li><a href="#">Sách giáo khoa</a></li>
-                                            <li><a href="#">Sách thiếu nhi</a></li>
-                                            <li><a href="#">Tâm lý - Kỹ năng</a></li>
-                                            <li><a href="#">Tiểu thuyết</a></li>
-                                        </ul>
+                                        {this.renderTheLoaiSach()}
                                     </div>
                                 </div>
                             </div>
                             {sach.length !== 0 ? (
                                 <>
-                                    <div className="col-lg-9 col-md-7">{this.renderSach()}</div>
+                                    <div className="col-lg-9 col-md-7">
+                                        <div className="row">
+                                            {this.renderSach()}
+                                        </div>
+                                    </div>
                                 </>
                             ) : (
                                 <><h3 className='p-4 m-2'>Không có dữ liệu.....</h3></>

@@ -5,9 +5,48 @@ import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
 import { Carousel } from 'react-responsive-carousel';
+import callApi from '../api/callApi';
 
 class Trangchu extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sach: [],
+        };
+    }
+
+    componentDidMount() {
+        callApi("api/sach", "GET", null).then((res) => {
+            this.setState({
+                sach: res.data.sach,
+            });
+        });
+    }
+
+
+    renderSach = () => {
+        let sach = this.state.sach.map((sachs, index) => (
+            <Link to={`/chitietsach/${sachs._id}`} className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                <div className="featured__item">
+                    <div className="featured__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
+                        <ul className="featured__item__pic__hover">
+                            <li><a href="#"><i className="fa fa-heart" /></a></li>
+                            <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
+                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
+                        </ul>
+                    </div>
+                    <div className="featured__item__text">
+                        <h6><a href="#">{(sachs.ten)}</a></h6>
+                        <h5>{(sachs.gia)} đ</h5>
+                    </div>
+                </div>
+            </Link>
+        ));
+        return sach;
+    }
+
     render() {
+        var { sach } = this.state;
         return (
             <div>
                 <Header />
@@ -139,68 +178,15 @@ class Trangchu extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="row featured__filter">
-                            <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                                <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach2.jpg)" }}>
-                                        <ul className="featured__item__pic__hover">
-                                            <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="featured__item__text">
-                                        <h6><a href="#">Người Thông Minh Học Tập Như Thế Nào</a></h6>
-                                        <h5>108.000 đ</h5>
-                                    </div>
+                        {sach.length !== 0 ? (
+                            <>
+                                <div className="row featured__filter">
+                                    {this.renderSach()}
                                 </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
-                                <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach3.jpg)" }}>
-                                        <ul className="featured__item__pic__hover">
-                                            <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="featured__item__text">
-                                        <h6><a href="#">Naruto - Tập 20</a></h6>
-                                        <h5>22.000 đ</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
-                                <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach4.jpg)" }}>
-                                        <ul className="featured__item__pic__hover">
-                                            <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="featured__item__text">
-                                        <h6><a href="#">100 Cách Sống Hạnh Phúc</a></h6>
-                                        <h5>200.000 đ</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
-                                <div className="featured__item">
-                                    <div className="featured__item__pic set-bg" style={{ backgroundImage: "url(img/sach1.jpg)" }}>
-                                        <ul className="featured__item__pic__hover">
-                                            <li><a href="#"><i className="fa fa-heart" /></a></li>
-                                            <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
-                                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
-                                        </ul>
-                                    </div>
-                                    <div className="featured__item__text">
-                                        <h6><a href="#">Tony Buổi Sáng - Cà Phê Cùng Tony</a></h6>
-                                        <h5>81.000 đ</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </>
+                        ) : (
+                            <><h3 className='p-4 m-2'>Không có dữ liệu.....</h3></>
+                        )}
                     </div>
                 </section>
                 <div className="banner">

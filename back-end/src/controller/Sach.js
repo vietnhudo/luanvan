@@ -32,6 +32,36 @@ exports.lay_danhsach_sach = (req, res, next) => {
         });
 }
 
+//lấy id sách
+exports.get_id_sach = (req, res, next) => {
+  const id = req.params.sachId;
+  Sach.findById(id).select('ten gia _id hinh namxuatban noidung')
+    .exec()
+    .then(doc => {
+      console.log("From data", doc);
+      if (doc) {
+        res.status(200).json(
+          {
+            sach: doc,
+            request: {
+              type: 'GET',
+              url: 'http://localhost:2000/sach/'
+            }
+          }
+        );
+      } else {
+        res.status(400).json({ message: 'không lấy dc dữ liệu' })
+      }
+
+    })
+    .catch(err => {
+
+      console.log(err);
+      res.status(500).json({ error: err })
+    }
+    );
+}
+
 //thêm sách
 exports.them_sach = (req, res, next) => {
     const sach = new Sach({
