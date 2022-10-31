@@ -26,7 +26,7 @@ class Sach extends React.Component {
             <div className="row">
                 <Link to={`/chitietsach/${sachs._id}`} className="col-lg-4 col-md-6 col-sm-6">
                     <div className="product__item">
-                        <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach1.jpg)" }}>
+                        <div className="product__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
                             <ul className="product__item__pic__hover">
                                 <li><a href="#"><i className="fa fa-heart" /></a></li>
                                 <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
