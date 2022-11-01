@@ -29,7 +29,7 @@ class Sach extends React.Component {
 
     renderSach = () => {
         let sach = this.state.sach.map((sachs, index) => (
-            <Link to={`/chitietsach/${sachs._id}`} className="col-lg-4 col-md-6 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-6">
                 <div className="product__item">
                     <div className="product__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
                         <ul className="product__item__pic__hover">
@@ -43,7 +43,7 @@ class Sach extends React.Component {
                         <h5>{(sachs.gia)} đ</h5>
                     </div>
                 </div>
-            </Link>
+            </div>
         ));
         return sach;
     }

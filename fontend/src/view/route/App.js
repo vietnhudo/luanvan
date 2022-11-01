@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Trangchu></Trangchu>} />
           <Route path="/sach" element={<Sach></Sach>} />
-          <Route path="/chitietsach" element={<Chitietsach></Chitietsach>} />
+          <Route path="/chitietsach/:id" element={<Chitietsach></Chitietsach>} />
           <Route path="/lienhe" element={<Lienhe></Lienhe>} />
           <Route path="/dangnhap" element={<Dangnhap></Dangnhap>} />
           <Route path="/dangky" element={<Dangky></Dangky>} />

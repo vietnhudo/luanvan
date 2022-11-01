@@ -26,7 +26,7 @@ class Trangchu extends Component {
 
     renderSach = () => {
         let sach = this.state.sach.map((sachs, index) => (
-            <Link to={`/chitietsach/${sachs._id}`} className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+            <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 <div className="featured__item">
                     <div className="featured__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
                         <ul className="featured__item__pic__hover">
@@ -40,7 +40,7 @@ class Trangchu extends Component {
                         <h5>{(sachs.gia)} đ</h5>
                     </div>
                 </div>
-            </Link>
+            </div>
         ));
         return sach;
     }
