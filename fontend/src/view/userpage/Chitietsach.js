@@ -94,7 +94,6 @@ class Chitietsach extends Component {
                                         <span>(18 đánh giá)</span>
                                     </div>
                                     <div className="product__details__price">{gia} đ</div>
-                                    <p>{noidung}</p>
                                     <div className="product__details__quantity">
                                         <div className="quantity">
                                             <div className="pro-qty">
@@ -104,7 +103,8 @@ class Chitietsach extends Component {
                                     </div>
                                     <Link to className="primary-btn"><i className='fa fa-shopping-cart'></i> Thêm vào giỏ hàng</Link>
                                     <ul>
-                                        <li><b>Loại sản phẩm</b> <span>Tâm Lý</span></li>
+                                        <li><b>Loại sản phẩm:</b> <span>Tâm Lý</span></li>
+                                        <li><b>Năm xuất bản:</b> <span>{namxuatban}</span></li>
                                         <li><b>Khả dụng:</b> <span><i className='fa fa-check-square-o' style={{ textDecorationColor: "Highlight" }}></i> Còn hàng </span></li>
 
                                         <li><b>Share on</b>
@@ -131,27 +131,8 @@ class Chitietsach extends Component {
                                     <div className="tab-content">
                                         <div className="tab-pane active" id="tabs-1" role="tabpanel">
                                             <div className="product__details__tab__desc">
-                                                <h2>Cà Phê Cùng Tony</h2>
-                                                <p> Có đôi khi vào những tháng năm bắt đầu vào đời, giữa vô vàn ngả rẽ và lời khuyên,
-                                                    khi rất nhiều dự định mà thiếu đôi phần định hướng, thì CẢM HỨNG là điều quan trọng để bạn trẻ bắt
-                                                    đầu bước chân đầu tiên trên con đường theo đuổi giấc mơ của mình. Cà Phê Cùng Tony là tập hợp những bài
-                                                    viết của tác giả Tony Buổi Sáng. Đúng như tên gọi, mỗi bài nhẹ nhàng như một tách cà phê, mà bạn trẻ có
-                                                    thể nhận ra một chút gì của chính mình hay bạn bè mình trong đó: Từ chuyện lớn như định vị bản thân giữa
-                                                    bạn bè quốc tế, cho đến chuyện nhỏ như nên chú ý những phép tắc xã giao thông thường.
-                                                    Chúng tôi tin rằng những người trẻ tuổi luôn mang trong mình khát khao vươn lên và tấm lòng hướng thiện,
-                                                    và có nhiều cách để động viên họ biến điều đó thành hành động. Nếu như tập sách nhỏ này có thể khơi gợi trong
-                                                    lòng bạn đọc trẻ một cảm hứng tốt đẹp, như tách cà phê thơm vào đầu ngày nắng mới, thì đó là niềm vui lớn
-                                                    của tác giả Tony Buổi Sáng.
-                                                    Tony Buổi Sáng cũng là tác giả của Trên đường băng, tác phẩm hiện đã bán hơn 200.000 bản
-                                                    Trích đoạn
-                                                    ...Thật ra Tony hiểu vì sao các bác giáo sư tiến sĩ soạn sách đã phải đưa vào nhiều nội dung như vậy.
-                                                    Rất là tâm huyết và đáng trân trọng. Vì ngày xưa, kiến thức rất khó tìm. Nhiều điều hữu ích chỉ nằm trong sách,
-                                                    trong thư viện các thành phố lớn, các trường các viện đại học lớn và người ta phải nhớ mọi thứ, nên phải cộng điểm
-                                                    cho học sinh nông thôn vì ít cơ hội tiếp cận kiến thức. Nhưng, bây giờ kiến thức nằm hết trên mạng, trong file máy tính,
-                                                    truy cập là ra ngay, nên các nước đã phải thay đổi chương trình học phổ thông sau khi máy tính và internet ra đời.
-                                                    Học sinh chỉ cần nhớ những gì cốt lõi, và PHƯƠNG PHÁP tìm kiếm tài liệu. Vì chữ nghĩa rồi cũng sẽ rụng rơi theo thời gian,
-                                                    kiến thức mới lại bổ sung liên tục, nên phương pháp tìm kiếm thông tin tốt sẽ giúp ích cho các bạn trong cuộc sống sau này.
-                                                    Làm ngành nghề gì cũng phải cập nhật cái mới... </p>
+                                                <h2>{ten}</h2>
+                                                <p>{noidung}</p>
                                             </div>
                                         </div>
                                         <div className="tab-pane" id="tabs-3" role="tabpanel">
@@ -210,7 +191,7 @@ class Chitietsach extends Component {
                         </div>
                     </div>
                 </section >
-                <section className="related-product">
+                {/* <section className="related-product">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
@@ -282,7 +263,7 @@ class Chitietsach extends Component {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 <Footer />
             </div >
         );

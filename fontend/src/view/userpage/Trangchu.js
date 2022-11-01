@@ -162,30 +162,30 @@ class Trangchu extends Component {
                 </section>
                 <section className="">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="section-title">
-                                    <h2>Danh mục phổ biến được người dùng quan tâm</h2>
-                                </div>
-                                <div className="featured__controls">
-                                    <ul>
-                                        <li className="active" data-filter="*">Tất cả</li>
-                                        <li data-filter=".oranges">Sách thiếu nhi</li>
-                                        <li data-filter=".fresh-meat">Tâm lý</li>
-                                        <li data-filter=".vegetables">Kinh doanh</li>
-                                        <li data-filter=".fastfood">Sách giáo khoa</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         {sach.length !== 0 ? (
                             <>
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        <div className="section-title">
+                                            <h2>Danh mục phổ biến được người dùng quan tâm</h2>
+                                        </div>
+                                        <div className="featured__controls">
+                                            <ul>
+                                                <li className="active" data-filter="*">Tất cả</li>
+                                                <li data-filter=".oranges">Sách thiếu nhi</li>
+                                                <li data-filter=".fresh-meat">Tâm lý</li>
+                                                <li data-filter=".vegetables">Kinh doanh</li>
+                                                <li data-filter=".fastfood">Sách giáo khoa</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="row featured__filter">
                                     {this.renderSach()}
                                 </div>
                             </>
                         ) : (
-                            <><h3 className='p-4 m-2'>Không có dữ liệu.....</h3></>
+                            <><h3 className='p-4 m-2'></h3></>
                         )}
                     </div>
                 </section>
