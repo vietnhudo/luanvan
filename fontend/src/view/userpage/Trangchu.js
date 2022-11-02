@@ -28,7 +28,7 @@ class Trangchu extends Component {
         let sach = this.state.sach.map((sachs, index) => (
             <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 <div className="featured__item">
-                    <div className="featured__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
+                    <div  className="featured__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
                         <ul className="featured__item__pic__hover">
                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                             <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
@@ -185,7 +185,10 @@ class Trangchu extends Component {
                                 </div>
                             </>
                         ) : (
-                            <><h3 className='p-4 m-2'>Không có dữ liệu.....</h3></>
+                            <>
+                            <img style={{marginLeft:'40%'}} src='img/nodata.png'></img>
+                            <h3 className='p-4 mgo'>Hiện tại không có dữ liệu mới...</h3>
+                            </>
                         )}
                     </div>
                 </section>
