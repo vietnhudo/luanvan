@@ -116,3 +116,14 @@ exports.themchitiettacgia = (req, res) => {
     });
 };
 
+//khách hàng
+exports.khachhang = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/khachhang")
+    .then(function (response) {
+      res.render("KhachHang", { khachhang: response.data.khachhang });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};

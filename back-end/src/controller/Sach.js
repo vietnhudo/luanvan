@@ -4,7 +4,7 @@ const Sach = require('../model/Sach');
 //lấy dữ liệu sách
 exports.lay_danhsach_sach = (req, res, next) => {
     Sach.find()
-        .select('ten gia _id hinh noidung namxuatban')
+        .select('ten gia giamgia _id hinh noidung namxuatban')
         .exec()
         .then((docs) => {
             const response = {
@@ -14,6 +14,7 @@ exports.lay_danhsach_sach = (req, res, next) => {
                         _id: doc._id,
                         ten: doc.ten,
                         gia: doc.gia,
+                        giamgia: doc.giamgia,
                         hinh: doc.hinh,
                         noidung:doc.noidung,
                         namxuatban:doc.namxuatban,
@@ -68,6 +69,7 @@ exports.them_sach = (req, res, next) => {
       _id: new mongoose.Types.ObjectId(),
       ten: req.body.ten,
       gia: req.body.gia,
+      giamgia: req.body.giamgia,
       hinh: req.file.path,
       noidung: req.body.noidung,
       namxuatban: req.body.namxuatban,

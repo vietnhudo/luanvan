@@ -14,6 +14,7 @@ class Chitietsach extends Component {
             ten: '',
             hinh: '',
             gia: '',
+            giamgia: '',
             noidung: '',
             namxuatban: '',
         }
@@ -31,6 +32,7 @@ class Chitietsach extends Component {
                     ten: data.sach.ten,
                     hinh: data.sach.hinh,
                     gia: data.sach.gia,
+                    giamgia: data.sach.giamgia,
                     noidung: data.sach.noidung,
                     namxuatban: data.sach.namxuatban,
                 });
@@ -53,7 +55,7 @@ class Chitietsach extends Component {
 
 
     render() {
-        var { _id, ten, hinh, gia , sachs , namxuatban, noidung} = this.state;
+        var { _id, ten, hinh, gia , sachs , namxuatban, noidung,giamgia} = this.state;
         return (
             <div>
                 <Header />
