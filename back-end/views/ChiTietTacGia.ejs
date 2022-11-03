@@ -21,6 +21,8 @@
                                         <tr class="text-dark">
                                             <th>ID</th>
                                             <th scope="col">Chủ biên</th>
+                                            <th scope="col">Sách</th>
+                                            <th scope="col">Tác Giả</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -31,6 +33,12 @@
                                                 </td>
                                                 <td>
                                                     <%= chitiettacgia[i].chubien %>
+                                                </td>
+                                                <td>
+                                                    <%= chitiettacgia[i].sach.ten %>
+                                                </td>
+                                                <td>
+                                                    <%= chitiettacgia[i].tacgia.tentacgia %>
                                                 </td>
                                                 <td>
                                                     <!-- <a class="btn btn-sm btn-primary" href="">Chi tiết</a> -->

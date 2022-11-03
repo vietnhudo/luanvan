@@ -4,7 +4,9 @@ const Sach = require('../model/Sach');
 //lấy dữ liệu sách
 exports.lay_danhsach_sach = (req, res, next) => {
     Sach.find()
-        .select('ten gia giamgia _id hinh noidung namxuatban')
+        .select('ten gia giamgia _id hinh noidung namxuatban nhaxuatban theloaisach')
+        .populate("nhaxuatban", "tennxb")
+        .populate("theloaisach", "ten")
         .exec()
         .then((docs) => {
             const response = {
@@ -18,6 +20,8 @@ exports.lay_danhsach_sach = (req, res, next) => {
                         hinh: doc.hinh,
                         noidung:doc.noidung,
                         namxuatban:doc.namxuatban,
+                        theloaisach:doc.theloaisach,
+                        nhaxuatban:doc.nhaxuatban,
                         request: {
                             type: 'GET',
                             url: 'http://localhost:2000/sach/' + doc._id
@@ -36,7 +40,9 @@ exports.lay_danhsach_sach = (req, res, next) => {
 //lấy id sách
 exports.get_id_sach = (req, res, next) => {
   const id = req.params.sachId;
-  Sach.findById(id).select('ten gia _id hinh namxuatban noidung')
+  Sach.findById(id).select('ten gia _id hinh namxuatban noidung nhaxuatban theloaisach')
+  .populate("nhaxuatban", "tennxb")
+  .populate("theloaisach", "ten")
     .exec()
     .then(doc => {
       console.log("From data", doc);
@@ -73,6 +79,8 @@ exports.them_sach = (req, res, next) => {
       hinh: req.file.path,
       noidung: req.body.noidung,
       namxuatban: req.body.namxuatban,
+      theloaisach: req.body.idtheloaisach,
+      nhaxuatban: req.body.idnhaxuatban,
     });
     sach.save().then(result => {
       console.log(result);

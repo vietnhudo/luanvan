@@ -16,6 +16,29 @@
                                 <div class="form-floating mb-3">
                                     <input type="text" placeholder="chủ biên" class="form-control" name="chubien">
                                     <label> Nhập chủ biên</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="floatingSelect" name="idsach"
+                                        aria-label="Floating label select example">
+                                        <% for(var i = 0; i < sach.length; i++) { %>
+                                            <option value="<%= sach[i]._id %>">
+                                                <%= sach[i].ten %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <label for="floatingSelect">Sách</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="floatingSelect" name="idtacgia"
+                                        aria-label="Floating label select example">
+                                        <% for(var i = 0; i < tacgia.length; i++) { %>
+                                            <option value="<%= tacgia[i]._id %>">
+                                                <%= tacgia[i].tentacgia %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <label for="floatingSelect">Tác Giả</label>
+                                </div>
                                 <div class="pt-4">
                                     <button type="submit" class="btn btn-primary">Thêm chi tiết tác giả</button>
                                 </div>
