@@ -72,4 +72,47 @@ exports.themnhaxuatban = (req, res) => {
     });
 };
 
+//tác giả
+exports.tacgia = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/tacgia")
+    .then(function (response) {
+      res.render("TacGia", { tacgia: response.data.tacgia });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+exports.themtacgia = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/tacgia")
+    .then(function (response) {
+      res.render("TacGia_Them", { tacgia: response.data.tacgia });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+//chi tiết tác giả
+exports.chitiettacgia = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/chitiettacgia")
+    .then(function (response) {
+      res.render("ChiTietTacGia", { chitiettacgia: response.data.chitiettacgia });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+exports.themchitiettacgia = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/chitiettacgia")
+    .then(function (response) {
+      res.render("ChiTietTacGia_Them", { chitiettacgia: response.data.chitiettacgia });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
 

@@ -18,4 +18,12 @@ router.get("/themtheloaisach", xulyController.themtheloaisach);
 router.get("/nhaxuatban", xulyController.nhaxuatban);
 router.get("/themnhaxuatban", xulyController.themnhaxuatban);
 
+//dulieu  : TÁC GIẢ
+router.get("/tacgia", xulyController.tacgia);
+router.get("/themtacgia", xulyController.themtacgia);
+
+//dulieu  : Chi Tiết TÁC GIẢ
+router.get("/chitiettacgia", xulyController.chitiettacgia);
+router.get("/themchitiettacgia", xulyController.themchitiettacgia);
+
 module.exports = router;

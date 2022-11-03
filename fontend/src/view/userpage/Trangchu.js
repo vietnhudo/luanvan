@@ -28,7 +28,7 @@ class Trangchu extends Component {
         let sach = this.state.sach.map((sachs, index) => (
             <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 <div className="featured__item">
-                    <div  className="featured__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
+                    <div className="featured__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
                         <ul className="featured__item__pic__hover">
                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                             <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
@@ -162,33 +162,34 @@ class Trangchu extends Component {
                 </section>
                 <section className="">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="section-title">
-                                    <h2>Danh mục phổ biến được người dùng quan tâm</h2>
-                                </div>
-                                <div className="featured__controls">
-                                    <ul>
-                                        <li className="active" data-filter="*">Tất cả</li>
-                                        <li data-filter=".oranges">Sách thiếu nhi</li>
-                                        <li data-filter=".fresh-meat">Tâm lý</li>
-                                        <li data-filter=".vegetables">Kinh doanh</li>
-                                        <li data-filter=".fastfood">Sách giáo khoa</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         {sach.length !== 0 ? (
                             <>
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        <div className="section-title">
+                                            <h2>Danh mục phổ biến được người dùng quan tâm</h2>
+                                        </div>
+                                        <div className="featured__controls">
+                                            <ul>
+                                                <li className="active" data-filter="*">Tất cả</li>
+                                                <li data-filter=".oranges">Sách thiếu nhi</li>
+                                                <li data-filter=".fresh-meat">Tâm lý</li>
+                                                <li data-filter=".vegetables">Kinh doanh</li>
+                                                <li data-filter=".fastfood">Sách giáo khoa</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="row featured__filter">
                                     {this.renderSach()}
                                 </div>
                             </>
                         ) : (
                             <>
-                            <img style={{marginLeft:'40%'}} src='img/nodata.png'></img>
-                            <h3 className='p-4 mgo'>Hiện tại không có dữ liệu mới...</h3>
+                                <img style={{ marginLeft: '40%' }} src='img/nodata.png'></img>
+                                <h3 className='p-4 mgo'>Hiện tại không có dữ liệu mới...</h3>
                             </>
+
                         )}
                     </div>
                 </section>

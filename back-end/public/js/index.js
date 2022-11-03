@@ -80,3 +80,57 @@ $onDeleteNhaXuatBan.click(function () {
       });
   }
 });
+
+// tác giả
+//sửa
+// $("#sua_sach").submit(function(evnet){
+//     alert("sửa thành công");
+//   });
+//thêm
+$("#them_tacgia").submit(function(evnet){
+  alert("Thêm tác giả thành công");
+});
+//xóa
+$onDeleteTacGia = $(".table tbody td a.xoatacgia");
+$onDeleteTacGia.click(function () {
+  var id = $(this).attr("data-id");
+  
+  var request = {
+      url: `http://localhost:2000/api/tacgia/${id}`,
+      method: "DELETE",
+  };
+  console.log(request)
+  if (confirm("Bạn có muốn xóa tác giả này không?")) {
+      $.ajax(request).done(function (response) {
+          alert("Xóa tác giả thành công!");
+          location.reload();
+      });
+  }
+});
+
+// chi tiết tác giả
+//sửa
+// $("#sua_sach").submit(function(evnet){
+//     alert("sửa thành công");
+//   });
+//thêm
+$("#them_chitiettacgia").submit(function(evnet){
+  alert("Thêm chi tiết tác giả thành công");
+});
+//xóa
+$onDeleteChiTietTacGia = $(".table tbody td a.xoachitiettacgia");
+$onDeleteChiTietTacGia.click(function () {
+  var id = $(this).attr("data-id");
+  
+  var request = {
+      url: `http://localhost:2000/api/chitiettacgia/${id}`,
+      method: "DELETE",
+  };
+  console.log(request)
+  if (confirm("Bạn có muốn xóa chi tiết tác giả này không?")) {
+      $.ajax(request).done(function (response) {
+          alert("Xóa chi tiết tác giả thành công!");
+          location.reload();
+      });
+  }
+});
