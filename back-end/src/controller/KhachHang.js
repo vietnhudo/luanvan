@@ -55,6 +55,7 @@ exports.xoa_khachhang = (req, res, next) => {
       });
 }
 
+//đăng ký
 exports.dangKyKhachHang = (req,res, next)=>{
     KhachHang.find({ username: req.body.username })
     .exec()
@@ -98,6 +99,7 @@ exports.dangKyKhachHang = (req,res, next)=>{
     });
 }
 
+//đăng nhập
 exports.dangNhapKhachHang = (req,res,next)=>{
   KhachHang.find({ username: req.body.username })
   .exec()
