@@ -134,3 +134,26 @@ $onDeleteChiTietTacGia.click(function () {
       });
   }
 });
+
+// khách hàng
+//sửa
+// $("#sua_sach").submit(function(evnet){
+//     alert("sửa thành công");
+//   });
+//xóa
+$onDeleteKhachHang = $(".table tbody td a.xoakhachhang");
+$onDeleteKhachHang.click(function () {
+  var id = $(this).attr("data-id");
+  
+  var request = {
+      url: `http://localhost:2000/api/khachhang/${id}`,
+      method: "DELETE",
+  };
+  console.log(request)
+  if (confirm("Bạn có muốn xóa khách hàng này không?")) {
+      $.ajax(request).done(function (response) {
+          alert("Xóa khách hàng thành công!");
+          location.reload();
+      });
+  }
+});
