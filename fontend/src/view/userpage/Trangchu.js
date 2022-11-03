@@ -185,7 +185,11 @@ class Trangchu extends Component {
                                 </div>
                             </>
                         ) : (
-                            <><h3 className='p-4 m-2'></h3></>
+                            <>
+                                <img style={{ marginLeft: '40%' }} src='img/nodata.png'></img>
+                                <h3 className='p-4 mgo'>Hiện tại không có dữ liệu mới...</h3>
+                            </>
+
                         )}
                     </div>
                 </section>
