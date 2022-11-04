@@ -12,6 +12,7 @@ class Trangchu extends Component {
         super(props);
         this.state = {
             sach: [],
+            baiviet: []
         };
     }
 
@@ -21,8 +22,29 @@ class Trangchu extends Component {
                 sach: res.data.sach,
             });
         });
+        callApi("api/baiviet", "GET", null).then((res) => {
+            this.setState({
+                baiviet: res.data.baiviet,
+            });
+        });
     }
 
+    renderBaiViet = () => {
+        let baiviet = this.state.baiviet.map((baiviets, index) => (
+            <div className="col-lg-4 col-md-4 col-sm-6">
+                <div className="blog__item">
+                    <div className="blog__item__pic">
+                        <Link to={`/chitietbaiviet/${baiviets._id}`}><img src={`${process.env.REACT_APP_API_URL}/${baiviets.hinh.split(",")[0]}`} alt="" /></Link>
+                    </div>
+                    <div className="blog__item__text_1">
+                        <h5><Link to={`/chitietbaiviet/${baiviets._id}`}>{(baiviets.ten)}</Link></h5>
+                        <p>{(baiviets.noidung)}</p>
+                    </div>
+                </div>
+            </div>
+        ));
+        return baiviet;
+    }
 
     renderSach = () => {
         let sach = this.state.sach.map((sachs, index) => (
@@ -167,9 +189,9 @@ class Trangchu extends Component {
                                 <div className="row">
                                     <div className="col-lg-12">
                                         <div className="section-title">
-                                            <h2>Danh mục phổ biến được người dùng quan tâm</h2>
+                                            <h2>Các cuốn sách phổ biến được người dùng hay quan tâm</h2>
                                         </div>
-                                        <div className="featured__controls">
+                                        {/* <div className="featured__controls">
                                             <ul>
                                                 <li className="active" data-filter="*">Tất cả</li>
                                                 <li data-filter=".oranges">Sách thiếu nhi</li>
@@ -177,7 +199,7 @@ class Trangchu extends Component {
                                                 <li data-filter=".vegetables">Kinh doanh</li>
                                                 <li data-filter=".fastfood">Sách giáo khoa</li>
                                             </ul>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                                 <div className="row featured__filter">
@@ -219,43 +241,7 @@ class Trangchu extends Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-lg-4 col-md-4 col-sm-6">
-                                <div className="blog__item">
-                                    <div className="blog__item__pic">
-                                        <Link to={"/chitietbaiviet"}><img src="img/blog1.jpg" alt="" /></Link>
-                                    </div>
-                                    <div className="blog__item__text_1">
-                                        {/* <ul>
-                                            <li><i className="fa fa-calendar-o" /> May 4,2019</li>
-                                            <li><i className="fa fa-comment-o" /> 5</li>
-                                        </ul> */}
-                                        <h5><Link to={"/chitietbaiviet"}>THÁNG PHÁI ĐẸP: TỎA SÁNG VẺ ĐẸP, NHẬN NGÀN QUÀ TẶNG</Link></h5>
-                                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-6">
-                                <div className="blog__item">
-                                    <div className="blog__item__pic">
-                                        <Link to={"/chitietbaiviet"}> <img src="img/blog2.jpg" alt="" /></Link>
-                                    </div>
-                                    <div className="blog__item__text_1">
-                                        <h5><Link to={"/chitietbaiviet"}>Chỉ còn 5 ngày để săn sale Siêu khuyến mãi, Mừng lễ lớn</Link></h5>
-                                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-4 col-sm-6">
-                                <div className="blog__item">
-                                    <div className="blog__item__pic">
-                                        <Link to={"/chitietbaiviet"}><img src="img/blog3.jpg" alt="" /></Link>
-                                    </div>
-                                    <div className="blog__item__text_1">
-                                        <h5><Link to={"/chitietbaiviet"}>NHÂN VĂN - VNPAY KHAO LỚN, QUÉT MÃ QRBOOKNV GIẢM NGAY 20K</Link></h5>
-                                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                    </div>
-                                </div>
-                            </div>
+                            {this.renderBaiViet()}
                         </div>
                     </div>
                 </section>

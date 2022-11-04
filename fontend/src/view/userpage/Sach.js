@@ -11,6 +11,7 @@ class Sach extends React.Component {
         this.state = {
             sach: [],
             theloaisach: [],
+            nhaxuatban: [],
         };
     }
 
@@ -25,7 +26,28 @@ class Sach extends React.Component {
                 theloaisach: res.data.theloaisach,
             });
         });
+        callApi("api/nhaxuatban", "GET", null).then((res) => {
+            this.setState({
+                nhaxuatban: res.data.nhaxuatban,
+            });
+        });
     }
+
+    handleChang = (e) => {
+        callApi(`api/sach/theloaisach/${e.target.value}`, "GET", null).then((res) => {
+            this.setState({
+                sach: res.data.sach,
+            });
+        });
+    }
+    handleChangNhaXuatBan = (e) => {
+        callApi(`api/sach/nhaxuatban/${e.target.value}`, "GET", null).then((res) => {
+            this.setState({
+                sach: res.data.sach,
+            })
+        })
+    }
+
 
     renderSach = () => {
         let sach = this.state.sach.map((sachs, index) => (

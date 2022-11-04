@@ -157,3 +157,29 @@ $onDeleteKhachHang.click(function () {
       });
   }
 });
+// bài viết
+//sửa
+// $("#sua_sach").submit(function(evnet){
+//     alert("sửa thành công");
+//   });
+//thêm
+$("#them_baiviet").submit(function(evnet){
+  alert("Thêm bài viết thành công");
+});
+//xóa
+$onDeleteBaiViet = $(".table tbody td a.xoabaiviet");
+$onDeleteBaiViet.click(function () {
+  var id = $(this).attr("data-id");
+  
+  var request = {
+      url: `http://localhost:2000/api/baiviet/${id}`,
+      method: "DELETE",
+  };
+  console.log(request)
+  if (confirm("Bạn có muốn xóa bài viết này không?")) {
+      $.ajax(request).done(function (response) {
+          alert("Xóa bài viết thành công!");
+          location.reload();
+      });
+  }
+});

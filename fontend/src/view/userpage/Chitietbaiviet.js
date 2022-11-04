@@ -1,10 +1,67 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
+import callApi from '../api/callApi';
 
 class Chitietbaiviet extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            baiviet: [],
+            _id: '',
+            ten: '',
+            hinh: '',
+            noidung: '',
+        }
+    }
+
+    componentDidMount() {
+
+        callApi("api/baiviet", "GET", null).then((res) => {
+            this.setState({
+                baiviet: res.data.baiviet,
+            });
+        });
+
+        var { id } = this.props.params;
+        console.log(this.data);
+        if (id) {
+            callApi(`api/baiviet/${id}`, 'GET', null).then(res => {
+                var data = res.data;
+                console.log(res)
+                this.setState({
+                    _id: data.baiviet._id,
+                    ten: data.baiviet.ten,
+                    hinh: data.baiviet.hinh,
+                    noidung: data.baiviet.noidung,
+                });
+            });
+        }
+    }
+
+    renderBaiViet = () => {
+        let baiviet = this.state.baiviet.map((baiviets, index) => (
+            <div className="row">
+            <div className="col-lg-4 col-md-4 col-sm-6">
+                <div className="blog__item">
+                    <div className="blog__item__pic">
+                        <Link to={`/chitietbaiviet/${baiviets._id}`}><img src={`${process.env.REACT_APP_API_URL}/${baiviets.hinh.split(",")[0]}`} alt="" /></Link>
+                    </div>
+                    <div className="blog__item__text_1">
+                        <h5><Link to={`/chitietbaiviet/${baiviets._id}`}>{(baiviets.ten)}</Link></h5>
+                        <p>{(baiviets.noidung)}</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        ));
+        return baiviet;
+    }
+
     render() {
+        var { _id, ten, hinh, noidung } = this.state;
         return (
             <div>
                 <Header />
@@ -28,74 +85,15 @@ class Chitietbaiviet extends Component {
                         <div className="row">
                             <div className="col-lg-8 col-12">
                                 <div className="blog__details__text" style={{ width: "100%" }}>
-                                    <h3>The corner window forms a place within a place that is a resting point within the large
-                                        space.</h3>
-                                    <p>Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                                        dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit
-                                        aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur
-                                        sed, convallis at tellus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.
-                                        Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.
-                                        Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis
-                                        quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada
-                                        feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                                        The study area is located at the back with a view of the vast nature. Together with the other
-                                        buildings, a congruent story has been managed in which the whole has a reinforcing effect on
-                                        the components. The use of materials seeks connection to the main house, the adjacent
-                                        stables</p>
-                                    <img style={{ width: "100%" }} src="img/blog1.jpg" alt="" />
-                                    <p>Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                                        dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit
-                                        aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur
-                                        sed, convallis at tellus. Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada.
-                                        Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.
-                                        Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis
-                                        quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada
-                                        feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                                        The study area is located at the back with a view of the vast nature. Together with the other
-                                        buildings, a congruent story has been managed in which the whole has a reinforcing effect on
-                                        the components. The use of materials seeks connection to the main house, the adjacent
-                                        stables</p>
-                                    <img style={{ height: "50px", float: "right" }} src='img/share.jpg'></img>
+                                    <h3>{ten}</h3>
+                                    <p>{noidung}</p>
+                                    <img style={{ width: "100%" }} src={`${process.env.REACT_APP_API_URL}/${hinh.split(",")[0]}`} alt="" />
                                 </div>
                             </div>
                             <div className="col-lg-4 col-12">
                                 <div className="blog__sidebar__item">
                                     <h4>Bài viết liên quan</h4>
-                                    <div className="row">
-                                        <div className="col-lg-12 col-md-12 col-sm-12">
-                                            <div className="blog__item">
-                                                <div className="blog__item__pic">
-                                                    <img src="img/blog1.jpg" alt="" />
-                                                </div>
-                                                <div className="blog__item__text">
-                                                    <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12 col-sm-12">
-                                            <div className="blog__item">
-                                                <div className="blog__item__pic">
-                                                    <img src="img/blog2.jpg" alt="" />
-                                                </div>
-                                                <div className="blog__item__text">
-                                                    <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 col-md-12 col-sm-12">
-                                            <div className="blog__item">
-                                                <div className="blog__item__pic">
-                                                    <img src="img/blog3.jpg" alt="" />
-                                                </div>
-                                                <div className="blog__item__text">
-                                                    <h5><a href="#">Visit the clean farm in the US</a></h5>
-                                                    <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        {this.renderBaiViet()}
                                 </div>
                             </div>
                         </div>
@@ -107,4 +105,12 @@ class Chitietbaiviet extends Component {
     }
 }
 
-export default Chitietbaiviet;
+export default (props) => (
+    <Chitietbaiviet
+        {...props}
+        params={useParams()}
+        navigate={useNavigate()}
+    // dispatch={useDispatch()}
+    />
+
+);

@@ -146,3 +146,25 @@ exports.khachhang = (req, res) => {
       res.send(err);
     });
 };
+
+//bài viết
+exports.baiviet = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/baiviet")
+    .then(function (response) {
+      res.render("BaiViet", { baiviet: response.data.baiviet });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+exports.thembaiviet = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/baiviet")
+    .then(function (response) {
+      res.render("BaiViet_Them", { baiviet: response.data.baiviet });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};

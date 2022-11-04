@@ -5,7 +5,7 @@ const multer = require('multer');
 
 
 const SachController = require('../controller/Sach');
-// get list sách
+// hiển thị và thêm hình
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
       cb(null, './uploads/');

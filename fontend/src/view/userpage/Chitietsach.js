@@ -16,7 +16,9 @@ class Chitietsach extends Component {
             gia: '',
             giamgia: '',
             noidung: '',
-            namxuatban: '',
+            tentheloai: '',
+            tentheloai: '',
+            tennxb: '',
         }
     }
 
@@ -35,6 +37,8 @@ class Chitietsach extends Component {
                     giamgia: data.sach.giamgia,
                     noidung: data.sach.noidung,
                     namxuatban: data.sach.namxuatban,
+                    tentheloai: data.sach.theloaisach.ten,
+                    tennxb: data.sach.nhaxuatban.tennxb,
                 });
             });
         }
@@ -55,7 +59,7 @@ class Chitietsach extends Component {
 
 
     render() {
-        var { _id, ten, hinh, gia , sachs , namxuatban, noidung,giamgia} = this.state;
+        var { _id, ten, hinh, gia , sachs , namxuatban, noidung,giamgia,tentheloai,tennxb} = this.state;
         return (
             <div>
                 <Header />
@@ -105,11 +109,12 @@ class Chitietsach extends Component {
                                     </div>
                                     <Link to className="primary-btn"><i className='fa fa-shopping-cart'></i> Thêm vào giỏ hàng</Link>
                                     <ul>
-                                        <li><b>Loại sản phẩm:</b> <span>Tâm Lý</span></li>
+                                        <li><b>Loại sản phẩm:</b> <span>{tentheloai}</span></li>
                                         <li><b>Năm xuất bản:</b> <span>{namxuatban}</span></li>
+                                        <li><b>Nhà xuất bản:</b> <span>{tennxb}</span></li>
                                         <li><b>Khả dụng:</b> <span><i className='fa fa-check-square-o' style={{ textDecorationColor: "Highlight" }}></i> Còn hàng </span></li>
 
-                                        <li><b>Share on</b>
+                                        <li><b>Chia Sẻ Trên</b>
                                             <div className="share">
                                                 <a href="#"><i className="fa fa-facebook" /></a>
                                                 <a href="#"><i className="fa fa-twitter" /></a>

@@ -23,7 +23,7 @@ function App() {
           <Route path="/dangnhap" element={<Dangnhap></Dangnhap>} />
           <Route path="/dangky" element={<Dangky></Dangky>} />
           <Route path="/baiviet" element={<Baiviet></Baiviet>} />
-          <Route path="/chitietbaiviet" element={<Chitietbaiviet></Chitietbaiviet>} />
+          <Route path="/chitietbaiviet/:id" element={<Chitietbaiviet></Chitietbaiviet>} />
           <Route path='/giohang' element={<Giohang></Giohang>}/>
           <Route path='/thanhtoan' element={<Thanhtoan></Thanhtoan>}/>
         </Routes>

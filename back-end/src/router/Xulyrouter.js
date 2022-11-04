@@ -29,4 +29,8 @@ router.get("/themchitiettacgia", xulyController.themchitiettacgia);
 //dulieu  : KHÁCH HÀNG
 router.get("/khachhang", xulyController.khachhang);
 
+//dulieu  : BÀI VIẾT
+router.get("/baiviet", xulyController.baiviet);
+router.get("/thembaiviet", xulyController.thembaiviet);
+
 module.exports = router;
