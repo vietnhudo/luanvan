@@ -18,6 +18,8 @@ const TacGiaRouter = require('./router/TacGia')
 const ChiTietTacGiaRouter = require('./router/ChiTietTacGia')
 const KhachHangRouter = require('./router/KhachHang')
 const BaiVietRouter = require('./router/BaiViet')
+const DatHangRouter = require('./router/DatHang')
+
 
 //xử lý router
 const XuLyRouter = require('./router/Xulyrouter')
@@ -95,6 +97,9 @@ app.use('/themchitiettacgia',XuLyRouter);
 app.use('/baiviet',XuLyRouter);
 app.use('/thembaiviet',XuLyRouter);
 
+//Đặt Hàng
+app.use('/dathang',XuLyRouter);
+
 
 
 // event router (phần xử lý)
@@ -105,6 +110,7 @@ app.use('/api/tacgia', TacGiaRouter);
 app.use('/api/chitiettacgia', ChiTietTacGiaRouter);
 app.use('/api/khachhang', KhachHangRouter);
 app.use('/api/baiviet', BaiVietRouter);
+app.use('/api/dathang', DatHangRouter);
 
 app.use((req, res, next) => {
     const error = new Error('Không kết nối');

@@ -33,4 +33,7 @@ router.get("/khachhang", xulyController.khachhang);
 router.get("/baiviet", xulyController.baiviet);
 router.get("/thembaiviet", xulyController.thembaiviet);
 
+//dulieu  : Đặt Hàng
+router.get("/dathang", xulyController.dathang);
+
 module.exports = router;

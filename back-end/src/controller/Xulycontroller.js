@@ -168,3 +168,15 @@ exports.thembaiviet = (req, res) => {
       res.send(err);
     });
 };
+
+//bài viết
+exports.dathang = (req, res) => {
+  axios.get(process.env.NODEJS_APP_URL + "/api/dathang")
+    .then(function (response) {
+      res.render("DatHang", { dathang: response.data.dathang });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
