@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import callApi from '../api/callApi';
+import { useDispatch } from 'react-redux';
+import { them_giohang } from '../../redux/cart';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 
@@ -12,6 +14,7 @@ class Sach extends React.Component {
             sach: [],
             theloaisach: [],
             nhaxuatban: [],
+            cart:[],
         };
     }
 
@@ -57,7 +60,7 @@ class Sach extends React.Component {
                         <ul className="product__item__pic__hover">
                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                             <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
-                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
+                            <li><Link onClick={() => this.props.dispatch(them_giohang(sachs))}><i className="fa fa-shopping-cart" /></Link></li>
                         </ul>
                     </div>
                     <div className="product__item__text">
@@ -160,4 +163,11 @@ class Sach extends React.Component {
     }
 }
 
-export default Sach;
+export default (props) => (
+    <Sach
+        {...props}
+       
+        dispatch={useDispatch()}
+    />
+
+);

@@ -3,6 +3,9 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 import callApi from '../api/callApi';
+import { useDispatch } from 'react-redux';
+import { them_giohang } from '../../redux/cart';
+
 
 class Chitietsach extends Component {
 
@@ -14,11 +17,12 @@ class Chitietsach extends Component {
             ten: '',
             hinh: '',
             gia: '',
-            giamgia: '',
             noidung: '',
             tentheloai: '',
             tentheloai: '',
             tennxb: '',
+            cart:[],
+            sachs:[],
         }
     }
 
@@ -34,28 +38,28 @@ class Chitietsach extends Component {
                     ten: data.sach.ten,
                     hinh: data.sach.hinh,
                     gia: data.sach.gia,
-                    giamgia: data.sach.giamgia,
                     noidung: data.sach.noidung,
                     namxuatban: data.sach.namxuatban,
                     tentheloai: data.sach.theloaisach.ten,
                     tennxb: data.sach.nhaxuatban.tennxb,
+                    sachs:data.sach
                 });
             });
         }
     }
 
-    // onSave = (e) => {
-    //     var { ten } = this.state;
-    //     e.preventDefault();
-    //     var { id } = this.props.params;
-    //     console.log(this.props)
-    //     if (id) {
-    //         callApi("api/sach", 'PUT', {
-    //             _id: id,
-    //             ten: ten
-    //         })
-    //     }
-    // }
+    onSave = (e) => {
+        var { ten } = this.state;
+        e.preventDefault();
+        var { id } = this.props.params;
+        console.log(this.props)
+        if (id) {
+            callApi("api/sach", 'PUT', {
+                _id: id,
+                ten: ten,
+            })
+        }
+    }
 
 
     render() {
@@ -107,13 +111,11 @@ class Chitietsach extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <Link to className="primary-btn"><i className='fa fa-shopping-cart'></i> Thêm vào giỏ hàng</Link>
+                                    <button onClick={() => this.props.dispatch(them_giohang(sachs))} className="primary-btn"><i className='fa fa-shopping-cart'></i> Thêm vào giỏ hàng</button>
                                     <ul>
                                         <li><b>Loại sản phẩm:</b> <span>{tentheloai}</span></li>
                                         <li><b>Năm xuất bản:</b> <span>{namxuatban}</span></li>
                                         <li><b>Nhà xuất bản:</b> <span>{tennxb}</span></li>
-                                        <li><b>Khả dụng:</b> <span><i className='fa fa-check-square-o' style={{ textDecorationColor: "Highlight" }}></i> Còn hàng </span></li>
-
                                         <li><b>Chia Sẻ Trên</b>
                                             <div className="share">
                                                 <a href="#"><i className="fa fa-facebook" /></a>
@@ -282,7 +284,7 @@ export default (props) => (
         {...props}
         params={useParams()}
         navigate={useNavigate()}
-        // dispatch={useDispatch()}
+        dispatch={useDispatch()}
     />
 
 );

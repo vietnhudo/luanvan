@@ -6,13 +6,16 @@ import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
 import { Carousel } from 'react-responsive-carousel';
 import callApi from '../api/callApi';
+import { them_giohang } from '../../redux/cart';
+import { useDispatch } from 'react-redux';
 
 class Trangchu extends Component {
     constructor(props) {
         super(props);
         this.state = {
             sach: [],
-            baiviet: []
+            baiviet: [],
+            cart:[]
         };
     }
 
@@ -54,7 +57,7 @@ class Trangchu extends Component {
                         <ul className="featured__item__pic__hover">
                             <li><a href="#"><i className="fa fa-heart" /></a></li>
                             <li><Link to={`/chitietsach/${sachs._id}`} ><i className="fa fa-eye" /></Link></li>
-                            <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
+                            <li><Link onClick={() => this.props.dispatch(them_giohang(sachs))}><i className="fa fa-shopping-cart" /></Link></li>
                         </ul>
                     </div>
                     <div className="featured__item__text">
@@ -250,4 +253,11 @@ class Trangchu extends Component {
         );
     }
 }
-export default Trangchu;
+export default (props) => (
+    <Trangchu
+        {...props}
+       
+        dispatch={useDispatch()}
+    />
+
+);

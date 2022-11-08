@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { logOutSuccess } from '../../redux/khachhang';
 const Header = () => {
+ 
     const user = useSelector((state) => state.auth.login.currentUser);
     const dispatch = useDispatch();
+    const navigate = useNavigate();       
+    const carts = useSelector((state) => state.cart.cart);
+
+    let soluong = 0;
+
+    carts?.forEach((item) => {
+        soluong += item.qty;
+    });
+
     return (
         <div>
             <header className="header">
@@ -65,7 +74,7 @@ const Header = () => {
                             <div className="header__cart">
                                 <ul>
                                     <li><a href="#"><i className="fa fa-heart" /> <span>1</span></a></li>
-                                    <li><a href="#"><i className="fa fa-shopping-bag" /> <span>3</span></a></li>
+                                    <li><Link to={"/giohang"}><i className="fa fa-shopping-bag" /> <span>{soluong}</span></Link></li>
                                 </ul>
                             </div>
                         </div>
