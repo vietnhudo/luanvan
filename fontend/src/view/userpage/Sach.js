@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { them_giohang } from '../../redux/cart';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
+import util from '../../util/util';
 
 class Sach extends React.Component {
 
@@ -65,7 +66,8 @@ class Sach extends React.Component {
                     </div>
                     <div className="product__item__text">
                         <h6><a href="#">{(sachs.ten)}</a></h6>
-                        <h5>{(sachs.gia)} đ</h5>
+                        <del className='float-center' style={{padding:'10px',color:'#b1b1b1'}}>{util(sachs.gia)}</del>
+                        <span><b>{util(sachs.gia)}</b></span>
                     </div>
                 </div>
             </div>

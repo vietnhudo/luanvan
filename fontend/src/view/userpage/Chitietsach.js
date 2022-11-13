@@ -5,7 +5,7 @@ import Header from '../layout/Header';
 import callApi from '../api/callApi';
 import { useDispatch } from 'react-redux';
 import { them_giohang } from '../../redux/cart';
-
+import util from '../../util/util';
 
 class Chitietsach extends Component {
 
@@ -103,7 +103,7 @@ class Chitietsach extends Component {
                                         <i className="fa fa-star-half-o" />
                                         <span>(18 đánh giá)</span>
                                     </div>
-                                    <div className="product__details__price">{gia} đ</div>
+                                    <div className="product__details__price">{util(gia)}</div>
                                     <div className="product__details__quantity">
                                         <div className="quantity">
                                             <div className="pro-qty">

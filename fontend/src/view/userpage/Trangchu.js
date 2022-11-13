@@ -8,6 +8,7 @@ import { Carousel } from 'react-responsive-carousel';
 import callApi from '../api/callApi';
 import { them_giohang } from '../../redux/cart';
 import { useDispatch } from 'react-redux';
+import util from '../../util/util';
 
 class Trangchu extends Component {
     constructor(props) {
@@ -62,7 +63,8 @@ class Trangchu extends Component {
                     </div>
                     <div className="featured__item__text">
                         <h6><a href="#">{(sachs.ten)}</a></h6>
-                        <h5>{(sachs.gia)} đ</h5>
+                        <del className='float-center' style={{padding:'10px',color:'#b1b1b1'}}>{util(sachs.gia)}</del>
+                        <span><b>{util(sachs.gia)}</b></span>
                     </div>
                 </div>
             </div>

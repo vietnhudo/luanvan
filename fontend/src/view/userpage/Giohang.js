@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 import { xoa_giohang } from '../../redux/cart';
+import util from '../../util/util';
 
 const Giohang = () => {
 
@@ -60,7 +61,7 @@ const Giohang = () => {
                                                     <h5>{cart.ten}</h5>
                                                 </td>
                                                 <td className="shoping__cart__price">
-                                                    {cart.gia} đ
+                                                    {util(cart.gia)} 
                                                 </td>
                                                 <td className="shoping__cart__quantity">
                                                     <div className="quantity">
@@ -70,7 +71,7 @@ const Giohang = () => {
                                                     </div>
                                                 </td>
                                                 <td className="shoping__cart__total">
-                                                    {Math.floor((cart.gia) * (cart.qty))} đ
+                                                    {util(Math.floor((cart.gia) * (cart.qty)))} 
                                                 </td>
                                                 <td >
                                                     <from>
@@ -106,7 +107,7 @@ const Giohang = () => {
                                 <h5>Tổng cộng</h5>
                                 <ul>
                                     <li>Tổng số lượng sản phẩm<span>{soluong} cuốn</span></li>
-                                    <li>Tạm tính <span>{price}đ</span></li>
+                                    <li>Tạm tính <span>{util(price)}</span></li>
                                 </ul>
                                 <Link to={'/thanhtoan'} className="primary-btn">Thanh toán</Link>
                             </div>
