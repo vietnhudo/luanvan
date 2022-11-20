@@ -2501,6 +2501,18 @@ ol {
 	margin-bottom: 10px;
 }
 
+.product-sale {
+    position: absolute;
+    background: #ff5800;
+    z-index: 2;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 15px;
+    right: 60px;
+    top: 10px;
+    border-radius: 4px;
+}
+
 /*---------------------
   Blog Details Hero
 -----------------------*/

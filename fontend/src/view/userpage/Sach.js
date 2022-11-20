@@ -15,7 +15,7 @@ class Sach extends React.Component {
             sach: [],
             theloaisach: [],
             nhaxuatban: [],
-            cart:[],
+            cart: [],
         };
     }
 
@@ -57,6 +57,9 @@ class Sach extends React.Component {
         let sach = this.state.sach.map((sachs, index) => (
             <div className="col-lg-4 col-md-6 col-sm-6">
                 <div className="product__item">
+                    <div className='product-sale'>
+                        <span>{sachs.giamgia}%</span>
+                    </div>
                     <div className="product__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
                         <ul className="product__item__pic__hover">
                             <li><a href="#"><i className="fa fa-heart" /></a></li>
@@ -66,7 +69,7 @@ class Sach extends React.Component {
                     </div>
                     <div className="product__item__text">
                         <h6><a href="#">{(sachs.ten)}</a></h6>
-                        <del className='float-center' style={{padding:'10px',color:'#b1b1b1'}}>{util(sachs.gia)}</del>
+                        <del className='float-center' style={{ padding: '10px', color: '#b1b1b1' }}>{util(Math.floor((sachs.gia) / (1 - ((sachs.giamgia) / 100))))}</del>
                         <span><b>{util(sachs.gia)}</b></span>
                     </div>
                 </div>
@@ -77,11 +80,20 @@ class Sach extends React.Component {
 
     renderTheLoaiSach = () => {
         let theloaisach = this.state.theloaisach.map((theloaisachs, index) => (
-            <ul>
-                <li><a href="#">{(theloaisachs.ten)}</a></li>
-            </ul>
+            <option className='text-left' value={theloaisachs._id}>
+                {theloaisachs.ten}
+            </option>
         ));
         return theloaisach;
+    }
+
+    renderNhaXuatBan = () => {
+        let nhaxuatban = this.state.nhaxuatban.map((nhaxuatbans, index) => (
+            <option className='text-left' value={nhaxuatbans._id}>
+                {nhaxuatbans.tennxb}
+            </option>
+        ));
+        return nhaxuatban;
     }
 
     render() {
@@ -139,10 +151,14 @@ class Sach extends React.Component {
                         <div className="row">
                             <div className="col-lg-3 col-md-5">
                                 <div className="sidebar">
-                                    <div className="sidebar__item">
-                                        <h4>Danh mục</h4>
+                                    <label for="car1"> <b>Danh mục:</b> &nbsp;</label>
+                                    <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px' }} id="car1">
                                         {this.renderTheLoaiSach()}
-                                    </div>
+                                    </select>
+                                    <label for="car2"> <b>Nhà xuất bản:</b> &nbsp;</label>
+                                    <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px' }} id="car2">
+                                        {this.renderNhaXuatBan()}
+                                    </select>
                                 </div>
                             </div>
                             {sach.length !== 0 ? (
@@ -168,7 +184,7 @@ class Sach extends React.Component {
 export default (props) => (
     <Sach
         {...props}
-       
+
         dispatch={useDispatch()}
     />
 

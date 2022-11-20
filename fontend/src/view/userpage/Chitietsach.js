@@ -19,7 +19,6 @@ class Chitietsach extends Component {
             gia: '',
             noidung: '',
             tentheloai: '',
-            tentheloai: '',
             tennxb: '',
             cart:[],
             sachs:[],

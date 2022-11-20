@@ -25,6 +25,13 @@ const upload = multer({
     storage: storage, limits: { fileSize: 1024 * 1024 * 5},
     fileFilter: fileFilter
 });
+
+//lấy thể loại sách
+router.get("/theloaisach/:sachid", SachController.get_theloaisach);
+
+//lấy nhà xuất bản
+router.get("/nhaxuatban/:idnxb",SachController.get_nhaxuatban);
+
 //lấy danh sách của sách
 router.get('/',SachController.lay_danhsach_sach);
 

@@ -43,8 +43,7 @@ class Chitietbaiviet extends Component {
 
     renderBaiViet = () => {
         let baiviet = this.state.baiviet.map((baiviets, index) => (
-            <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-6">
+            <div className="col-lg-12 col-md-12 col-sm-12">
                 <div className="blog__item">
                     <div className="blog__item__pic">
                         <Link to={`/chitietbaiviet/${baiviets._id}`}><img src={`${process.env.REACT_APP_API_URL}/${baiviets.hinh.split(",")[0]}`} alt="" /></Link>
@@ -54,7 +53,6 @@ class Chitietbaiviet extends Component {
                         <p>{(baiviets.noidung)}</p>
                     </div>
                 </div>
-            </div>
             </div>
         ));
         return baiviet;
@@ -93,7 +91,7 @@ class Chitietbaiviet extends Component {
                             <div className="col-lg-4 col-12">
                                 <div className="blog__sidebar__item">
                                     <h4>Bài viết liên quan</h4>
-                                        {this.renderBaiViet()}
+                                    <div className="row">{this.renderBaiViet()}</div>
                                 </div>
                             </div>
                         </div>

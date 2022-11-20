@@ -16,7 +16,7 @@ class Trangchu extends Component {
         this.state = {
             sach: [],
             baiviet: [],
-            cart:[]
+            cart: []
         };
     }
 
@@ -54,6 +54,9 @@ class Trangchu extends Component {
         let sach = this.state.sach.map((sachs, index) => (
             <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 <div className="featured__item">
+                    <div className='product-sale'>
+                        <span>{sachs.giamgia}%</span>
+                    </div>
                     <div className="featured__item__pic set-bg" style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL}/${sachs.hinh})` }}>
                         <ul className="featured__item__pic__hover">
                             <li><a href="#"><i className="fa fa-heart" /></a></li>
@@ -63,7 +66,7 @@ class Trangchu extends Component {
                     </div>
                     <div className="featured__item__text">
                         <h6><a href="#">{(sachs.ten)}</a></h6>
-                        <del className='float-center' style={{padding:'10px',color:'#b1b1b1'}}>{util(sachs.gia)}</del>
+                        <del className='float-center' style={{ padding: '10px', color: '#b1b1b1' }}>{util(Math.floor((sachs.gia) / (1 - ((sachs.giamgia) / 100))))}</del>
                         <span><b>{util(sachs.gia)}</b></span>
                     </div>
                 </div>
@@ -258,7 +261,7 @@ class Trangchu extends Component {
 export default (props) => (
     <Trangchu
         {...props}
-       
+
         dispatch={useDispatch()}
     />
 
