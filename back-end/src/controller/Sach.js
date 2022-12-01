@@ -5,7 +5,7 @@ const Sach = require('../model/Sach');
 
 //lọc và tìm kiếm theo tên sách
 exports.get_tensach = (req, res, next) => {
-  Dulieusach.find({
+  Sach.find({
     "$or": [
       { ten: { $regex: req.params.ten } },
     ]
@@ -14,7 +14,7 @@ exports.get_tensach = (req, res, next) => {
     .then((docs) => {
       const response = {
         count: docs.length,
-        dulieusach: docs.map((doc) => {
+        sach: docs.map((doc) => {
           return {
             ten: doc.ten,
             gia: doc.gia,

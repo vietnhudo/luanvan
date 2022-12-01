@@ -80,38 +80,6 @@ class Trangchu extends Component {
         return (
             <div>
                 <Header />
-                <section className="hero">
-                    <div className="container" style={{ width: "100%" }}>
-                        <div className="row">
-                            <div className="col-lg-3 ">
-                                <a className="btn shadow-none d-flex align-items-center justify-content-between text-white" data-toggle="collapse" href="#navbar-vertical" style={{ height: '53px', marginTop: '-1px', backgroundColor: "#006666" }}>
-                                    <h6 className="m-0 font-weight-bold" style={{ textTransform: "uppercase", display: "inline-block" }}>DANH MỤC</h6>
-                                    <i className="fa fa-bars" />
-                                </a>
-                                <nav className=" collapse p-3 border border-top-0 " id="navbar-vertical" style={{ overflow: "hidden", zIndex: "99999", position: "relative" }}>
-                                    <div className="hi" style={{ height: 'auto', overflow: "hidden", position: "relative" }}>
-                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Sách giáo khoa</Link></p>
-                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Sách thiếu nhi</Link></p>
-                                        <p><Link to={"/sach"} style={{ color: "#000" }} >Tâm lý - Kỹ năng</Link></p>
-                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Tiểu thuyết</Link></p>
-                                    </div>
-                                </nav>
-                            </div>
-                            <div className="col-lg-9">
-                                <div className="hero__search">
-                                    <div className="hero__search__form">
-                                        <form action="#">
-                                            <input type="text" placeholder="What do yo u need?" />
-                                            <button type="submit" className="site-btn">TÌM KIẾM</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)", width: "100%" }}>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 <div className="container">
                     <Carousel autoPlay='true' infiniteLoop='true' >
                         <div className="row">

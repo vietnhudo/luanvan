@@ -1,19 +1,32 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { logOutSuccess } from '../../redux/khachhang';
+import callApi from '../api/callApi';
+import React, { useState } from 'react';
+import { timkiem } from '../../redux/cart'
 const Header = () => {
- 
+
     const user = useSelector((state) => state.auth.login.currentUser);
     const dispatch = useDispatch();
-    const navigate = useNavigate();       
+    const navigate = useNavigate();
+    const [ten, setTen] = useState('');
+    const [ddssach, setDsSach] = useState([]);
     const carts = useSelector((state) => state.cart.cart);
 
+    const TimKiem = (e) => {
+        e.preventDefault();
+        callApi(`api/sach/timkiem/${ten}`, "GET", null).then(res => {
+            setDsSach(res.data.sach)
+        });
+        navigate('/timkiem')
+    }
     let soluong = 0;
 
     carts?.forEach((item) => {
         soluong += item.qty;
     });
 
+    dispatch(timkiem(ddssach));
     return (
         <div>
             <header className="header">
@@ -83,6 +96,37 @@ const Header = () => {
                         <i className="fa fa-bars" />
                     </div>
                 </div>
+                <section className="hero">
+                    <div className="container" style={{ width: "100%" }}>
+                        <div className="row">
+                            <div className="col-lg-3 ">
+                                <a className="btn shadow-none d-flex align-items-center justify-content-between text-white" data-toggle="collapse" href="#navbar-vertical" style={{ height: '53px', marginTop: '-1px', backgroundColor: "#006666" }}>
+                                    <h6 className="m-0 font-weight-bold" style={{ textTransform: "uppercase", display: "inline-block" }}>DANH MỤC</h6>
+                                    <i className="fa fa-bars" />
+                                </a>
+                                <nav className=" collapse p-3 border border-top-0 " id="navbar-vertical" style={{ overflow: "hidden", zIndex: "99999", position: "relative" }}>
+                                    <div className="hi" style={{ height: 'auto', overflow: "hidden", position: "relative" }}>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Sách giáo khoa</Link></p>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Sách thiếu nhi</Link></p>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }} >Tâm lý - Kỹ năng</Link></p>
+                                        <p><Link to={"/sach"} style={{ color: "#000" }}>Tiểu thuyết</Link></p>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div className="col-lg-9">
+                                <div className="hero__search">
+                                    <div className="hero__search__form">
+                                        <form onSubmit={TimKiem}>
+                                            <input type="text" placeholder="Tìm kiếm..." value={ten} onChange={(e) => setTen(e.target.value)} />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)", width: "100%" }}>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </header>
         </div>
     );
