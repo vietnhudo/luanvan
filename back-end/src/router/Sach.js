@@ -37,6 +37,7 @@ router.get('/',SachController.lay_danhsach_sach);
 
 //lấy id sách
 router.get('/:sachId',SachController.get_id_sach);
+router.get('/timkiem/:ten',SachController.get_tensach);
 
 // thêm sách
 router.post('/',upload.single('hinh'),SachController.them_sach);

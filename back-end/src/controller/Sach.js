@@ -3,7 +3,45 @@ const mongoose = require('mongoose');
 const Sach = require('../model/Sach');
 
 
+//lọc và tìm kiếm theo tên sách
+exports.get_tensach = (req, res, next) => {
+  Dulieusach.find({
+    "$or": [
+      { ten: { $regex: req.params.ten } },
+    ]
+  })
+    .exec()
+    .then((docs) => {
+      const response = {
+        count: docs.length,
+        dulieusach: docs.map((doc) => {
+          return {
+            ten: doc.ten,
+            gia: doc.gia,
+            hinh: doc.hinh,
+            theloaisach: doc.theloaisach,
+            nhaxuatban: doc.nhaxuatban,
+            noidung: doc.noidung,
+            giamgia: doc.giamgia,
+            namxuatban: doc.namxuatban,
+            _id: doc._id,
+            request: {
+              type: "GET",
+              url: process.env.NODEJS_APP_URL + "/api/sach/" + doc._id,
+            },
+          };
+        }),
+      };
+      res.status(200).json(response);
 
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({
+        error: err,
+      });
+    });
+}
 //lọc và tìm kiếm theo thể loại sách
 exports.get_theloaisach = (req, res, next) => {
   const sachid = req.params.sachid;
