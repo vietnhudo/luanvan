@@ -35,6 +35,7 @@ class Sach extends React.Component {
                 nhaxuatban: res.data.nhaxuatban,
             });
         });
+
     }
 
     handleChang = (e) => {
@@ -153,10 +154,12 @@ class Sach extends React.Component {
                                 <div className="sidebar">
                                     <label for="car1"> <b>Danh mục:</b> &nbsp;</label>
                                     <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px' }} id="car1">
+                                    <option>Chọn danh mục</option>
                                         {this.renderTheLoaiSach()}
                                     </select>
                                     <label for="car2"> <b>Nhà xuất bản:</b> &nbsp;</label>
                                     <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px' }} id="car2">
+                                    <option>Chọn nhà xuất bản</option>
                                         {this.renderNhaXuatBan()}
                                     </select>
                                 </div>
@@ -186,6 +189,7 @@ export default (props) => (
         {...props}
 
         dispatch={useDispatch()}
+        
     />
 
 );

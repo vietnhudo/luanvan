@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cart: [],
-  sach: [] 
+  sach: [],
 };
 
 const cartSlice = createSlice({
@@ -45,7 +45,7 @@ const cartSlice = createSlice({
     },
     timkiem: (state, action) => {
       const dss = action.payload;
-      return{
+      return {
         ...state,
           sach : dss
       } 

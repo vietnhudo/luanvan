@@ -1,5 +1,5 @@
 const {default: axios} = require('axios');
-// const { data } = require('jquery');
+const { data } = require('jquery');
 require('dotenv').config();
 
 exports.trangchu = (req, res) => {
