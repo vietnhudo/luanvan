@@ -80,6 +80,14 @@ class Trangchu extends Component {
         return (
             <div>
                 <Header />
+                <section className="hero">
+                    <div className="container" style={{ width: "100%" }}>
+                        <div className="row">
+                            <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)", width: "100%" }}>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div className="container">
                     <Carousel autoPlay='true' infiniteLoop='true' >
                         <div className="row">

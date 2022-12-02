@@ -102,36 +102,6 @@ class Sach extends React.Component {
         return (
             <div>
                 <Header />
-                {/* <section className="hero hero-normal">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-3">
-                                <div className="hero__categories">
-                                    <div className="hero__categories__all">
-                                        <i className="fa fa-bars" />
-                                        <span>Danh mục</span>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">Sách giáo khoa</a></li>
-                                        <li><a href="#">Sách thiếu nhi</a></li>
-                                        <li><a href="#">Tâm lý - Kỹ năng</a></li>
-                                        <li><a href="#">Tiểu thuyết</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-9">
-                                <div className="hero__search">
-                                    <div className="hero__search__form">
-                                        <form action="#">
-                                            <input type="text" placeholder="What do yo u need?" />
-                                            <button type="submit" className="site-btn">SEARCH</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
                 <section className="breadcrumb-section set-bg" style={{ backgroundColor: "#006666" }} >
                     <div className="container">
                         <div className="row">
@@ -150,16 +120,16 @@ class Sach extends React.Component {
                 <section className="product spad">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-3 col-md-5">
+                            <div className="col-lg-9 col-md-7">
                                 <div className="sidebar">
-                                    <label for="car1"> <b>Danh mục:</b> &nbsp;</label>
-                                    <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px' }} id="car1">
-                                    <option>Chọn danh mục</option>
+                                    <label for="car1"> <b>Chọn:</b> &nbsp;</label>
+                                    <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px',width:'150px'}} id="car1">
+                                    <option>Danh mục</option>
                                         {this.renderTheLoaiSach()}
                                     </select>
-                                    <label for="car2"> <b>Nhà xuất bản:</b> &nbsp;</label>
-                                    <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px' }} id="car2">
-                                    <option>Chọn nhà xuất bản</option>
+                                    <label for="car2"> &nbsp; &nbsp; &nbsp; <b>Chọn:</b> &nbsp;</label>
+                                    <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px',width:'150px'}} id="car2">
+                                    <option>Nhà xuất bản</option>
                                         {this.renderNhaXuatBan()}
                                     </select>
                                 </div>

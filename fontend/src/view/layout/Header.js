@@ -122,8 +122,6 @@ const Header = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="hero__item set-bg" style={{ backgroundImage: "url(img/slide-banner-1.jpg)", width: "100%" }}>
-                            </div>
                         </div>
                     </div>
                 </section>
