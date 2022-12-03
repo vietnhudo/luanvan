@@ -16,8 +16,10 @@ const Header = () => {
     const TimKiem = (e) => {
         e.preventDefault();
         callApi(`api/sach/timkiem/${ten}`, "GET", null).then(res => {
-            setDsSach(res.data.sach)
+            setDsSach(res.data.sach);
+            dispatch(timkiem(res.data.sach));
         });
+        
         navigate('/timkiem')
     }
     let soluong = 0;
@@ -26,7 +28,7 @@ const Header = () => {
         soluong += item.qty;
     });
 
-    dispatch(timkiem(ddssach));
+    
     return (
         <div>
             <header className="header">

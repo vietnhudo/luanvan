@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 import { xoa_giohang } from '../../redux/cart';
+import { capnhat_giohang } from '../../redux/cart';
 import util from '../../util/util';
 
 const Giohang = () => {
 
     const dispatch = useDispatch();
     const carts = useSelector((state) => state.cart.cart);
-
+    
 
     let soluong = 0;
     let price = 0;
@@ -61,17 +62,33 @@ const Giohang = () => {
                                                     <h5>{cart.ten}</h5>
                                                 </td>
                                                 <td className="shoping__cart__price">
-                                                    {util(cart.gia)} 
+                                                    {util(cart.gia)}
                                                 </td>
                                                 <td className="shoping__cart__quantity">
                                                     <div className="quantity">
                                                         <div className="pro-qty">
-                                                            <input type="text" value={cart.qty} />
+                                                            <input
+                                                                min="1"
+                                                                type="number"
+                                                                id="qty"
+                                                                name="qty"
+                                                                value={cart.qty}
+                                                                onChange={(e)=>{
+                                                                    if (e.target.value > 0) {
+                                                                      var product = {...cart};
+                                                                      product.qty = Number(e.target.value);
+                                                                      dispatch(capnhat_giohang(product));
+                                                                    } else if (Number(e.target.value) === 0) {
+                                                                      dispatch(xoa_giohang(cart));
+                                                                    }
+                                                                 
+                                                              }}
+                                                            />
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td className="shoping__cart__total">
-                                                    {util(Math.floor((cart.gia) * (cart.qty)))} 
+                                                    {util(Math.floor((cart.gia) * (cart.qty)))}
                                                 </td>
                                                 <td >
                                                     <from>

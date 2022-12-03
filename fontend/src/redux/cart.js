@@ -37,6 +37,17 @@ const cartSlice = createSlice({
         )),
       };
     },
+    capnhat_giohang: (state, action) => {
+      const sanpham = action.payload;
+      return {
+        ...state,
+        cart: state.cart.map((item) =>
+        item._id === sanpham._id
+            ? { ...item, qty: + sanpham.qty }
+            : item
+        ),
+      };
+    },
     lammoi_giohang: (state) => {
         return{
           ...state,
@@ -58,6 +69,7 @@ export const {
     them_giohang,
     xoa_giohang,
     lammoi_giohang,
+    capnhat_giohang,
     timkiem
 } = cartSlice.actions;
 

@@ -11,6 +11,7 @@ const TimKiem = () => {
     const dispatch = useDispatch();
     return (
         <div>
+            <Header />
             <section className="breadcrumb-section set-bg" style={{ backgroundColor: "#006666" }} >
                 <div className="container">
                     <div className="row">
