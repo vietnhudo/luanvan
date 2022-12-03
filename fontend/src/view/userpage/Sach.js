@@ -123,13 +123,13 @@ class Sach extends React.Component {
                             <div className="col-lg-9 col-md-7">
                                 <div className="sidebar">
                                     <label for="car1"> <b>Danh mục:</b> &nbsp;</label>
-                                    <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px',width:'150px'}} id="car1">
-                                    <option>Tất cả</option>
+                                    <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px', width: '150px' }} id="car1">
+                                        <option>Tất cả</option>
                                         {this.renderTheLoaiSach()}
                                     </select>
                                     <label for="car2"> &nbsp; &nbsp; &nbsp; <b>Nhà xuất bản:</b> &nbsp;</label>
-                                    <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px',width:'150px'}} id="car2">
-                                    <option>Tất cả</option>
+                                    <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px', width: '150px' }} id="car2">
+                                        <option>Tất cả</option>
                                         {this.renderNhaXuatBan()}
                                     </select>
                                 </div>
@@ -159,7 +159,7 @@ export default (props) => (
         {...props}
 
         dispatch={useDispatch()}
-        
+
     />
 
 );
