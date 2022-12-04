@@ -37,7 +37,7 @@
                                 <div class="form-floating mb-3">
                                     <select class="form-select" id="floatingSelect" name="idnhaxuatban"
                                         aria-label="Floating label select example">
-                                        <% for(var i = 0; i < nhaxuatban.length; i++) { %>
+                                        <% for(var i=0; i < nhaxuatban.length; i++) { %>
                                             <option value="<%= nhaxuatban[i]._id %>">
                                                 <%= nhaxuatban[i].tennxb %>
                                             </option>
@@ -48,7 +48,7 @@
                                 <div class="form-floating mb-3">
                                     <select class="form-select" id="floatingSelect" name="idtheloaisach"
                                         aria-label="Floating label select example">
-                                        <% for(var i = 0; i < theloaisach.length; i++) { %>
+                                        <% for(var i=0; i < theloaisach.length; i++) { %>
                                             <option value="<%= theloaisach[i]._id %>">
                                                 <%= theloaisach[i].ten %>
                                             </option>
@@ -57,8 +57,7 @@
                                     <label for="floatingSelect">Thể Loại Sách</label>
                                 </div>
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here"
-                                        id="floatingTextarea" style="height: 150px;" name="noidung"></textarea>
+                                    <input type="text" placeholder="tên sách" class="form-control" name="noidung">
                                     <label for="floatingTextarea">Nội dung</label>
                                 </div>
                                 <div class="pt-4">

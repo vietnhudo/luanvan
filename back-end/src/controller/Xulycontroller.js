@@ -35,6 +35,30 @@ exports.sach = (req, res) => {
       res.send(err);
     });
 };
+exports.suasach = (req, res) => {
+  var _id = req.query.id;
+  function getSach(){
+    return axios.get(process.env.NODEJS_APP_URL + "/api/sach/" + _id);
+  }
+  function getTheLoaiSach(){
+    return axios.get(process.env.NODEJS_APP_URL + "/api/theloaisach/");
+  }
+  function getNhaXuatBan(){
+    return axios.get(process.env.NODEJS_APP_URL + "/api/nhaxuatban/");
+  }
+  Promise.all([getSach(),getTheLoaiSach(),getNhaXuatBan()]).then(function(result){
+    const sach = result[0].data.sach;
+    const theloaisach = result[1].data.theloaisach;
+    const nhaxuatban = result[2].data.nhaxuatban;
+    res.render("Sach_Sua",{
+      sach: sach,
+      theloaisach: theloaisach,
+      nhaxuatban: nhaxuatban,
+    });
+  }).catch((err)=>{
+    res.send(err);
+  });
+}; 
 
 //thể loại sách
   exports.theloaisach = (req, res) => {

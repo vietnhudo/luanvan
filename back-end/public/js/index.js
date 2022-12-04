@@ -1,7 +1,7 @@
 // sách
-// $("#sua_sach").submit(function(evnet){
-//     alert("sửa thành công");
-//   });
+$("#sua_sach").submit(function(evnet){
+    alert("Sửa sách thành công");
+  });
   $("#them_sach").submit(function(evnet){
     alert("Thêm sách thành công");
   });

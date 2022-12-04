@@ -155,7 +155,7 @@ exports.lay_danhsach_sach = (req, res, next) => {
 //lấy id sách
 exports.get_id_sach = (req, res, next) => {
   const id = req.params.sachId;
-  Sach.findById(id).select('ten gia _id hinh namxuatban noidung nhaxuatban theloaisach')
+  Sach.findById(id).select('ten gia _id hinh namxuatban noidung nhaxuatban theloaisach giamgia')
     .populate("nhaxuatban", "tennxb")
     .populate("theloaisach", "ten")
     .exec()
@@ -226,6 +226,28 @@ exports.xoa_sach = (req, res, next) => {
       });
     })
     .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: err });
+    });
+}
+//sửa sách
+exports.sua_sach = (req, res, next) => {
+  var dataSach = {
+    ten: req.body.ten,
+    gia: req.body.gia,
+    giamgia: req.body.giamgia,
+    noidung: req.body.noidung,
+    namxuatban: req.body.namxuatban,
+    theloaisach: req.body.idtheloaisach,
+    nhaxuatban: req.body.idnhaxuatban,
+  }
+  if (req.file) {
+    dataSach.hinh = req.file.path;
+  }
+  Sach.findByIdAndUpdate(req.body.sachId, dataSach).exec().then((result) => {
+    res.redirect("../../sach");
+  })
+    .catch((err) => {
       console.log(err);
       res.status(500).json({ error: err });
     });

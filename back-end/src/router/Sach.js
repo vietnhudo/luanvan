@@ -45,5 +45,8 @@ router.post('/',upload.single('hinh'),SachController.them_sach);
 //xóa sách
 router.delete('/:idsach',SachController.xoa_sach);
 
+//sửa sách
+router.post('/suasach',upload.single('hinh'),SachController.sua_sach);
+
 
 module.exports = router;

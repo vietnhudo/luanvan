@@ -8,7 +8,7 @@ router.get("/", xulyController.trangchu);
 //dulieu  : SÁCH
 router.get('/sach', xulyController.sach);
 router.get('/themsach', xulyController.themsach);
-
+router.get('/sua-sach',xulyController.suasach);
 
 //dulieu  : THỂ LOẠI SÁCH
 router.get("/theloaisach", xulyController.theloaisach);

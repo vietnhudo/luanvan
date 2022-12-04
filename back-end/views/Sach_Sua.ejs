@@ -1,0 +1,87 @@
+<%- include('container/Header/Header') %>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <%- include('container/Sidebar/Sidebar') %>
+            <div class="content">
+                <%- include('container/Navbar/Navbar') %>
+                    <div class="col-12">
+                        <form method="POST" id="sua_sach" action="/api/sach/suasach" enctype="multipart/form-data">
+                            <div class="bg-light rounded h-au p-4">
+                                <h3 class="mb-4">Cập nhật sách</h3>
+                                <div class="form-floating mb-3">
+                                    <input type="hidden" name="sachId" value="<%= sach._id %>">
+                                    <input type="text" placeholder="tên sách" class="form-control" name="ten"
+                                        value='<%= sach.ten %>'>
+                                    <label> Nhập tên sách</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" placeholder="tên sách" class="form-control" name="gia"
+                                        value='<%= sach.gia %>'>
+                                    <label>Giá</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" placeholder="tên sách" class="form-control" name="giamgia"
+                                        value='<%= sach.giamgia %>'>
+                                    <label>Giảm giá</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="file" placeholder="tên sách" class="form-control" name="hinh"
+                                        accept="public/image/*"></input>
+                                    <label>Hình</label>
+                                    <div class="image-preview" id="imagePreview">
+                                        <img src="<%= sach.hinh %>" alt="Image Preview" class="image-preview__image"
+                                            style="height: 150px;">
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" placeholder="tên sách" class="form-control" name="namxuatban"
+                                        value='<%= sach.namxuatban %>'>
+                                    <label>Năm xuất bản</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="floatingSelect" name="idnhaxuatban"
+                                        aria-label="Floating label select example">
+                                        <% for(var i=0; i < nhaxuatban.length; i++) { %>
+                                            <option value="<%= nhaxuatban[i]._id %>"
+                                                <%=nhaxuatban[i]._id===sach.nhaxuatban._id ? selected="selected" : "" %>
+                                                >
+                                                <%= nhaxuatban[i].tennxb %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <label for="floatingSelect">Nhà Xuất Bản</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="floatingSelect" name="idtheloaisach"
+                                        aria-label="Floating label select example">
+                                        <% for(var i=0; i < theloaisach.length; i++) { %>
+                                            <option value="<%= theloaisach[i]._id %>"
+                                                <%=theloaisach[i]._id===sach.theloaisach._id ? selected="selected" : ""
+                                                %>>
+                                                <%= theloaisach[i].ten %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <label for="floatingSelect">Thể Loại Sách</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" placeholder="tên sách" class="form-control" name="noidung"
+                                        value='<%= sach.noidung %>'>
+                                    <label for="floatingTextarea">Nội dung</label>
+                                </div>
+                                <div class="pt-4">
+                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                </div>
+                        </form>
+                    </div>
+            </div>
+            <%- include('container/Footer/Footer') %>
+    </div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    <%- include('container/JavaScript/JavaScript') %>

@@ -76,6 +76,7 @@ app.use('/', XuLyRouter);
 //Sách
 app.use('/sach', XuLyRouter);
 app.use('/themsach', XuLyRouter);
+app.use('/sua-sach',XuLyRouter);
 
 //Thể Loại Sách
 app.use('/theloaisach',XuLyRouter);
