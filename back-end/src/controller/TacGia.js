@@ -1,5 +1,47 @@
 const mongoose = require('mongoose');
 const TacGia= require('../model/TacGia');
+ 
+//lấy danh sách tác giả
+exports.get_all_tacgia = (req,res,next)=>{
+    TacGia.find()
+   .select('tentacgia _id noisinh tieusu')
+   .exec()
+   .then((docs) => {
+    const response = {
+        count: docs.length,
+        tacgia: docs.map(doc => {
+            return{
+                tentacgia: doc.tentacgia,
+                noisinh: doc.noisinh,
+                tieusu: doc.tieusu,
+                _id: doc._id,
+                request:{
+                    type: 'GET',
+                    url:'http://localhost:2000/api/tacgia/' + doc._id
+                }
+            }
+        })
+    };
+    res.status(200).json(response);
+        })
+        .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    if(docs.length >=0){
+        res.status(200).json(docs)
+    }else{
+        res.status(404).json({message: 'lỗi'})
+    }
+    
+   })
+   .catch(err => {
+       console.log(err);
+       res.status(500).json({error: err});
+   });
+}
+
 // lấy dữ liệu tác giả
 exports.lay_danhsach_tacgia = (req,res,next)=>{
     TacGia.find()
@@ -39,6 +81,35 @@ exports.lay_danhsach_tacgia = (req,res,next)=>{
        console.log(err);
        res.status(500).json({error: err});
    });
+}
+
+//lấy id tác giả
+exports.get_tacgia_id = (req,res,next)=>{
+    const id = req.params.dmTacGiaId;
+    TacGia.findById(id).select('tentacgia _id noisinh tieusu')
+    .exec()
+    .then(doc =>{
+        console.log("From data",doc);
+        if(doc){
+            res.status(200).json(
+                {
+                    tacgia:doc,
+                    request:{
+                        type: 'GET',
+                        url: 'http://localhost:2000/api/tacgia/'
+                    }
+                }
+            );
+        }else{
+            res.status(400).json({message: 'không lấy dc dữ liệu'})
+        }
+        
+    })
+    .catch(err =>{
+
+    console.log(err);
+    res.status(500).json({ error:err})}
+    );
 }
 
 //thêm tác giả

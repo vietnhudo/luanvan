@@ -16,6 +16,8 @@ class Sach extends React.Component {
             theloaisach: [],
             nhaxuatban: [],
             cart: [],
+            chitiettacgia:[],
+            tacgia:[],
         };
     }
 
@@ -35,6 +37,16 @@ class Sach extends React.Component {
                 nhaxuatban: res.data.nhaxuatban,
             });
         });
+        callApi("api/chitiettacgia", "GET", null).then((res) => {
+            this.setState({
+                chitiettacgia: res.data.chitiettacgia,
+            });
+        });
+        callApi("api/tacgia", "GET", null).then((res) => {
+            this.setState({
+                tacgia: res.data.tacgia,
+            });
+        });
 
     }
 
@@ -49,6 +61,13 @@ class Sach extends React.Component {
         callApi(`api/sach/nhaxuatban/${e.target.value}`, "GET", null).then((res) => {
             this.setState({
                 sach: res.data.sach,
+            })
+        })
+    }
+    handleChangChiTietTacGia = (e) => {
+        callApi(`api/chitiettacgia/tacgia/${e.target.value}`, "GET", null).then((res) => {
+            this.setState({
+                sach: res.data.chitiettacgia,
             })
         })
     }
@@ -97,6 +116,16 @@ class Sach extends React.Component {
         return nhaxuatban;
     }
 
+    renderChiTietTacGia = () => {
+        let tacgia = this.state.tacgia.map((tacgias, index) => (
+            <option className='text-left' value={tacgias._id}>
+                {tacgias.tentacgia}
+            </option>
+
+        ));
+        return tacgia;
+    }
+
     render() {
         var { sach } = this.state;
         return (
@@ -123,14 +152,19 @@ class Sach extends React.Component {
                             <div className="col-lg-9 col-md-7">
                                 <div className="sidebar">
                                     <label for="car1"> <b>Danh mục:</b> &nbsp;</label>
-                                    <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px', width: '150px' }} id="car1">
+                                    <select onChange={(e) => this.handleChang(e)} className="text-center mb-4 cars" style={{ height: '30px', width: '170px' }} id="car1">
                                         <option>Tất cả</option>
                                         {this.renderTheLoaiSach()}
                                     </select>
                                     <label for="car2"> &nbsp; &nbsp; &nbsp; <b>Nhà xuất bản:</b> &nbsp;</label>
-                                    <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px', width: '150px' }} id="car2">
+                                    <select onChange={(e) => this.handleChangNhaXuatBan(e)} className="text-center mb-4 cars" style={{ height: '30px', width: '170px' }} id="car2">
                                         <option>Tất cả</option>
                                         {this.renderNhaXuatBan()}
+                                    </select>
+                                    <label for="car3"> &nbsp; &nbsp; &nbsp; <b>Tác giả:</b> &nbsp;</label>
+                                    <select onChange={(e) => this.handleChangChiTietTacGia(e)} className="text-center mb-4 cars" style={{ height: '30px', width: '180px' }} id="car3">
+                                        <option>Tất cả</option>
+                                        {this.renderChiTietTacGia()}
                                     </select>
                                 </div>
                             </div>

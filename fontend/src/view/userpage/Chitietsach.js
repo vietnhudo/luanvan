@@ -20,8 +20,13 @@ class Chitietsach extends Component {
             noidung: '',
             tentheloai: '',
             tennxb: '',
-            cart:[],
-            sachs:[],
+            cart: [],
+            chitiettacgia: [],
+            tentacgia: '',
+            chubien: '',
+            tacgia: [],
+            dstacgia: [],
+            sachs: [],
         }
     }
 
@@ -41,10 +46,25 @@ class Chitietsach extends Component {
                     namxuatban: data.sach.namxuatban,
                     tentheloai: data.sach.theloaisach.ten,
                     tennxb: data.sach.nhaxuatban.tennxb,
-                    sachs:data.sach
+                    sachs: data.sach
                 });
             });
         }
+        var { id } = this.props.params;
+        console.log(this.data);
+        if (id) {
+            callApi(`api/chitiettacgia/tacgias/${id}`, 'GET', null).then(res => {
+                var data = res.data;
+                this.setState({
+                    dstacgia: res.data.chitiettacgia
+                });
+            });
+        }
+        callApi("api/tacgia", "GET", null).then((res) => {
+            this.setState({
+                tacgia: res.data.tacgia,
+            });
+        });
     }
 
     onSave = (e) => {
@@ -62,7 +82,7 @@ class Chitietsach extends Component {
 
 
     render() {
-        var { _id, ten, hinh, gia , sachs , namxuatban, noidung,giamgia,tentheloai,tennxb} = this.state;
+        var { _id, ten, hinh, gia, sachs, namxuatban, noidung, giamgia, tentheloai, tennxb, dstacgia } = this.state;
         return (
             <div>
                 <Header />
@@ -103,18 +123,20 @@ class Chitietsach extends Component {
                                         <span>(18 đánh giá)</span>
                                     </div>
                                     <div className="product__details__price">{util(gia)}</div>
-                                    <div className="product__details__quantity">
+                                    {/* <div className="product__details__quantity">
                                         <div className="quantity">
                                             <div className="pro-qty">
                                                 <input type="text" defaultValue={1} />
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <button onClick={() => this.props.dispatch(them_giohang(sachs))} className="primary-btn"><i className='fa fa-shopping-cart'></i> Thêm vào giỏ hàng</button>
                                     <ul>
                                         <li><b>Loại sản phẩm:</b> <span>{tentheloai}</span></li>
                                         <li><b>Năm xuất bản:</b> <span>{namxuatban}</span></li>
                                         <li><b>Nhà xuất bản:</b> <span>{tennxb}</span></li>
+                                        <li><b>Tác giả:</b> <span>{dstacgia[0]?.tacgia?.tentacgia}</span></li>
+                                        <li><b>Chủ biên:</b> <span>{dstacgia[0]?.chubien}</span></li>
                                         <li><b>Chia Sẻ Trên</b>
                                             <div className="share">
                                                 <a href="#"><i className="fa fa-facebook" /></a>
