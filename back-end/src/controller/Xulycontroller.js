@@ -59,6 +59,20 @@ exports.sach = (req, res) => {
       });
 };
 
+exports.suatheloaisach = (req, res) => {
+  var _id = req.query.id;
+  axios
+    .get(process.env.NODEJS_APP_URL + "/api/theloaisach/" + _id)
+    .then(function (response) {
+      console.log(response.data);
+      res.render("TheLoaiSach_Sua", { theloaisach: response.data.theloaisach });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+
 //nhà xuất bản
 exports.nhaxuatban = (req, res) => {
   axios.get(process.env.NODEJS_APP_URL + "/api/nhaxuatban")

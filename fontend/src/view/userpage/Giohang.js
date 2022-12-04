@@ -11,7 +11,7 @@ const Giohang = () => {
 
     const dispatch = useDispatch();
     const carts = useSelector((state) => state.cart.cart);
-    
+
 
     let soluong = 0;
     let price = 0;
@@ -73,16 +73,16 @@ const Giohang = () => {
                                                                 id="qty"
                                                                 name="qty"
                                                                 value={cart.qty}
-                                                                onChange={(e)=>{
+                                                                onChange={(e) => {
                                                                     if (e.target.value > 0) {
-                                                                      var product = {...cart};
-                                                                      product.qty = Number(e.target.value);
-                                                                      dispatch(capnhat_giohang(product));
+                                                                        var product = { ...cart };
+                                                                        product.qty = Number(e.target.value);
+                                                                        dispatch(capnhat_giohang(product));
                                                                     } else if (Number(e.target.value) === 0) {
-                                                                      dispatch(xoa_giohang(cart));
+                                                                        dispatch(xoa_giohang(cart));
                                                                     }
-                                                                 
-                                                              }}
+
+                                                                }}
                                                             />
                                                         </div>
                                                     </div>
@@ -92,7 +92,7 @@ const Giohang = () => {
                                                 </td>
                                                 <td >
                                                     <from>
-                                                        <button onClick={() => dispatch(xoa_giohang(cart))} className="btn btn-sm btn-primary"> <i className="fa fa-times" /></button>
+                                                        <button onClick={() => dispatch(xoa_giohang(cart))} className="btn btn-xxl"> <i style={{ color: 'red', fontSize: '25px' }} className="fa fa-trash" /></button>
                                                     </from>
                                                 </td>
                                             </tr>

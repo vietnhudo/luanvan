@@ -27,10 +27,6 @@ $onDeleteSach.click(function () {
 
 
 // thể loại sách
-//sửa
-// $("#sua_sach").submit(function(evnet){
-//     alert("sửa thành công");
-//   });
 //thêm
 $("#them_theloaisach").submit(function(evnet){
   alert("Thêm thể loại sách thành công");
@@ -52,7 +48,10 @@ $onDeleteTheLoaiSach.click(function () {
       });
   }
 });
-
+//sửa
+$("#sua_theloaisach").submit(function(evnet){
+  alert("Sửa thể loại sách thành công");
+});
 
 // nhà xuất bản
 //sửa

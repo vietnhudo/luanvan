@@ -80,6 +80,7 @@ app.use('/themsach', XuLyRouter);
 //Thể Loại Sách
 app.use('/theloaisach',XuLyRouter);
 app.use('/themtheloaisach',XuLyRouter);
+app.use('/sua-theloaisach',XuLyRouter);
 
 //Nhà Xuất Bản
 app.use('/nhaxuatban',XuLyRouter);

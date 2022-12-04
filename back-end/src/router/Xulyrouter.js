@@ -13,6 +13,7 @@ router.get('/themsach', xulyController.themsach);
 //dulieu  : THỂ LOẠI SÁCH
 router.get("/theloaisach", xulyController.theloaisach);
 router.get("/themtheloaisach", xulyController.themtheloaisach);
+router.get('/sua-theloaisach',xulyController.suatheloaisach);
 
 //dulieu  : NHÀ XUẤT BẢN
 router.get("/nhaxuatban", xulyController.nhaxuatban);

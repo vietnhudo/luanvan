@@ -57,6 +57,14 @@ class Sach extends React.Component {
             });
         });
     }
+
+    handleChang = (e) => {
+        callApi(`api/sach/theloaisach/${e.target.value}`, "GET", null).then((res) => {
+            this.setState({
+                sach: res.data.sach,
+            });
+        });
+    }
     handleChangNhaXuatBan = (e) => {
         callApi(`api/sach/nhaxuatban/${e.target.value}`, "GET", null).then((res) => {
             this.setState({

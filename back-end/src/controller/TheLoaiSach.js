@@ -67,3 +67,53 @@ exports.xoa_theloaisach = (req, res, next) => {
         res.status(500).json({ error: err });
       });
   }
+  //sửa thể loại sách
+  exports.sua_theloaisach = (req,res,next)=>{
+    var dataTheLoaiSach = {
+        ten: req.body.ten,
+      };
+      TheLoaiSach.findByIdAndUpdate(req.body.idtheloaisach, dataTheLoaiSach)
+    .exec()
+    .then(result =>{
+        res.redirect("../../theloaisach");
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error:err
+        });
+    });
+    
+ }
+
+ 
+ // lấy id thể loại sách
+exports.get_theloaisach_id = (req,res,next)=>{
+    const id = req.params.idtheloaisach;
+    TheLoaiSach.findById(id).select('ten _id')
+    .exec()
+    .then(doc =>{
+        console.log("From data",doc);
+        if(doc){
+            res.status(200).json(
+                {
+                    theloaisach:doc,
+                    request:{
+                        type: 'GET',
+                        url: 'http://localhost:2000/theloaisach/' + id
+                    }
+                }
+            );
+        }else{
+            req.status(400).json({message: 'không lấy dc dữ liệu'})
+        }
+        
+    })
+    .catch(err =>{
+
+    console.log(err);
+    res.status(500).json({ error:err})}
+    );
+
+}
+  

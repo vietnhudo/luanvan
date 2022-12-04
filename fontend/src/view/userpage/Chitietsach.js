@@ -32,7 +32,7 @@ class Chitietsach extends Component {
 
     componentDidMount() {
         var { id } = this.props.params;
-        console.log(this.data);
+        // console.log(this.data);
         if (id) {
             callApi(`api/sach/${id}`, 'GET', null).then(res => {
                 var data = res.data;
@@ -51,10 +51,11 @@ class Chitietsach extends Component {
             });
         }
         var { id } = this.props.params;
-        console.log(this.data);
+        // console.log(this.data);
         if (id) {
             callApi(`api/chitiettacgia/tacgias/${id}`, 'GET', null).then(res => {
                 var data = res.data;
+                console.log("tacgia", res.data.chitiettacgia);
                 this.setState({
                     dstacgia: res.data.chitiettacgia
                 });
@@ -79,7 +80,14 @@ class Chitietsach extends Component {
             })
         }
     }
-
+    renderTacGia = () => {
+        let dstacgia = this.state.dstacgia.map((dstacgias, index) => (
+            <div className='row'>
+                <div className='col-6'>{index + 1}. {dstacgias.tacgia.tentacgia}</div>
+            </div>
+        ));
+        return dstacgia;
+    }
 
     render() {
         var { _id, ten, hinh, gia, sachs, namxuatban, noidung, giamgia, tentheloai, tennxb, dstacgia } = this.state;
@@ -135,8 +143,10 @@ class Chitietsach extends Component {
                                         <li><b>Loại sản phẩm:</b> <span>{tentheloai}</span></li>
                                         <li><b>Năm xuất bản:</b> <span>{namxuatban}</span></li>
                                         <li><b>Nhà xuất bản:</b> <span>{tennxb}</span></li>
-                                        <li><b>Tác giả:</b> <span>{dstacgia[0]?.tacgia?.tentacgia}</span></li>
                                         <li><b>Chủ biên:</b> <span>{dstacgia[0]?.chubien}</span></li>
+                                        <li><b>Tác giả:</b>
+                                            {this.renderTacGia()}
+                                        </li>
                                         <li><b>Chia Sẻ Trên</b>
                                             <div className="share">
                                                 <a href="#"><i className="fa fa-facebook" /></a>
@@ -250,7 +260,7 @@ class Chitietsach extends Component {
                                 <div className="product__item">
                                     <div className="product__item__pic set-bg" style={{ backgroundImage: "url(img/sach2.jpg)" }}>
                                         <ul className="product__item__pic__hover">
-                                            <li><a href="#"><i className="fa fa-heart" /></a></li>
+<li><a href="#"><i className="fa fa-heart" /></a></li>
                                             <li><Link to={"/chitietsach"} ><i className="fa fa-eye" /></Link></li>
                                             <li><Link to={"/giohang"}><i className="fa fa-shopping-cart" /></Link></li>
                                         </ul>
@@ -293,7 +303,7 @@ class Chitietsach extends Component {
                             </div>
                         </div>
                     </div>
-                </section> */}
+</section> */}
                 <Footer />
             </div >
         );
