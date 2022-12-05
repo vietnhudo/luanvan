@@ -13,7 +13,9 @@ router.get('/:dmTacGiaId',TacGiaController.get_tacgia_id);
 
 //thêm
 router.post('/', TacGiaController.them_tacgia);
-
+//sửa
+router.post('/suatacgia',TacGiaController.sua_tacgia);
  //Xóa 
  router.delete('/:idtacgia',TacGiaController.xoa_tacgia);
+ 
 module.exports = router;

@@ -152,6 +152,18 @@ exports.themtacgia = (req, res) => {
       res.send(err);
     });
 };
+exports.suatacgia = (req, res) => {
+  var _id = req.query.id;
+  axios
+    .get(process.env.NODEJS_APP_URL + "/api/tacgia/" + _id)
+    .then(function (response) {
+      console.log(response.data);
+      res.render("TacGia_Sua", { tacgia: response.data.tacgia });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
 
 //chi tiết tác giả
 exports.chitiettacgia = (req, res) => {
@@ -184,6 +196,30 @@ exports.themchitiettacgia = (req, res) => {
     res.send(err);
   });
 };
+exports.suachitiettacgia = (req, res) => {
+  var _id = req.query.id;
+  function getChiTietTacGia(){
+    return axios.get(process.env.NODEJS_APP_URL + "/api/chitiettacgia/"+ _id);
+  }
+  function getSach(){
+    return axios.get(process.env.NODEJS_APP_URL + "/api/sach/");
+  }
+  function getTacGia(){
+    return axios.get(process.env.NODEJS_APP_URL + "/api/tacgia/");
+  }
+  Promise.all([getChiTietTacGia(),getSach(),getTacGia()]).then(function(result){
+    const chitiettacgia = result[0].data.chitiettacgia;
+    const sach = result[1].data.sach;
+    const tacgia = result[2].data.tacgia;
+    res.render("ChiTietTacGia_Sua",{
+      chitiettacgia: chitiettacgia,
+      sach: sach,
+      tacgia: tacgia,
+    });
+  }).catch((err)=>{
+    res.send(err);
+  });
+}
 
 //khách hàng
 exports.khachhang = (req, res) => {
@@ -218,8 +254,20 @@ exports.thembaiviet = (req, res) => {
       res.send(err);
     });
 };
+exports.suabaiviet = (req, res) => {
+  var _id = req.query.id;
+  axios
+    .get(process.env.NODEJS_APP_URL + "/api/baiviet/" + _id)
+    .then(function (response) {
+      console.log(response.data);
+      res.render("BaiViet_Sua", { baiviet: response.data.baiviet });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
 
-//bài viết
+//đặt hàng
 exports.dathang = (req, res) => {
   axios.get(process.env.NODEJS_APP_URL + "/api/dathang")
     .then(function (response) {

@@ -15,6 +15,9 @@ router.get('/:dmChiTietTacGiaId',ChiTietTacGiaController.get_id_chitiettacgia);
 //thêm
 router.post('/', ChiTietTacGiaController.them_chitiettacgia);
 
+//Sửa
+router.post('/suachitiettacgia',ChiTietTacGiaController.sua_chitiettacgia);
+
  //Xóa 
  router.delete('/:idchitiettacgia',ChiTietTacGiaController.xoa_chitiettacgia);
  

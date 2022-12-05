@@ -82,9 +82,9 @@ $onDeleteNhaXuatBan.click(function () {
 
 // tác giả
 //sửa
-// $("#sua_sach").submit(function(evnet){
-//     alert("sửa thành công");
-//   });
+$("#sua_tacgia").submit(function(evnet){
+    alert("Sửa tác giả thành công");
+  });
 //thêm
 $("#them_tacgia").submit(function(evnet){
   alert("Thêm tác giả thành công");
@@ -109,9 +109,9 @@ $onDeleteTacGia.click(function () {
 
 // chi tiết tác giả
 //sửa
-// $("#sua_sach").submit(function(evnet){
-//     alert("sửa thành công");
-//   });
+$("#sua_chitiettacgia").submit(function(evnet){
+    alert("Sửa chi tiết tác giả thành công");
+  });
 //thêm
 $("#them_chitiettacgia").submit(function(evnet){
   alert("Thêm chi tiết tác giả thành công");
@@ -135,10 +135,6 @@ $onDeleteChiTietTacGia.click(function () {
 });
 
 // khách hàng
-//sửa
-// $("#sua_sach").submit(function(evnet){
-//     alert("sửa thành công");
-//   });
 //xóa
 $onDeleteKhachHang = $(".table tbody td a.xoakhachhang");
 $onDeleteKhachHang.click(function () {
@@ -158,9 +154,9 @@ $onDeleteKhachHang.click(function () {
 });
 // bài viết
 //sửa
-// $("#sua_sach").submit(function(evnet){
-//     alert("sửa thành công");
-//   });
+$("#sua_baiviet").submit(function(evnet){
+    alert("Sửa bài viết thành công");
+  });
 //thêm
 $("#them_baiviet").submit(function(evnet){
   alert("Thêm bài viết thành công");

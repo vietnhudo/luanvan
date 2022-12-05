@@ -152,3 +152,23 @@ exports.them_tacgia = (req,res,next)=>{
       res.status(500).json({error: err});
   });
  }
+
+ //sửa tác giả
+ exports.sua_tacgia = (req, res, next) => {
+    var dataTacGia = {
+        tentacgia: req.body.tentacgia,
+        noisinh: req.body.noisinh,
+        tieusu: req.body.tieusu
+    };
+    TacGia.findByIdAndUpdate(req.body.dmTacGiaId, dataTacGia)
+      .exec()
+      .then(result => {
+        res.redirect("../../tacgia");
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+      });
+  }

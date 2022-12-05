@@ -172,3 +172,23 @@ exports.them_chitiettacgia = (req,res,next)=>{
       res.status(500).json({error: err});
   });
  }
+
+ //sửa chi tiết tác giả
+ exports.sua_chitiettacgia = (req, res, next) => {
+    var dataChiTietTacGia = {
+        chubien: req.body.chubien,
+        sach: req.body.idsach,
+        tacgia:req.body.idtacgia
+    };
+    ChiTietTacGia.findByIdAndUpdate(req.body.dmChiTietTacGiaId, dataChiTietTacGia)
+      .exec()
+      .then(result => {
+        res.redirect("../../chitiettacgia");
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+      });
+  }

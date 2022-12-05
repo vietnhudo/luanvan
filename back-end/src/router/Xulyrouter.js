@@ -23,10 +23,12 @@ router.get('/sua-nhaxuatban',xulyController.suanhaxuatban);
 //dulieu  : TÁC GIẢ
 router.get("/tacgia", xulyController.tacgia);
 router.get("/themtacgia", xulyController.themtacgia);
+router.get('/sua-tacgia',xulyController.suatacgia);
 
 //dulieu  : CHI TIẾT TÁC GIẢ
 router.get("/chitiettacgia", xulyController.chitiettacgia);
 router.get("/themchitiettacgia", xulyController.themchitiettacgia);
+router.get('/sua-chitiettacgia',xulyController.suachitiettacgia);
 
 //dulieu  : KHÁCH HÀNG
 router.get("/khachhang", xulyController.khachhang);
@@ -34,6 +36,7 @@ router.get("/khachhang", xulyController.khachhang);
 //dulieu  : BÀI VIẾT
 router.get("/baiviet", xulyController.baiviet);
 router.get("/thembaiviet", xulyController.thembaiviet);
+router.get('/sua-baiviet',xulyController.suabaiviet);
 
 //dulieu  : Đặt Hàng
 router.get("/dathang", xulyController.dathang);

@@ -28,13 +28,16 @@ const upload = multer({
 //lấy danh sách của bài viết
 router.get('/',BaiVietController.lay_danhsach_baiviet);
 
-//lấy id sách
+//lấy id bài viết
 router.get('/:baivietId',BaiVietController.get_id_baiviet);
 
-// thêm sách
+// thêm bài viết
 router.post('/',upload.single('hinh'),BaiVietController.them_baiviet);
 
-//xóa sách
+//sửa bài viết
+router.post('/suabaiviet',upload.single('hinh'),BaiVietController.sua_baiviet);
+
+//xóa bài viết
 router.delete('/:idbaiviet',BaiVietController.xoa_baiviet);
 
 

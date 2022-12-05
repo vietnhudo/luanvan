@@ -91,14 +91,17 @@ app.use('/sua-nhaxuatban',XuLyRouter);
 //Tác Giả
 app.use('/tacgia',XuLyRouter);
 app.use('/themtacgia',XuLyRouter);
+app.use('/sua-tacgia',XuLyRouter);
 
 //Chi Tiết Tác Giả
 app.use('/chitiettacgia',XuLyRouter);
 app.use('/themchitiettacgia',XuLyRouter);
+app.use('/sua-chitiettacgia',XuLyRouter);
 
 //Bài Viết
 app.use('/baiviet',XuLyRouter);
 app.use('/thembaiviet',XuLyRouter);
+app.use('/sua-baiviet',XuLyRouter);
 
 //Đặt Hàng
 app.use('/dathang',XuLyRouter);

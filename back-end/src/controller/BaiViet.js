@@ -60,7 +60,7 @@ exports.get_id_baiviet = (req, res, next) => {
     );
 }
 
-//thêm sách
+//thêm bài viết
 exports.them_baiviet = (req, res, next) => {
     const baiviet = new BaiViet({
       _id: new mongoose.Types.ObjectId(),
@@ -82,7 +82,7 @@ exports.them_baiviet = (req, res, next) => {
   
   }
 
-//xoá sách
+//xoá bài viết
 exports.xoa_baiviet = (req, res, next) => {
     const id = req.params.idbaiviet
     BaiViet.remove({ _id: id })
@@ -101,3 +101,21 @@ exports.xoa_baiviet = (req, res, next) => {
         res.status(500).json({ error: err });
       });
   }
+
+//sửa bài viết
+exports.sua_baiviet = (req, res, next) => {
+  var dataBaiViet = {
+    ten: req.body.ten,
+    noidung: req.body.noidung,
+  }
+  if (req.file) {
+    dataBaiViet.hinh = req.file.path;
+  }
+  BaiViet.findByIdAndUpdate(req.body.baivietId, dataBaiViet).exec().then((result) => {
+    res.redirect("../../baiviet");
+  })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: err });
+    });
+}
