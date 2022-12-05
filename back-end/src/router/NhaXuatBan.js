@@ -13,5 +13,10 @@ router.post('/',NhaXuatBanController.them_nhaxuatban);
 
 //xoá nhà xuất bản
 router.delete('/:idnhaxuatban',NhaXuatBanController.xoa_nhaxuatban);
+//lay id thể loại sách
+router.get('/:idnhaxuatban',NhaXuatBanController.get_nhaxuatban_id);
+
+//Cập nhật thể loại sách
+router.post('/suanhaxuatban',NhaXuatBanController.sua_nhaxuatban);
 
 module.exports = router;

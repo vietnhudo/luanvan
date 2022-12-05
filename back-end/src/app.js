@@ -86,6 +86,7 @@ app.use('/sua-theloaisach',XuLyRouter);
 //Nhà Xuất Bản
 app.use('/nhaxuatban',XuLyRouter);
 app.use('/themnhaxuatban',XuLyRouter);
+app.use('/sua-nhaxuatban',XuLyRouter);
 
 //Tác Giả
 app.use('/tacgia',XuLyRouter);

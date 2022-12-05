@@ -144,6 +144,7 @@ class Chitietsach extends Component {
                                         <li><b>Năm xuất bản:</b> <span>{namxuatban}</span></li>
                                         <li><b>Nhà xuất bản:</b> <span>{tennxb}</span></li>
                                         <li><b>Chủ biên:</b> <span>{dstacgia[0]?.chubien}</span></li>
+                                        {/* <li><b>Tác giả:</b> <span>{dstacgia[0]?.tacgia?.tentacgia}</span></li> */}
                                         <li><b>Tác giả:</b>
                                             {this.renderTacGia()}
                                         </li>

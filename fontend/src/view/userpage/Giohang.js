@@ -69,6 +69,7 @@ const Giohang = () => {
                                                         <div className="pro-qty">
                                                             <input
                                                                 min="1"
+                                                                max="5"
                                                                 type="number"
                                                                 id="qty"
                                                                 name="qty"

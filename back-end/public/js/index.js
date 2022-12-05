@@ -55,9 +55,9 @@ $("#sua_theloaisach").submit(function(evnet){
 
 // nhà xuất bản
 //sửa
-// $("#sua_sach").submit(function(evnet){
-//     alert("sửa thành công");
-//   });
+$("#sua_nhaxuatban").submit(function(evnet){
+    alert("Sửa nhà xuất bản thành công");
+  });
 //thêm
 $("#them_nhaxuatban").submit(function(evnet){
   alert("Thêm nhà xuất bản thành công");

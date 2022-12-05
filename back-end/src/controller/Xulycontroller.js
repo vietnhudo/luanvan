@@ -118,6 +118,18 @@ exports.themnhaxuatban = (req, res) => {
       res.send(err);
     });
 };
+exports.suanhaxuatban = (req, res) => {
+  var _id = req.query.id;
+  axios
+    .get(process.env.NODEJS_APP_URL + "/api/nhaxuatban/" + _id)
+    .then(function (response) {
+      console.log(response.data);
+      res.render("NhaXuatBan_Sua", { nhaxuatban: response.data.nhaxuatban });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
 
 //tác giả
 exports.tacgia = (req, res) => {

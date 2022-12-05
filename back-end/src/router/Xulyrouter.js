@@ -18,6 +18,7 @@ router.get('/sua-theloaisach',xulyController.suatheloaisach);
 //dulieu  : NHÀ XUẤT BẢN
 router.get("/nhaxuatban", xulyController.nhaxuatban);
 router.get("/themnhaxuatban", xulyController.themnhaxuatban);
+router.get('/sua-nhaxuatban',xulyController.suanhaxuatban);
 
 //dulieu  : TÁC GIẢ
 router.get("/tacgia", xulyController.tacgia);
