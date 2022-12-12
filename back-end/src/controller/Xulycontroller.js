@@ -278,3 +278,40 @@ exports.dathang = (req, res) => {
       res.send(err);
     });
 };
+exports.hoadon = (req, res) => {
+  axios
+    .get(process.env.NODEJS_APP_URL + "/api/dathang")
+    .then(function (response) {
+      res.render("HoaDon", { dathang: response.data.dathang });
+      console.log(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+exports.suadathang = (req, res) => {
+  var _id = req.query.id;
+  axios
+    .get(process.env.NODEJS_APP_URL + "/api/dathang/" + _id)
+    .then(function (responseDatHang) {
+      console.log(responseDatHang.data);
+      res.render("DatHang_Sua", { dathang: responseDatHang.data.dathang });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+
+exports.chitietdonhang = (req, res) => {
+  var _id = req.query.id;
+  axios
+    .get(process.env.NODEJS_APP_URL + "/api/dathang/" + _id)
+    .then(function (responseDatHang) {
+      console.log(responseDatHang.data);
+      res.render("ChiTietDonHang", { dathang: responseDatHang.data.dathang });
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};

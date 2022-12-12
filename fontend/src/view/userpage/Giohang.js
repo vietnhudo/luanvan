@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
@@ -11,6 +11,7 @@ const Giohang = () => {
 
     const dispatch = useDispatch();
     const carts = useSelector((state) => state.cart.cart);
+    const user = useSelector((state) => state.auth.login.currentUser);
 
 
     let soluong = 0;
@@ -127,7 +128,15 @@ const Giohang = () => {
                                     <li>Tổng số lượng sản phẩm<span>{soluong} cuốn</span></li>
                                     <li>Tạm tính <span>{util(price)}</span></li>
                                 </ul>
-                                <Link to={'/thanhtoan'} className="primary-btn">Thanh toán</Link>
+                                {user ? (
+                                    <>
+                                        <Link to={'/thanhtoan'} className="primary-btn">Thanh toán</Link>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Link to={'/dangnhap'} className="primary-btn">Thanh toán</Link>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>

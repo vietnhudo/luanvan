@@ -1,0 +1,69 @@
+<%- include('container/Header/Header') %>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <%- include('container/Sidebar/Sidebar') %>
+            <div class="content">
+                <%- include('container/Navbar/Navbar') %>
+                    <div class="col-12">
+                        <form method="POST" id="sua_dathang" action="/api/dathang/suadathang">
+                            <div class="bg-light rounded h-au p-4">
+                                <h3 class="mb-4">Sửa đặt hàng</h3>
+                                <div class="form-floating mb-3">
+                                    <input type="hidden" name="dathangId" value="<%= dathang._id %>">
+                                    <input type="text" placeholder="Nhập gía" class="form-control" name="gia"
+                                        value="<%= dathang.gia %>">
+                                    <label>Nhập Giá</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" placeholder="Nhập quốc gia" class="form-control" name="diachi"
+                                        value="<%= dathang.diachi %>">
+                                    <label> Nhập địa chỉ</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" placeholder="Nhập quốc gia" class="form-control"
+                                        name="sodienthoai" value="<%='0'+dathang.sodienthoai %>">
+                                    <label> Nhập số điện thoại</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="floatingSelect" name="trangthai"
+                                        aria-label="Floating label select example">
+                                        <option>
+                                            <label value='<%= dathang.trangthai %>'>đang xử lý đơn hàng</label>
+                                        </option>
+                                        <option>
+                                            <label value='<%= dathang.trangthai %>'>Đã xác nhận</label>
+                                        </option>
+                                        <option>
+                                            <label value='<%= dathang.trangthai %>'>Đang đóng gói sản phẩm</label>
+                                        </option>
+                                        <option>
+                                            <label value='<%= dathang.trangthai %>'>Đang lấy hàng</label>
+                                        </option>
+                                        <option>
+                                            <label value='<%= dathang.trangthai %>'>Đang vận chuyển</label>
+                                        </option>
+                                        <option>
+                                            <label value='<%= dathang.trangthai %>'>Hoàn thành</label>
+                                        </option>
+                                        <option>
+                                            <label value='<%= dathang.trangthai %>'>Đã hủy</label>
+                                        </option>
+                                    </select>
+                                    <label for="floatingSelect">Trạng thái</label>
+                                </div>
+                                <div class="pt-4">
+                                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                </div>
+                        </form>
+                    </div>
+            </div>
+            <%- include('container/Footer/Footer') %>
+    </div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+    <%- include('container/JavaScript/JavaScript') %>

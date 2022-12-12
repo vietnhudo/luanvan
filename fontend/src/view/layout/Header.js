@@ -19,7 +19,7 @@ const Header = () => {
             setDsSach(res.data.sach);
             dispatch(timkiem(res.data.sach));
         });
-        
+
         navigate('/timkiem')
     }
     let soluong = 0;
@@ -28,7 +28,7 @@ const Header = () => {
         soluong += item.qty;
     });
 
-    
+
     return (
         <div>
             <header className="header">
@@ -54,7 +54,16 @@ const Header = () => {
 
                                     {user ? (
                                         <>
-                                            <div className="header__top__right__auth" onClick={() => dispatch(logOutSuccess())}><Link to={"/dangnhap"} replace className="dropdown-item"><span><i className="fa fa-user" />{user.username}</span></Link></div>
+                                            <div className="header__top__right__auth">
+                                                <Link to={"/thongtin"} replace className="dropdown-item">
+                                                    <span><i className="fa fa-user" />{user.username}</span>
+                                                </Link>
+                                            </div>
+                                            <div className="header__top__right__auth" onClick={() => dispatch(logOutSuccess())}>
+                                                <Link to={"/dangnhap"} replace className="dropdown-item">
+                                                    <span><i className="fa fa-sign-out" />Đăng xuất</span>
+                                                </Link>
+                                            </div>
                                         </>
                                     ) : (
                                         <>

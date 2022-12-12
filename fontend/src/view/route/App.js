@@ -11,6 +11,7 @@ import Chitietsach from '../userpage/Chitietsach';
 import Giohang from '../userpage/Giohang';
 import Timkiem from '../userpage/Timkiem';
 import Thanhtoan from '../userpage/Thanhtoan';
+import Thongtin from '../userpage/ThongTin';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/timkiem' element={<Timkiem></Timkiem>}/>
           <Route path='/giohang' element={<Giohang></Giohang>}/>
           <Route path='/thanhtoan' element={<Thanhtoan></Thanhtoan>}/>
+          <Route path='/thongtin' element={<Thongtin></Thongtin>}/>
         </Routes>
       </Router>
 

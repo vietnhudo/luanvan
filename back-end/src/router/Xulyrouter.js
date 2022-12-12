@@ -40,5 +40,8 @@ router.get('/sua-baiviet',xulyController.suabaiviet);
 
 //dulieu  : Đặt Hàng
 router.get("/dathang", xulyController.dathang);
+router.get('/sua-dathang',xulyController.suadathang);
+router.get('/chitietdonhang',xulyController.chitietdonhang);
+router.use('/hoadon',xulyController.hoadon);
 
 module.exports = router;

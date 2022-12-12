@@ -19,6 +19,7 @@ const ChiTietTacGiaRouter = require('./router/ChiTietTacGia')
 const KhachHangRouter = require('./router/KhachHang')
 const BaiVietRouter = require('./router/BaiViet')
 const DatHangRouter = require('./router/DatHang')
+const HoaDonRouter = require('./router/DatHang');
 
 
 //xử lý router
@@ -105,6 +106,8 @@ app.use('/sua-baiviet',XuLyRouter);
 
 //Đặt Hàng
 app.use('/dathang',XuLyRouter);
+app.use('/sua-dathang',XuLyRouter);
+app.use('/chitietdonhang',XuLyRouter);
 
 
 
@@ -117,6 +120,8 @@ app.use('/api/chitiettacgia', ChiTietTacGiaRouter);
 app.use('/api/khachhang', KhachHangRouter);
 app.use('/api/baiviet', BaiVietRouter);
 app.use('/api/dathang', DatHangRouter);
+app.use('/api/hoadon', HoaDonRouter);
+
 
 app.use((req, res, next) => {
     const error = new Error('Không kết nối');

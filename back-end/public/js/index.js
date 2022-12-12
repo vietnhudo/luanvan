@@ -178,3 +178,9 @@ $onDeleteBaiViet.click(function () {
       });
   }
 });
+
+//đặt hàng
+//thêm
+$("#sua_dathang").submit(function(evnet){
+  alert("Sửa đặt hàng thành công");
+});

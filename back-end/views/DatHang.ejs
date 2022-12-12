@@ -19,47 +19,52 @@
                                     <thead>
                                         <tr class="text-dark">
                                             <th>ID</th>
-                                            <th scope="col">Tổng giá</th>
-                                            <th scope="col">Địa chỉ</th>
                                             <th scope="col">Tên khách hàng</th>
+                                            <th scope="col">Địa chỉ</th>
                                             <th scope="col">Số điện thoại</th>
+                                            <th scope="col">Tổng giá</th>
                                             <th scope="col">Ngày đặt</th>
                                             <th scope="col">Trạng thái</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% let date = new Intl.DateTimeFormat('en-US', { year: 'numeric' , month: '2-digit' , day: '2-digit' , hour: '2-digit' , minute: '2-digit' ,
-                                            second: '2-digit' }) 
-                                            for(var i=0; i < dathang.length; i++) { %>
+                                        <% let date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })
+                                        for(var i=0; i < dathang.length; i++) { %>
                                             <tr>
                                                 <td><b>
                                                         <%= i+1 %>
                                                     </b></td>
+                                                    <td>
+                                                        <%= dathang[i].khachhang.username %>
+                                                    </td>
+                                                    <td>
+                                                        <%= dathang[i].diachi %>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        0<%= dathang[i].sodienthoai %>
+                                                    </td>
                                                 <td>
                                                     <%= dathang[i].gia %>
-                                                </td>
-                                                <td>
-                                                    <%= dathang[i].diachi %>
-                                                </td>
-                                                <td>
-                                                    <%= dathang[i].nguoidung.username %>
-                                                </td>
-                                                <td>
-                                                    <%= dathang[i].sodienthoai %>
                                                 </td>
                                                 <td>
                                                     <%= date.format(Date.parse(dathang[i].createdAt)) %>
                                                 </td>
                                                 <td>
+                                                    <%= dathang[i].trangthai %>
+                                                </td>
+                                                <td>
                                                     <a class="form-group btn btn-success" type="button"
-                                                        href="#"><i class="fas fa-eye"></i>&ensp; xem chi tiết</a>
-                                                    <a class="form-group btn btn-success" type="button">
+                                                        href="/chitietdonhang?id=<%= dathang[i]._id%>"><i
+                                                            class="fas fa-eye"></i>&ensp; xem chi tiết</a>&ensp;
+                                                    <a class="form-group btn btn-success" type="button"
+                                                        href="/sua-dathang?id=<%= dathang[i]._id%>">
                                                         <i class="fas fa-pen-square"></i>Sửa
-                                                    </a>&ensp;
-                                                    <a style="color:#fff;" class="form-group btn btn-danger xoadathang"
+                                                    </a>
+                                                    <!-- <a style="color:#fff;" class="form-group btn btn-danger xoadathang"
                                                         type="button" data-id=<%=dathang[i]._id %> ><i
                                                             class="fas fa-trash"></i> Xóa
-                                                    </a>
+                                                    </a> -->
                                                 </td>
                                             </tr>
                                             <% } %>
