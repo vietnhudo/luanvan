@@ -34,9 +34,18 @@
                                                 <td><b>
                                                         <%= i+1 %>
                                                     </b></td>
-                                                    <td>
-                                                        <%= dathang[i].khachhang.username %>
-                                                    </td>
+                                                     <% if (dathang[i].tenkhach) { %>
+                                                        <td>
+                                                            <%= dathang[i].tenkhach %>
+                                                        </td>
+                                                        <%} %>
+                                                        <% if (dathang[i].khachhang) { %>
+                                                            <td>
+                                                                <%= dathang[i].khachhang.username %>
+                                                            </td>
+                                                            <%}  %>
+                                                   
+                                                
                                                     <td>
                                                         <%= dathang[i].diachi %>
                                                     </td>

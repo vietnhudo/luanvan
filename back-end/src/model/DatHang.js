@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const DathangSchema = mongoose.Schema({
     khachhang: { type: mongoose.Schema.Types.ObjectId, ref: "KhachHang" },
+    tenkhach: {type: String},
+    email: {type: String},
     sachs: [
       {
         sach: {
@@ -14,7 +16,7 @@ const DathangSchema = mongoose.Schema({
         },
       },
     ],
-    gia: { type: Number, required: true },
+    gia: { type: Number },
     diachi: { type: Object, required: true },
     sodienthoai: {type: Number, required: true},
     trangthai: { type: String, default: "đang xử lý đơn hàng" },

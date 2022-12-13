@@ -32,7 +32,7 @@ const Dathang = require('../model/DatHang');
 
 //lấy khách hàng
 exports.get_khachhang_dathang = async (req,res,next)=>{
-    Dathang.find({khachhang: req.params.khachhangId}).select("sachs sach diachi hinh khachhang trangthai sodienthoai createdAt gia _id")
+    Dathang.find({khachhang: req.params.khachhangId}).select("sachs sach diachi hinh khachhang tenkhach trangthai sodienthoai createdAt gia _id")
     .populate("khachhang","username")
     .populate("sachs.sach")
     .exec().then(docs =>{
@@ -44,6 +44,7 @@ exports.get_khachhang_dathang = async (req,res,next)=>{
                     sachs: doc.sachs,
                     gia:doc.gia,
                     diachi:doc.diachi,
+                    tenkhach: doc.tenkhach,
                     trangthai: doc.trangthai,
                     khachhang:doc.khachhang,
                     sodienthoai: doc.sodienthoai,
@@ -65,7 +66,7 @@ exports.get_khachhang_dathang = async (req,res,next)=>{
 
 //lấy hoá đơn
 exports.get_hoadon = async(req,res,next)=>{
-    Dathang.find().select("sachs sach diachi hinh khachhang trangthai createdAt sodienthoai gia _id")
+    Dathang.find().select("sachs sach diachi tenkhach hinh khachhang trangthai createdAt sodienthoai gia _id")
     .populate("khachhang","username")
     .populate("sachs.sach")
     .exec().then(docs =>{
@@ -77,6 +78,7 @@ exports.get_hoadon = async(req,res,next)=>{
                     sachs: doc.sachs,
                     gia:doc.gia,
                     diachi:doc.diachi,
+                    tenkhach: doc.tenkhach,
                     trangthai: doc.trangthai,
                     khachhang:doc.khachhang,
                     sodienthoai: doc.sodienthoai,
@@ -98,7 +100,7 @@ exports.get_hoadon = async(req,res,next)=>{
 
 // lấy tất cả dathang
 exports.lay_danhsach_dathang = async(req,res,next)=>{
-    Dathang.find().select("sachs sach diachi hinh khachhang trangthai createdAt sodienthoai gia _id")
+    Dathang.find().select("sachs sach diachi hinh khachhang tenkhach trangthai createdAt sodienthoai gia _id")
     .populate("khachhang","username")
     .populate("sachs.sach")
     .exec().then(docs =>{
@@ -110,6 +112,7 @@ exports.lay_danhsach_dathang = async(req,res,next)=>{
                     sachs: doc.sachs,
                     gia:doc.gia,
                     diachi:doc.diachi,
+                    tenkhach: doc.tenkhach,
                     trangthai: doc.trangthai,
                     nguoidung:doc.nguoidung,
                     sodienthoai: doc.sodienthoai,
@@ -183,6 +186,7 @@ exports.them_dathang =  async (req,res,next)=>{
     var daTaDatHang = {
         trangthai: req.body.trangthai,
         gia: req.body.gia,
+        tenkhach: req.body.tenkhach,
         diachi:req.body.diachi,
         sodienthoai: req.body.sodienthoai,
       };
