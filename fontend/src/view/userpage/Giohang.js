@@ -128,15 +128,14 @@ const Giohang = () => {
                                     <li>Tổng số lượng sản phẩm<span>{soluong} cuốn</span></li>
                                     <li>Tạm tính <span>{util(price)}</span></li>
                                 </ul>
-                                {user ? (
-                                    <>
+                               
+                                   
                                         <Link to={'/thanhtoan'} className="primary-btn">Thanh toán</Link>
-                                    </>
-                                ) : (
-                                    <>
-                                        <Link to={'/dangnhap'} className="primary-btn">Thanh toán</Link>
-                                    </>
-                                )}
+                                  
+                                
+                                  
+                                   
+                              
                             </div>
                         </div>
                     </div>

@@ -13,11 +13,11 @@ const khachhang = createSlice({
             error:false,
             success:false
         },
-        // lienhe:{
-        //     isFetching: false,
-        //     error:false,
-        //     success:false
-        // },
+        dathang:{
+            isFetching: false,
+            error:false,
+            success:false
+        },
     },
     reducers:{
         loginStart: (state) =>{
@@ -57,19 +57,19 @@ const khachhang = createSlice({
         logOutStart: (state) =>{
             state.login.isFetching = true;
         },
-        // LienheStart: (state) =>{
-        //     state.lienhe.isFetching = true;
-        // },
-        // LienheSuccess: (state) => {
-        //     state.lienhe.isFetching = false;
-        //     state.lienhe.error = false;
-        //     state.lienhe.success = true;
-        // },
-        // LienheFailed: (state) =>{
-        //     state.lienhe.isFetching = false;
-        //     state.lienhe.error = true;
-        //     state.lienhe.success = false;
-        // },
+        LienheStart: (state) =>{
+            // state.dathang.isFetching = true;
+        },
+        LienheSuccess: (state) => {
+            state.dathang.isFetching = false;
+            state.dathang.error = false;
+            state.dathang.success = true;
+        },
+        LienheFailed: (state) =>{
+            state.dathang.isFetching = false;
+            state.dathang.error = true;
+            state.dathang.success = false;
+        },
        
     }
 });
@@ -86,9 +86,9 @@ export const {
     logOutStart,
     logOutSuccess,
     logOutFailed,
-    // LienheStart,
-    // LienheSuccess,
-    // LienheFailed,
+    LienheStart,
+    LienheSuccess,
+    LienheFailed,
 } = khachhang.actions;
 
 export default khachhang.reducer;

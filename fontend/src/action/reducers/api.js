@@ -1,5 +1,5 @@
 import callApi from '../../view/api/callApi'
-import { loginFailed, loginStart, loginSuccess, registerFailed, registerStart, registerSuccess} from "../../redux/khachhang";
+import { loginFailed, loginStart, loginSuccess, registerFailed, registerStart, registerSuccess,LienheStart, LienheSuccess, LienheFailed} from "../../redux/khachhang";
 export const loginKhachHang = async (khachhang, dispatch, navigate) => {
     dispatch(loginStart());
     try {
@@ -31,6 +31,17 @@ export const dangkyKhachHang = async (khachhang, dispatch,navigate) =>{
     }
 }
 
+export const themDonHangMoi = async (dathang, dispatch,navigate) =>{
+    dispatch(LienheStart());
+    try{
+        callApi("api/dathang","POST",dathang).then((res)=>{
+            dispatch(LienheSuccess(res.data));
+            navigate("/dangnhap");
+        });
+    }catch(err){
+        dispatch(LienheFailed());
+    }
+}
 
 // export const nguoiDungLienHe = async (nguoidung, dispatch,navigate) =>{
 //     dispatch(registerStart());
